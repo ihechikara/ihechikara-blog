@@ -1,0 +1,35 @@
+---
+const { posts } = Astro.props;
+const { tag } = Astro.params;
+
+let title = tag;
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await Astro.glob('../posts/*.{md,mdx}');
+  const sortedPosts = allPosts.sort(
+		(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+	);
+  const allTags = new Set();
+  sortedPosts.map(post => {
+      post.frontmatter.tags && post.frontmatter.tags.map(tag => allTags.add(tag))
+  })
+  
+  return Array.from(allTags).map((tag) => {
+    const filteredPosts = sortedPosts.filter((post) => post.frontmatter.tags.includes(tag))
+    return {
+      params: { tag },
+      props: {
+        posts: filteredPosts
+      }
+    };
+  });
+}
+---
+    <main>
+        <p>Posts tagged with {title}</p>
+        {posts.map(post => 
+            <p>{post.frontmatter.pubDate} - <a href={post.url}>{post.frontmatter.title}</a></p>
+        )}
+        <hr />
+        <p><a href ="/tags/">See all tags...</a></p>
+    </main>

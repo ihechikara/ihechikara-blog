@@ -1,0 +1,17 @@
+---
+let title = 'Tags'
+
+const allPosts = await Astro.glob('../posts/*.{md,mdx}');
+const tags = [...new Set([].concat.apply([],allPosts.map(post => post.frontmatter.tags)))]
+
+console.log(tags)
+---
+
+    <main>
+        <h1>Tags</h1>
+        <div class="flex ">
+            {tags.sort().map((tag) => (
+                <p class="ml-2"><a  href={`/tags/${tag}`}>{tag}</a></p>
+            ))}
+        </div>
+    </main>
