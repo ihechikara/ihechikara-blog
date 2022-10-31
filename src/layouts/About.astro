@@ -18,6 +18,8 @@ const {
   content: { title, description, pubDate, updatedDate, heroImage, tags },
 } = Astro.props;
 
+
+
 ---
 
 <html lang="en">
@@ -49,11 +51,6 @@ const {
             </div>
           )
         }
-
-        <div class="flex space-x-2">
-            {tags.map((tag) => <a href={`/tags/${tag}`}><p class="p-2 bg-slate-600 text-gray-100 rounded">{tag}</p></a>)}
-        </div>
-
         <hr />
         <slot />
       </article>

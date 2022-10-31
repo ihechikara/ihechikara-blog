@@ -1,25 +1,24 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../config';
+import menu from '/bx_menu.svg'
 ---
 
 <header>
-	<h2>
-		{SITE_TITLE}
-	</h2>
-	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="https://twitter.com/Ihechikara2" target="_blank">Twitter</HeaderLink>
-		<HeaderLink href="https://github.com/ihechikara" target="_blank">GitHub</HeaderLink>
+	<nav class="">
+
+		<div class="flex justify-between items-center mt-11 mx-6 ">
+			<h1 class=" text-2xl leading-7 font-extrabold">IHECHIKARA<span class="text-[#87E0B2]">.</span></h1>
+			<img src={menu} alt="" class="p-2 border-white">
+		</div>
+
+		<hr class="border-[1px] border-[#5A5880] mt-[19.5px]">
+		<!-- <HeaderLink href="/"></HeaderLink> -->
+		<!-- <HeaderLink href="/blog">Blog</HeaderLink>
+		<HeaderLink href="/about">About</HeaderLink> -->
+		<!-- <HeaderLink href="https://twitter.com/Ihechikara2" target="_blank">Twitter</HeaderLink>
+		<HeaderLink href="https://github.com/ihechikara" target="_blank">GitHub</HeaderLink> -->
+
+		
 	</nav>
 </header>
-<style>
-	header {
-		margin: 0em 0 2em;
-	}
-	h2 {
-		margin: 0.5em 0;
-	}
-</style>
+
