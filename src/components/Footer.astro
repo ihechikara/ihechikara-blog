@@ -1,7 +1,65 @@
 ---
-const today = new Date();
+const today = new Date()
+import twitter from '/twitter.svg'
+import facebook from '/facebook.svg'
+import mail from '/mail.svg'
+import linkedin from '/linkedin.svg'
+import github from '/github.svg'
 ---
 
-<footer>
-	&copy; {today.getFullYear()} Ihechikara.
+<footer
+  class='px-6 lg:px-[8.3rem] pt-[1.9rem] lg:pt-[3.75rem] bg-[#5A5880] leading-7'
+>
+  <div class='lg:flex lg:justify-between lg:w-full'>
+    <div>
+      <h1 class='text-2xl lg:text-[2.4rem] font-extrabold mb-8'>
+        IHECHIKARA<span class='text-[#87E0B2]'>.</span>
+      </h1>
+    </div>
+    <div class=''>
+      <p
+        class='font-[Work_Sans] tracking-wider text-base md:text-[1.3rem] mb-2 md:mb-[1rem]'
+      >
+        Contact me
+      </p>
+      <div
+        class='flex items-center justify:center gap-4 lg:gap-[2.63rem] mb-[3.9rem] cursor-pointer'
+      >
+        <a
+          href='#'
+          target='_blank'
+          class='cursor-pointer md:mb-8 md:h-8 md:w-8'
+        >
+          <img src={twitter} class='w-[100%] h-[100%]' />
+        </a>
+        <a
+          href='#'
+          target='_blank'
+          class='cursor-pointer md:mb-8 md:h-8 md:w-8'
+        >
+          <img src={facebook} class='w-[100%] h-[100%]' />
+        </a>
+        <a
+          href='#'
+          target='_blank'
+          class='cursor-pointer md:mb-8 md:h-8 md:w-8'
+        >
+          <img src={mail} class='w-[100%] h-[100%]' />
+        </a>
+        <a href='#' target='_blank' class='cursor- md:mb-8 md:h-8 md:w-8'>
+          <img src={linkedin} class='w-[100%] h-[100%]' />
+        </a>
+        <a
+          href='#'
+          target='_blank'
+          class='cursor-pointer md:mb-8 md:h-8 md:w-8'
+        >
+          <img src={github} class='w-[100%] h-[100%]' />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class='text-center'>
+    <small>&copy; {today.getFullYear()} Ihechikara.</small>
+  </div>
 </footer>
