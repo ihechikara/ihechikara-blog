@@ -18,7 +18,8 @@ import blog from '/blog.svg'
           IHECHIKARA<span class='text-[#87E0B2]'>.</span>
         </h1>
       </a>
-      <img src={menu} alt='' class='p-2 pr-0 border-white lg:hidden' />
+
+      <img id="hamBurger-img" src={menu} alt='' class='p-2 pr-0 border-white lg:hidden' />
       <!-- desktop menu -->
       <div
         class='items-center leading-[1.56rem] text-[1.3rem] font-[Work_Sans] cursor-pointer hidden lg:flex'
@@ -49,36 +50,51 @@ import blog from '/blog.svg'
 		<HeaderLink href="https://github.com/ihechikara" target="_blank">GitHub</HeaderLink> -->
 
     <!-- Nav for Mobile -->
-    <div class='bg-[#5A5880] w-full hidden py-6 px-6'>
-      <form class='flex items-center text-xs mb-6 w-full'>
-        <button
-          class='p-[0.92rem] bg-[#87E0B2] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.5rem]'
-          ><img src={search} alt='' />
-        </button>
-        <input
-          type='text'
-          id='text'
-          name='text'
-          placeholder='Search for articles'
-          class='py-[0.75rem] pl-[1.9rem] pr-[4.5rem] w-full text-[#C8C7D5] text-[1rem] cursor-text tracking-wider leading-6'
-        />
-      </form>
+        <div id="mobileNav" class='bg-[#5A5880] w-full py-6 px-6 hidden'>
+        <form class='flex items-center text-xs mb-6 w-full'>
+          <button
+            class='p-[0.92rem] bg-[#87E0B2] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.5rem]'
+            ><img src={search} alt='' />
+          </button>
+          <input
+            type='text'
+            id='text'
+            name='text'
+            placeholder='Search for articles'
+            class='py-[0.75rem] pl-[1.9rem] pr-[4.5rem] w-full text-[#C8C7D5] text-[1rem] cursor-text tracking-wider leading-6'
+          />
+        </form>
 
-      <button
-        class='p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full'
-        ><img src={home} alt='' class='pr-[0.92rem]' />
-        <a class='pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]'
-          >Home</a
-        >
-      </button>
-      <button
-        class='p-[0.92rem] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full'
-        ><img src={blog} alt='' class='pr-[0.92rem]' />
-        <a class='pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]'
-          >Blog</a
-        >
-      </button>
-    </div>
+        <button
+          class='p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full'
+          ><img src={home} alt='' class='pr-[0.92rem]' />
+          <a class='pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]'
+            >Home</a>
+        </button>
+        <button
+          class='p-[0.92rem] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full'
+          ><img src={blog} alt='' class='pr-[0.92rem]' />
+          <a class='pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]'
+            >Blog</a
+          >
+        </button>
+      </div>
+    
     <!-- End of Nav for Mobile -->
   </nav>
 </header>
+
+
+<script>
+
+
+  let hamBurgerImg = document.getElementById("hamBurger-img");
+  let mobileNav = document.getElementById("mobileNav");
+
+  hamBurgerImg.addEventListener("click", ()=>{
+    mobileNav.classList.toggle("hidden")
+  })
+
+
+  
+</script>
