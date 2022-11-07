@@ -1,12 +1,12 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import Articles from '../components/Articles.astro'
-import About from '../components/About.astro'
-import Newsletter from '../components/Newsletter.astro'
-import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
-const allPosts = await Astro.glob('./posts/*.{md,mdx}')
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Articles from "../components/Articles.astro";
+import About from "../components/About.astro";
+import Newsletter from "../components/Newsletter.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+const allPosts = await Astro.glob("./posts/*.{md,mdx}");
 const tags = [
   ...new Set(
     [].concat.apply(
@@ -14,36 +14,36 @@ const tags = [
       allPosts.map((post) => post.frontmatter.tags)
     )
   ),
-]
+];
 ---
 
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <link
-      href='https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap'
-      rel='stylesheet'
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
     />
   </head>
-  <body class='bg-[#232055] text-[#FFFFFF]'>
+  <body class="bg-[#232055] text-white">
     <Header title={SITE_TITLE} />
 
     <main>
       <section
-        class='mx-6 md:mb-6 md:my-0 md:mx-auto md:w-[46.5rem] md:text-center md:flex md:flex-col md:items-center'
+        class="mx-6 md:mb-6 md:my-0 md:mx-auto md:w-[46.5rem] md:text-center md:flex md:flex-col md:items-center"
       >
         <h1
-          class='font-semibold leading-[33px] md:leading-[2.75rem] text-[28.43px] md:text-[2.5rem] font-[Work_Sans] mt-16 mb-8 md:mb-10 md:mt-[9rem]'
+          class="font-semibold leading-[33px] md:leading-[2.75rem] text-[28.43px] md:text-[2.5rem] font-[Work_Sans] mt-16 mb-8 md:mb-10 md:mt-[9rem]"
         >
           Access to thousands of programmming, Blockchain, and Web development
           resources.
         </h1>
-        <div class='flex flex-wrap mb-16'>
+        <div class="flex flex-wrap mb-16">
           {
             tags.sort().map((tag) => (
-              <p class='mr-2 md:mr-6 mb-10 text-base leading-4 text-[#232055] font-[Work_Sans]'>
-                <a href={`/tags/${tag}`} class='py-3 px-6 bg-[#87E0B2]'>
+              <p class="mr-2 md:mr-6 mb-10 text-base leading-4 text-[#232055] font-[Work_Sans]">
+                <a href={`/tags/${tag}`} class="py-3 px-6 bg-[#87E0B2]">
                   {tag}
                 </a>
               </p>
@@ -54,13 +54,13 @@ const tags = [
 
       <Newsletter />
 
-      <section class='py-16 px-6 font-[Work_Sans] xl:px-[6rem] w-full'>
+      <section class="py-16 px-6 font-[Work_Sans] xl:px-[6rem] w-full">
         <h2
-          class='font-[Work_Sans] font-normal md:font-semibold leading-[1.5625rem] text-[1.3rem] md:text-[2rem] mb-8 md:mb-20 xl:px-[2rem]'
+          class="font-[Work_Sans] font-normal md:font-semibold leading-[1.5625rem] text-[1.3rem] md:text-[2rem] mb-8 md:mb-20 xl:px-[2rem]"
         >
           Published today
         </h2>
-        <div class='grid grid-cols-1 lg:grid-cols-3 lg:gap-8 lg:px-8'>
+        <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-8 lg:px-8">
           <Articles />
           <Articles />
           <Articles />
@@ -70,10 +70,10 @@ const tags = [
         </div>
       </section>
       <div
-        class='px-6 pb-36 md:pr-[2rem] lg:pr-[8rem] md:flex lg:justify-end items-center'
+        class="px-6 pb-36 md:pr-[2rem] lg:pr-[8rem] md:flex lg:justify-end items-center"
       >
         <div
-          class='px-[4rem] lg:px[6rem] py-3 border-2 border-[#FFFFFF] text-[#FFFFFF] border-solid tracking-wider w-full flex justify-center lg:justify-end items-center lg:w-[19.5rem]'
+          class="px-[4rem] lg:px[6rem] py-3 border-2 border-[#FFFFFF] text-[#FFFFFF] border-solid tracking-wider w-full flex justify-center lg:justify-end items-center lg:w-[19.5rem]"
         >
           <button>See more articles</button>
         </div>
