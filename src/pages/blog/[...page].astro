@@ -1,51 +1,89 @@
 ---
-import BaseHead from '../../components/BaseHead.astro'
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../config";
 
+
+const allPosts = await Astro.glob("../posts/*.{md,mdx}");
+
+const tags = [
+  ...new Set(
+    [].concat.apply(
+      [],
+      allPosts.map((post) => post.frontmatter.tags)
+    )
+  ),
+];
 
 export async function getStaticPaths({ paginate }) {
-	// Use Astro.glob() to fetch all posts, and then sort them by date.
-	const posts = (await Astro.glob('../posts/*.{md,mdx}')).sort(
-		(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
-	);
+  // Use Astro.glob() to fetch all posts, and then sort them by date.
+  const posts = (await Astro.glob("../posts/*.{md,mdx}")).sort(
+    (a, b) =>
+      new Date(b.frontmatter.pubDate).valueOf() -
+      new Date(a.frontmatter.pubDate).valueOf()
+  );
 
   // Generate pages from our array of astronauts, with 2 to a page
   return paginate(posts, { pageSize: 2 });
 }
 // All paginated data is passed on the "page" prop
 const { page } = Astro.props;
-
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body class="bg-[#232055] text-white">
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{page.data.map((post)=>(
-						<li>
-							<time datetime={post.frontmatter.pubDate}>
-								{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
-									year: 'numeric',
-									month: 'short',
-									day: 'numeric',
-								})}
-							</time>
-							<a href={post.url}>{post.frontmatter.title}</a>
-						</li>
-					))}
-				</ul>
-				{page.url.prev ? <a href={page.url.prev}>Previous</a> : null}
-				{page.url.next ? <a href={page.url.next}>Next</a> : null}
-			</section>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="bg-[#232055] text-white">
+    <Header />
+    <main>
+      <section
+        class="mx-6 md:mb-6 md:my-0 md:mx-auto md:w-[46.5rem] md:text-center md:flex md:flex-col md:items-center"
+      >
+        <h1
+          class="font-semibold leading-[33px] md:leading-[2.75rem] text-[28.43px] md:text-[2.5rem] font-[Work_Sans] mt-16 mb-8 md:mb-10 md:mt-[9rem]"
+        >
+          Browse by topic
+        </h1>
+
+        <div class="flex flex-wrap mb-16">
+          {
+            tags.sort().map((tag) => (
+              <p class="mr-2 md:mr-6 mb-10 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium">
+                <a href={`/tags/${tag}`} class="py-3 px-6 bg-[#87E0B2]">
+                  {tag}
+                </a>
+              </p>
+            ))
+          }
+        </div>
+      </section>
+      <section>
+        <ul>
+          {
+            page.data.map((post) => (
+              <li>
+                <time datetime={post.frontmatter.pubDate}>
+                  {new Date(post.frontmatter.pubDate).toLocaleDateString(
+                    "en-us",
+                    {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    }
+                  )}
+                </time>
+                <a href={post.url}>{post.frontmatter.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+        {page.url.prev ? <a href={page.url.prev}>Previous</a> : null}
+        {page.url.next ? <a href={page.url.next}>Next</a> : null}
+      </section>
+    </main>
+    <Footer />
+  </body>
 </html>

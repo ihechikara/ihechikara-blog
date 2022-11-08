@@ -6,7 +6,9 @@ import Articles from "../components/Articles.astro";
 import About from "../components/About.astro";
 import Newsletter from "../components/Newsletter.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
 const allPosts = await Astro.glob("./posts/*.{md,mdx}");
+
 const tags = [
   ...new Set(
     [].concat.apply(
@@ -39,10 +41,11 @@ const tags = [
           Access to thousands of programmming, Blockchain, and Web development
           resources.
         </h1>
+
         <div class="flex flex-wrap mb-16">
           {
             tags.sort().map((tag) => (
-              <p class="mr-2 md:mr-6 mb-10 text-base leading-4 text-[#232055] font-[Work_Sans]">
+              <p class="mr-2 md:mr-6 mb-10 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium">
                 <a href={`/tags/${tag}`} class="py-3 px-6 bg-[#87E0B2]">
                   {tag}
                 </a>
@@ -58,26 +61,25 @@ const tags = [
         <h2
           class="font-[Work_Sans] font-normal md:font-semibold leading-[1.5625rem] text-[1.3rem] md:text-[2rem] mb-8 md:mb-20 xl:px-[2rem]"
         >
-          Published today
+          Latest articles
         </h2>
+
         <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-8 lg:px-8">
-          <Articles />
-          <Articles />
-          <Articles />
-          <Articles />
-          <Articles />
           <Articles />
         </div>
       </section>
-      <div
-        class="px-6 pb-36 md:pr-[2rem] lg:pr-[8rem] md:flex lg:justify-end items-center"
-      >
+
+      <a href="/blog">
         <div
-          class="px-[4rem] lg:px[6rem] py-3 border-2 border-[#FFFFFF] text-[#FFFFFF] border-solid tracking-wider w-full flex justify-center lg:justify-end items-center lg:w-[19.5rem]"
+          class="px-6 pb-36 md:pr-[2rem] lg:pr-[8rem] md:flex lg:justify-end items-center"
         >
-          <button>See more articles</button>
+          <div
+            class="px-[4rem] lg:px[6rem] py-3 border-2 border-[#FFFFFF] text-[#FFFFFF] border-solid tracking-wider w-full flex justify-center lg:justify-end items-center lg:w-[19.5rem]"
+          >
+            <button>See more articles</button>
+          </div>
         </div>
-      </div>
+      </a>
 
       <About />
     </main>

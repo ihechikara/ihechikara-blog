@@ -10,12 +10,13 @@ export interface Props {
     pubDate?: string;
     updatedDate?: string;
     heroImage?: string;
+    author?: string;
     tags?: string[];
   };
 }
 
 const {
-  content: { title, description, pubDate, updatedDate, heroImage, tags },
+  content: { title, description, pubDate, updatedDate, heroImage, author, tags },
 } = Astro.props;
 
 ---
@@ -42,6 +43,7 @@ const {
         {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
         <h1 class="title">{title}</h1>
         {pubDate && <time>{pubDate}</time>}
+        {author}
         {
           updatedDate && (
             <div>
@@ -51,7 +53,7 @@ const {
         }
 
         <div class="flex space-x-2">
-            {tags.map((tag) => <a href={`/tags/${tag}`}><p class="p-2 bg-slate-600 text-gray-100 rounded">{tag}</p></a>)}
+            {tags.map((tag) => <a href={`/tags/${tag}`}><p >{tag}</p></a>)}
         </div>
 
         <hr />
