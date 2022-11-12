@@ -48,7 +48,7 @@ const { page } = Astro.props;
           Browse by topic
         </h1>
 
-        <div class="flex flex-wrap mb-16">
+        <div class="flex flex-wrap">
           {
             tags.sort().map((tag) => (
               <p class="mr-2 md:mr-6 mb-10 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium">
@@ -70,13 +70,13 @@ const { page } = Astro.props;
               <section >
                   <img
                     src={post.frontmatter.heroImage}
-                    class="w-[158px] h-[96px]"
+                    class="w-[250px] h-[150px]"
                   />
               </section>
 
               <section class="ml-3">
 
-                <p class="text-[0.6rem] my-[0.5rem] font-medium text-[#E3E3EA]">
+                <p class="text-[0.6rem] font-medium text-[#E3E3EA] mb-2">
                   <time datetime={post.frontmatter.pubDate}>
                     {new Date(post.frontmatter.pubDate).toLocaleDateString(
                       "en-us",
@@ -89,25 +89,26 @@ const { page } = Astro.props;
                   </time>
                 </p>
   
-                <p class="font-normal text-base mb-[0.5rem] max-w-full tracking-widest">
+                <p class="font-normal text-base mb-2 max-w-full tracking-widest w-[157px]">
                   {post.frontmatter.title}
                 </p>
   
                 <div class="">
-                  <p class="text-[0.6rem] font-medium text-[#E3E3EA]">
+                  <p class="text-[0.6rem] font-medium text-[#E3E3EA] mb-2">
                     Author: {post.frontmatter.author}
                   </p>
   
-                  {post.frontmatter.tags.map((tag) => {})}
-                  <p class="py-2 px-2 text-[#232055] bg-[#87E0B2] text-sm">
+                  <button class="font-medium py-1 px-2 text-xs text-center text-[#232055] bg-[#87E0B2] ">
                     <a href={`/tags/${post.frontmatter.tags[0]}`}>
                       {post.frontmatter.tags[0]}
                     </a>
-                  </p>
-                </div>
+                  </button>
+                  </div>
               </section>
 
             </div>
+            <hr class="border-[1px] border-[#5A5880] mt-4 mb-8" />
+
           ))
         }
       </section>
