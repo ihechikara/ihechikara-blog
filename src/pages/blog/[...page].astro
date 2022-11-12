@@ -4,7 +4,6 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../config";
 
-
 const allPosts = await Astro.glob("../posts/*.{md,mdx}");
 
 const tags = [
@@ -39,6 +38,7 @@ const { page } = Astro.props;
   <body class="bg-[#232055] text-white">
     <Header />
     <main>
+      <!-- tags section -->
       <section
         class="mx-6 md:mb-6 md:my-0 md:mx-auto md:w-[46.5rem] md:text-center md:flex md:flex-col md:items-center"
       >
@@ -60,30 +60,70 @@ const { page } = Astro.props;
           }
         </div>
       </section>
+
+      <!-- articles section -->
+      <section class="mx-6">
+        {
+          allPosts.map((post) => (
+            <div class="flex ">
+              
+              <section >
+                  <img
+                    src={post.frontmatter.heroImage}
+                    class="w-[158px] h-[96px]"
+                  />
+              </section>
+
+              <section class="ml-3">
+
+                <p class="text-[0.6rem] my-[0.5rem] font-medium text-[#E3E3EA]">
+                  <time datetime={post.frontmatter.pubDate}>
+                    {new Date(post.frontmatter.pubDate).toLocaleDateString(
+                      "en-us",
+                      {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      }
+                    )}
+                  </time>
+                </p>
+  
+                <p class="font-normal text-base mb-[0.5rem] max-w-full tracking-widest">
+                  {post.frontmatter.title}
+                </p>
+  
+                <div class="">
+                  <p class="text-[0.6rem] font-medium text-[#E3E3EA]">
+                    Author: {post.frontmatter.author}
+                  </p>
+  
+                  {post.frontmatter.tags.map((tag) => {})}
+                  <p class="py-2 px-2 text-[#232055] bg-[#87E0B2] text-sm">
+                    <a href={`/tags/${post.frontmatter.tags[0]}`}>
+                      {post.frontmatter.tags[0]}
+                    </a>
+                  </p>
+                </div>
+              </section>
+
+            </div>
+          ))
+        }
+      </section>
+      <!-- pagination -->
       <section>
-        <ul>
-          {
-            page.data.map((post) => (
-              <li>
-                <time datetime={post.frontmatter.pubDate}>
-                  {new Date(post.frontmatter.pubDate).toLocaleDateString(
-                    "en-us",
-                    {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    }
-                  )}
-                </time>
-                <a href={post.url}>{post.frontmatter.title}</a>
-              </li>
-            ))
-          }
-        </ul>
         {page.url.prev ? <a href={page.url.prev}>Previous</a> : null}
         {page.url.next ? <a href={page.url.next}>Next</a> : null}
       </section>
+      <Footer />
     </main>
-    <Footer />
   </body>
 </html>
+
+
+<!-- <a href={post.url}>
+                  <div class="px-[4rem] py-3 border-2 border-[#87E0B2] text-[#87E0B2] border-solid tracking-wider w-full flex justify-center items-center">
+                    <button> Read article </button>
+                  </div>
+                </a> -->
