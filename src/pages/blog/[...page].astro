@@ -61,6 +61,11 @@ const { page } = Astro.props;
         </div>
       </section>
 
+        <h2 class="mx-6 mb-10 mt-2 font-[Work_Sans] font-normal md:font-semibold leading-[1.5625rem] text-[1.3rem] md:text-[2rem] xl:px-[2rem]">
+          Articles
+        </h2>
+
+
       <!-- articles section -->
       <section class="mx-6">
         {
@@ -68,10 +73,12 @@ const { page } = Astro.props;
             <div class="flex ">
               
               <section >
-                  <img
-                    src={post.frontmatter.heroImage}
-                    class="w-[250px] h-[150px]"
-                  />
+                  <a href={post.url}>
+                    <img
+                      src={post.frontmatter.heroImage}
+                      class="w-[250px] h-[150px]"
+                    />
+                  </a>
               </section>
 
               <section class="ml-3">
@@ -90,7 +97,9 @@ const { page } = Astro.props;
                 </p>
   
                 <p class="font-normal text-base mb-2 max-w-full tracking-widest w-[157px]">
-                  {post.frontmatter.title}
+                  <a href={post.url}>
+                    {post.frontmatter.title}
+                  </a>
                 </p>
   
                 <div class="">
@@ -121,10 +130,3 @@ const { page } = Astro.props;
     </main>
   </body>
 </html>
-
-
-<!-- <a href={post.url}>
-                  <div class="px-[4rem] py-3 border-2 border-[#87E0B2] text-[#87E0B2] border-solid tracking-wider w-full flex justify-center items-center">
-                    <button> Read article </button>
-                  </div>
-                </a> -->
