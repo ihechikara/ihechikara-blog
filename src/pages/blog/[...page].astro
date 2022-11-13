@@ -24,7 +24,7 @@ export async function getStaticPaths({ paginate }) {
   );
 
   // Generate pages from our array of astronauts, with 2 to a page
-  return paginate(posts, { pageSize: 2 });
+  return paginate(posts, { pageSize: 4 });
 }
 // All paginated data is passed on the "page" prop
 const { page } = Astro.props;
@@ -69,7 +69,7 @@ const { page } = Astro.props;
       <!-- articles section -->
       <section class="mx-6">
         {
-          allPosts.map((post) => (
+          page.data.map((post) => (
             <div class="flex ">
               
               <section >
