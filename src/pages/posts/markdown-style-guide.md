@@ -6,7 +6,7 @@ pubDate: "Jul 01 2022"
 heroImage: "/placeholder-hero.jpg"
 author: "Ihechikara Abba"
 tags:
-    - web-development
+    - web-dev
     - css
 ---
 
