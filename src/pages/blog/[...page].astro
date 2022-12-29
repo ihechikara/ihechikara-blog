@@ -24,7 +24,7 @@ export async function getStaticPaths({ paginate }) {
   );
 
   // Generate pages from our array of astronauts, with 2 to a page
-  return paginate(posts, { pageSize: 2 });
+  return paginate(posts, { pageSize: 6 });
 }
 // All paginated data is passed on the "page" prop
 const { page } = Astro.props;
@@ -39,9 +39,9 @@ const { page } = Astro.props;
     <Header />
     <main class="md:flex">
       
-      <div class="md:flex md:flex-row-reverse">
+      <div class="md:flex  md:justify-evenly">
           <!-- tags section -->
-          <div class="hidden md:block md:h-full md:border-r"></div>
+          
           <section
             class="mx-6 md:mx-8 md:w-64"
           >
@@ -64,6 +64,7 @@ const { page } = Astro.props;
               }
             </div>
           </section>
+          <div class="hidden md:block md:h-full md:border-r md:border-[#5A5880] md:mr-12"></div>
 
           
       </div>
@@ -76,23 +77,23 @@ const { page } = Astro.props;
     
     
         <!-- articles section -->
-        <section class="mx-6">
+        <section class="mx-6 md:grid md:grid-cols-2">
           {
             page.data.map((post) => (
-              <div class="flex ">
+              <div class="flex md:mb-16 md:mr-12">
                 
                 <section >
                     <a href={post.url}>
                       <img
                         src={post.frontmatter.heroImage}
-                        class="w-[250px] h-[150px]"
+                        class="w-[250px] h-[150px] md:w-[350px] md:h-[180px]"
                       />
                     </a>
                 </section>
     
                 <section class="ml-3">
     
-                  <p class="text-[0.6rem] font-medium text-[#E3E3EA] mb-2">
+                  <p class="text-[9.6px] md:text-sm font-medium text-[#E3E3EA] mb-2">
                     <time datetime={post.frontmatter.pubDate}>
                       {new Date(post.frontmatter.pubDate).toLocaleDateString(
                         "en-us",
@@ -105,27 +106,25 @@ const { page } = Astro.props;
                     </time>
                   </p>
     
-                  <p class="font-normal text-base mb-2 max-w-full tracking-widest w-[157px]">
+                  <p class="font-normal text-base md:text-xl mb-2 max-w-full tracking-widest w-[157px] md:w-[190px]">
                     <a href={post.url}>
                       {post.frontmatter.title}
                     </a>
                   </p>
     
                   <div class="">
-                    <p class="text-[0.6rem] font-medium text-[#E3E3EA] mb-2">
-                      Author: {post.frontmatter.author}
-                    </p>
+               
     
-                    <button class="font-medium py-1 px-2 text-xs text-center text-[#232055] bg-[#87E0B2] ">
+                    <button class="font-medium py-1 px-2 text-xs md:text-sm text-center text-[#232055] bg-[#87E0B2] ">
                       <a href={`/tags/${post.frontmatter.tags[0]}`}>
                         {post.frontmatter.tags[0]}
                       </a>
                     </button>
-                    </div>
+                  </div>
                 </section>
     
               </div>
-              <hr class="border-[1px] border-[#5A5880] mt-4 mb-8" />
+              <hr class="border-[1px] border-[#5A5880] mt-4 mb-8 md:hidden" />
     
             ))
           }
@@ -141,3 +140,9 @@ const { page } = Astro.props;
     <Footer />
   </body>
 </html>
+
+
+  <!-- author -->
+    <!-- <p class="text-[9.6px] font-medium text-[#E3E3EA] mb-2">
+                       {post.frontmatter.author}
+    </p> -->

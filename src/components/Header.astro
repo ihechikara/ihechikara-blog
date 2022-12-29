@@ -29,8 +29,8 @@ import blog from "/blog.svg";
       <div
         class="items-center leading-[1.56rem] text-[1.3rem] font-[Work_Sans] cursor-pointer hidden lg:flex"
       >
-        <a class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Home</a>
-        <a class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Blog</a>
+        <a href="/" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Home</a>
+        <a href="/blog/" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Blog</a>
 
         <form class="flex items-center text-xs">
           <button class="p-[1.17rem] bg-[#87E0B2]"
@@ -73,15 +73,14 @@ import blog from "/blog.svg";
       <button
         class="p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"
         ><img src={home} alt="" class="pr-[0.92rem]" />
-        <a class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]"
+        <a class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]" href="/"
           >Home</a
         >
       </button>
       <button
         class="p-[0.92rem] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"
         ><img src={blog} alt="" class="pr-[0.92rem]" />
-        <a class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]"
-          >Blog</a
+        <a href="/blog/"class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]" >Blog</a
         >
       </button>
     </div>
