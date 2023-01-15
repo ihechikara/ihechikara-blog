@@ -24,7 +24,7 @@ const {
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} image={heroImage} />
-    <style>
+    <!-- <style>
       .title {
         font-size: 2em;
         margin: 0.25em 0 0;
@@ -33,33 +33,52 @@ const {
         border-top: 1px solid #ddd;
         margin: 1rem 0;
       }
-    </style>
+    </style> -->
   </head>
 
-  <body>
+  <body class="bg-[#232055] text-white">
     <Header />
-    <main>
-      <article>
+    <main class="">
+      <article class=" mt-16 mx-6">
+        <h1 class="text-[28.43px] font-semibold">{title}</h1>
+        <p class="mt-2 text-gray-300">Author: {author}</p>
+        <div class="mt-2 text-gray-300">
+          {pubDate && <time>{pubDate}</time>}
+        </div>
+
+        <hr class="border-[1px] border-[#5A5880] my-4" />
+
         {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-        <h1 class="title">{title}</h1>
-        {pubDate && <time>{pubDate}</time>}
-        {author}
-        {
+
+        <hr class="border-[1px] border-[#5A5880] mt-4 mb-12" />
+
+        
+        <!-- {
           updatedDate && (
             <div>
               Last updated on <time>{updatedDate}</time>
             </div>
           )
-        }
+        } -->
 
-        <div class="flex space-x-2">
-            {tags.map((tag) => <a href={`/tags/${tag}`}><p >{tag}</p></a>)}
+
+
+        <!-- <hr /> -->
+        <div class="prose text-white prose-headings:text-white prose-code:text-blue-300">
+
+          <slot />
         </div>
 
-        <hr />
-        <slot />
+        <div class="flex flex-col">
+          <p>Tags:</p>
+          <div class="flex space-x-2">
+            {tags.map((tag) => <p class="py-[4px] px-[8px] text-[#232055] bg-[#87E0B2] text-sm mr-2"><a href={`/tags/${tag}`}>{tag}</a> </p>)}
+          </div>
+        </div>
+
       </article>
     </main>
     <Footer />
   </body>
+
 </html>
