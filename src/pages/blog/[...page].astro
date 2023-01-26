@@ -37,25 +37,25 @@ const { page } = Astro.props;
   </head>
   <body class="bg-[#232055] text-white">
     <Header />
-    <main class="md:flex">
+    <main class="md:flex xl:flex">
       
-      <div class="md:flex  md:justify-evenly">
+      <div class="md:flex md:justify-evenly xl:flex  xl:justify-evenly">
           <!-- tags section -->
           
           <section
-            class="mx-6 md:mx-8 md:w-64"
+            class="mx-6 md:mx-6 md:w-64 xl:mx-8 xl:w-64"
           >
             <h1
-              class="font-semibold leading-[33px] md:leading-[2.75rem] text-[28.43px] md:text-[2.5rem] font-[Work_Sans] mt-16 md:mt-20 mb-8"
+              class="font-semibold leading-[33px] xl:leading-[2.75rem] text-[28.43px] xl:text-[2.5rem] font-[Work_Sans] mt-16 xl:mt-20 mb-8"
             >
-              <span class="md:hidden">Browse by topic</span>
-              <span class="hidden md:block md:text-[21.33px]">Tags</span>
+              <span class="md:hidden xl:hidden">Browse by topic</span>
+              <span class="hidden md:block md:text-[22px] xl:block xl:text-[21.33px]">Tags</span>
             </h1>
     
             <div class="flex flex-wrap">
               {
                 tags.sort().map((tag) => (
-                  <p class="mr-2 md:mr-6 mb-10 md:mb-12 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium">
+                  <p class="mr-2 md:mr-4 xl:mr-6 mb-10 md:mb-12 xl:mb-12 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium">
                     <a href={`/tags/${tag}`} class="py-3 px-6 bg-[#87E0B2] ">
                       {tag}
                     </a>
@@ -64,36 +64,36 @@ const { page } = Astro.props;
               }
             </div>
           </section>
-          <div class="hidden md:block md:h-full md:border-r md:border-[#5A5880] md:mr-12"></div>
+          <div class="hidden md:block xl:block md:h-full xl:h-full md:border-r xl:border-r md:border-[#5A5880] xl:border-[#5A5880] md:mr-4 xl:mr-12"></div>
 
           
       </div>
 
       <div>
 
-          <h2 class="mx-6 mb-10 mt-2 md:mt-24 font-[Work_Sans] font-normal md:font-semibold leading-[1.5625rem] text-[1.3rem] md:text-[2rem] xl:px-[2rem]">
+          <h2 class="mx-6 mb-10 md:mb-6 mt-2 md:mt-16 xl:mt-24 font-[Work_Sans] font-normal md:font-semibold xl:font-semibold leading-[1.5625rem] text-[1.3rem] md:text-[24px] xl:text-[2rem] md:px-[1rem] xl:px-[2rem]">
             Articles
           </h2>
     
     
         <!-- articles section -->
-        <section class="mx-6 md:grid md:grid-cols-2">
+        <section class="mx-6 md:grid md:grid-cols-2 xl:grid xl:grid-cols-2">
           {
             page.data.map((post) => (
-              <div class="flex md:mb-16 md:mr-12">
+              <div class="flex md:mb-16 md:mr-2 xl:mb-16 xl:mr-12">
                 
                 <section >
                     <a href={post.url}>
                       <img
                         src={post.frontmatter.heroImage}
-                        class="w-[250px] h-[150px] md:w-[350px] md:h-[180px]"
+                        class="w-[250px] h-[150px] md:w-max md:h-[180px] xl:w-[350px] xl:h-[180px]"
                       />
                     </a>
                 </section>
     
                 <section class="ml-3">
     
-                  <p class="text-[9.6px] md:text-sm font-medium text-[#E3E3EA] mb-2">
+                  <p class="text-[9.6px] md:text-sm xl:text-sm font-medium text-[#E3E3EA] mb-2">
                     <time datetime={post.frontmatter.pubDate}>
                       {new Date(post.frontmatter.pubDate).toLocaleDateString(
                         "en-us",
@@ -106,7 +106,7 @@ const { page } = Astro.props;
                     </time>
                   </p>
     
-                  <p class="font-normal text-base md:text-xl mb-2 max-w-full tracking-widest w-[157px] md:w-[190px]">
+                  <p class="font-normal text-base xl:text-xl mb-2 max-w-full tracking-widest w-[157px] xl:w-[190px]">
                     <a href={post.url}>
                       {post.frontmatter.title}
                     </a>
@@ -114,8 +114,7 @@ const { page } = Astro.props;
     
                   <div class="">
                
-    
-                    <button class="font-medium py-1 px-2 text-xs md:text-sm text-center text-[#232055] bg-[#87E0B2] ">
+                    <button class="font-medium py-1 px-2 text-xs md:text-sm xl:text-sm text-center text-[#232055] bg-[#87E0B2] ">
                       <a href={`/tags/${post.frontmatter.tags[0]}`}>
                         {post.frontmatter.tags[0]}
                       </a>
