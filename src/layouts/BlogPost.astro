@@ -72,9 +72,11 @@ const {
         <div class="flex flex-col">
           <p>Tags:</p>
           <div class="flex space-x-2">
-            {tags.map((tag) => <p class="py-[4px] px-[8px] text-[#232055] bg-[#87E0B2] text-sm mr-2"><a href={`/tags/${tag}`}>{tag}</a> </p>)}
+            {tags.map((tag) => <p class="py-[4px] px-[8px] text-[#232055] bg-[#87E0B2] text-sm mr-2 mt-8"><a href={`/tags/${tag}`}>{tag}</a> </p>)}
           </div>
         </div>
+
+        {tags[0]}
 
       </article>
     </main>
