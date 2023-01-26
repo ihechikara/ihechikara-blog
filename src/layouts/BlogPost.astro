@@ -38,19 +38,21 @@ const {
 
   <body class="bg-[#232055] text-white">
     <Header />
-    <main class="">
+    <main class="lg:mx-[16.5rem] lg:mt-[7.5rem]">
       <article class=" mt-16 mx-6">
-        <h1 class="text-[28.43px] font-semibold">{title}</h1>
+        <h1 class="text-[28.43px] lg:text-[37.9px] font-semibold lg:mb-[1.6rem]">{title}</h1>
+        <div class="sm:flex justify-between lg:text-[1rem] lg:mb-[1rem]">
         <p class="mt-2 text-gray-300">Author: {author}</p>
         <div class="mt-2 text-gray-300">
           {pubDate && <time>{pubDate}</time>}
         </div>
+      </div>
 
-        <hr class="border-[1px] border-[#5A5880] my-4" />
+        <hr class="border-[1px] border-[#5A5880] my-4 lg:mb-[2rem]" />
 
-        {heroImage && <img width={720} height={360} src={heroImage} alt="" />}
+        {heroImage && <img width={720} height={360} src={heroImage} alt="" class="sm:w-full" />}
 
-        <hr class="border-[1px] border-[#5A5880] mt-4 mb-12" />
+        <hr class="border-[1px] border-[#5A5880] mt-4 mb-12 lg:mt-[2rem]" />
 
         
         <!-- {
@@ -64,13 +66,13 @@ const {
 
 
         <!-- <hr /> -->
-        <div class="prose text-white prose-headings:text-white prose-code:text-blue-300">
+        <div class="prose sm:prose-xl max-w-none text-white prose-headings:text-white prose-code:text-blue-300">
 
           <slot />
         </div>
 
-        <div class="flex flex-col">
-          <p>Tags:</p>
+        <div class="flex flex-col mt-[6.25rem] mb-[8rem] ">
+          <p class="mb-[2rem]">Tags:</p>
           <div class="flex space-x-2">
             {tags.map((tag) => <p class="py-[4px] px-[8px] text-[#232055] bg-[#87E0B2] text-sm mr-2 mt-8"><a href={`/tags/${tag}`}>{tag}</a> </p>)}
           </div>
@@ -80,6 +82,7 @@ const {
 
       </article>
     </main>
+    
     <Footer />
   </body>
 
