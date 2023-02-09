@@ -4,7 +4,6 @@ let title = 'Tags'
 const allPosts = await Astro.glob('../posts/*.{md,mdx}');
 const tags = [...new Set([].concat.apply([],allPosts.map(post => post.frontmatter.tags)))]
 
-
 ---
 
     <main>
@@ -15,3 +14,5 @@ const tags = [...new Set([].concat.apply([],allPosts.map(post => post.frontmatte
             ))}
         </div>
     </main>
+
+    

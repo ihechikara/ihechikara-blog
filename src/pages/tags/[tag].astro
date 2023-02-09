@@ -1,43 +1,44 @@
 ---
-const { posts } = Astro.props;
-const { tag } = Astro.params;
-
-let title = tag;
-
-export async function getStaticPaths({ paginate }) {
+export async function getStaticPaths() {
   const allPosts = await Astro.glob('../posts/*.{md,mdx}');
-  const sortedPosts = allPosts.sort(
-		(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
-	);
-  const allTags = new Set();
-  sortedPosts.map(post => {
-      post.frontmatter.tags && post.frontmatter.tags.map(tag => allTags.add(tag))
-  })
-  
-  return Array.from(allTags).map((tag) => {
-    // paginate(sortedPosts, 
-    // {
-    //   params: { tag },
-    //   pageSize: 10
-    // });
-    const filteredPosts = sortedPosts.filter((post) => post.frontmatter.tags.includes(tag))
-    return {
-      params: { tag },
-      props: {
-        posts: filteredPosts
-      },
-    };
-  });
+
+  return [
+    {params: {tag: "css"}, props: {posts: allPosts}},
+    {params: {tag: "javascript"}, props: {posts: allPosts}},
+    {params: {tag: "mdx"}, props: {posts: allPosts}},
+    {params: {tag: "java"}, props: {posts: allPosts}},
+    {params: {tag: "web-dev"}, props: {posts: allPosts}},
+    // {params: {tag: "learning in public"}, props: {posts: allPosts}}
+  ]
 }
 
-const { page } = Astro.props;
-
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+const filteredPosts = posts.filter((post) => post.frontmatter.tags.includes(tag));
 ---
+
+<html>
+  <head>
+    <!-- <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} /> -->
+  </head>
+
+  <body class="">
     <main>
-        <p>Posts tagged with {title}</p>
-        {posts.map(post => 
-            <p>{post.frontmatter.pubDate} - <a href={post.url}>{post.frontmatter.title}</a></p>
-        )}
-        <hr />
-        <p><a href ="/tags/">See all tags...</a></p>
+       <p>Posts tagged with {tag}</p>
+        <ul>
+          {filteredPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+        </ul>
     </main>
+
+
+  </body>
+</html>
+
+<!-- <main>
+        
+</main> -->
+
+
+
+
+    
