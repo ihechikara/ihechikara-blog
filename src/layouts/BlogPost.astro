@@ -3,6 +3,8 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
+import { BLOG_HOME_PAGE } from "../config";
+
 export interface Props {
   content: {
     title: string;
@@ -37,7 +39,7 @@ const {
   </head>
 
   <body class="bg-[#232055] text-white">
-    <Header />
+    <Header HREF={BLOG_HOME_PAGE} />
     <main class="lg:mx-[16.5rem] lg:mt-[7.5rem]">
       <article class=" mt-16 mx-6">
         <h1 class="text-[28.43px] lg:text-[37.9px] font-semibold lg:mb-[1.6rem]">{title}</h1>

@@ -4,6 +4,8 @@ import menu from "/bx_menu.svg";
 import search from "/search.svg";
 import home from "/home.svg";
 import blog from "/blog.svg";
+
+const { HREF } = Astro.props;
 ---
 
 <header>
@@ -11,7 +13,7 @@ import blog from "/blog.svg";
     <div
       class="flex justify-between items-center mt-11 mx-6 md:mx-[3rem] xl:mx-[8.25rem] md:my-[1.63rem]"
     >
-      <a href="#" target="_blank" class="cursor-pointer"
+      <a href={HREF} class="cursor-pointer"
         ><h1
           class="text-2xl md:text-[2.4rem] leading-7 md:leading-[2.79rem] font-extrabold"
         >

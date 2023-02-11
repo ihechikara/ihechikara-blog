@@ -3,3 +3,5 @@
 
 export const SITE_TITLE = 'My personal website.';
 export const SITE_DESCRIPTION = 'Welcome to my website!';
+export const HOME_PAGE = '/';
+export const BLOG_HOME_PAGE = '/blog';

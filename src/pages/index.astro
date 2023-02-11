@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 import Articles from "../components/Articles.astro";
 import About from "../components/About.astro";
 import Newsletter from "../components/Newsletter.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import { SITE_TITLE, SITE_DESCRIPTION, HOME_PAGE } from "../config";
 
 const allPosts = await Astro.glob("./posts/*.{md,mdx}");
 
@@ -29,7 +29,7 @@ const tags = [
     />
   </head>
   <body class="bg-[#232055] text-white">
-    <Header title={SITE_TITLE} />
+    <Header HREF={HOME_PAGE} />
 
     <main>
       <section

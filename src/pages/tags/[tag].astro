@@ -2,7 +2,7 @@
 import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../config";
+import { SITE_TITLE, SITE_DESCRIPTION, HOME_PAGE } from "../../config";
 
 const allPosts = await Astro.glob('../posts/*.{md,mdx}');
 
@@ -29,6 +29,7 @@ export async function getStaticPaths() {
 const { tag } = Astro.params;
 const { posts } = Astro.props;
 const filteredPosts = posts.filter((post) => post.frontmatter.tags.includes(tag));
+
 ---
 
 <html>
@@ -37,7 +38,7 @@ const filteredPosts = posts.filter((post) => post.frontmatter.tags.includes(tag)
   </head>
 
   <body class="bg-[#232055] text-white">
-    <Header />
+    <Header HREF={HOME_PAGE} />
     <main class="md:flex xl:flex">
       <div class="md:flex md:justify-evenly xl:flex  xl:justify-evenly">
         <section
