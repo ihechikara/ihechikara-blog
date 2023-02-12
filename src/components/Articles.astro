@@ -29,14 +29,8 @@ const allPosts = (await Astro.glob("../pages/posts/*.{md,mdx}")).sort(
             {post.frontmatter.title.length < 35 ? post.frontmatter.title : post.frontmatter.title.slice(0,35) + "..."}
           </p>
       
-          <div class="flex justify-between items-center gap-[2rem] mb-8">
-            <p class="text-[0.6rem] font-medium text-[#E3E3EA] pr-[6.8rem]">
-              Author: {post.frontmatter.author}
-            </p>
-      
-            {post.frontmatter.tags.map((tag)=>{
-              
-            })}
+          <div class="flex justify-between items-center gap-[2rem] mb-4">
+           
             <p class="py-[4px] px-[8px] text-[#232055] bg-[#87E0B2] text-sm mr-2">
               <a href={`/tags/${post.frontmatter.tags[0]}`}>{post.frontmatter.tags[0]}</a>
             </p>
@@ -52,3 +46,8 @@ const allPosts = (await Astro.glob("../pages/posts/*.{md,mdx}")).sort(
       
     ))
   }
+
+
+ <!-- <p class="text-[0.6rem] font-medium text-[#E3E3EA] pr-[6.8rem]"> -->
+              <!-- Author: {post.frontmatter.author} -->
+            <!-- </p> -->
