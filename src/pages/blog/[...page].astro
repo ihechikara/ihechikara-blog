@@ -39,17 +39,17 @@ const { page } = Astro.props;
     <Header HREF={HOME_PAGE}/>
     <main class="md:flex lg:flex xl:flex">
       
-      <div class="lg:flex lg:justify-evenly xl:flex xl:justify-evenly">
+      <div class="md:flex md:justify-evenly lg:flex lg:justify-evenly xl:flex xl:justify-evenly">
           <!-- tags section -->
           
           <section
-            class="mx-6 lg:mx-6 lg:w-64 xl:mx-8 xl:w-64"
+            class="mx-6 md:w-44 lg:mx-6 lg:w-64 xl:mx-8 xl:w-64"
           >
             <h1
               class="font-semibold leading-[33px] xl:leading-[2.75rem] text-[28.43px] xl:text-[2.5rem] font-[Work_Sans] mt-16 xl:mt-20 mb-8"
             >
-              <span class="lg:hidden xl:hidden">Browse by topic</span>
-              <span class="hidden lg:block lg:text-[22px] xl:block xl:text-[21.33px]">Tags</span>
+              <span class="md:hidden lg:hidden xl:hidden">Browse by topic</span>
+              <span class="hidden md:block lg:block lg:text-[22px] xl:block xl:text-[21.33px]">Tags</span>
             </h1>
     
             <div class="flex flex-wrap">
@@ -64,36 +64,36 @@ const { page } = Astro.props;
               }
             </div>
           </section>
-          <div class="hidden lg:block xl:block lg:h-full xl:h-full lg:border-r xl:border-r lg:border-[#5A5880] xl:border-[#5A5880] lg:mr-4 xl:mr-12"></div>
+          <div class="hidden md:block lg:block xl:block md:h-full lg:h-full xl:h-full md:border-r lg:border-r xl:border-r md:border-[#5A5880] lg:border-[#5A5880] xl:border-[#5A5880] md:mr-4 lg:mr-4 xl:mr-12"></div>
 
           
       </div>
 
       <div>
 
-          <h2 class="mx-6 mb-10 lg:mb-6 mt-2 lg:mt-16 xl:mt-24 font-[Work_Sans] font-normal lg:font-semibold xl:font-semibold leading-[1.5625rem] text-[1.3rem] lg:text-[24px] xl:text-[2rem] lg:px-[1rem] xl:px-[2rem]">
+          <h2 class="mx-6 mb-10 md:mt-16 md:mb-6 lg:mb-6 mt-2 lg:mt-16 xl:mt-24 font-[Work_Sans] font-normal lg:font-semibold xl:font-semibold leading-[1.5625rem] text-[1.3rem] lg:text-[24px] xl:text-[2rem] lg:px-[1rem] xl:px-[2rem]">
             Articles
           </h2>
     
     
         <!-- articles section -->
-        <section class="mx-6 lg:grid lg:grid-cols-2 xl:grid xl:grid-cols-2">
+        <section class=" mx-6 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 xl:grid xl:grid-cols-3">
           {
             page.data.map((post) => (
-              <div class="flex lg:mb-16 lg:mr-2 xl:mb-16 xl:mr-12">
+              <div class="flex md:flex md:flex-col md:mr-8 md:mb-16 xl:mb-16 xl:mr-12">
                 
                 <section >
                     <a href={post.url}>
                       <img
                         src={post.frontmatter.heroImage}
-                        class="w-[250px] h-[150px] lg:w-max lg:h-[180px] xl:w-[350px] xl:h-[180px]"
+                        class="w-[250px] h-[150px] md:w-max md:h-[180px] lg:w-max lg:h-[180px] xl:w-[350px] xl:h-[180px]"
                       />
                     </a>
                 </section>
     
                 <section class="ml-3">
     
-                  <p class="text-[9.6px] lg:text-sm xl:text-sm font-medium text-[#E3E3EA] mb-2">
+                  <p class="text-[9.6px] lg:text-sm xl:text-sm font-medium text-[#E3E3EA] mb-2 mt-2">
                     <time datetime={post.frontmatter.pubDate}>
                       {new Date(post.frontmatter.pubDate).toLocaleDateString(
                         "en-us",
@@ -106,7 +106,7 @@ const { page } = Astro.props;
                     </time>
                   </p>
     
-                  <p class="font-normal text-base xl:text-xl mb-2 max-w-full tracking-widest w-[157px] xl:w-[190px]">
+                  <p class="font-normal text-base mb-2 max-w-full tracking-widest w-[157px] xl:w-[190px] xl:text-xl">
                     <a href={post.url}>
                       {post.frontmatter.title}
                     </a>
@@ -123,7 +123,7 @@ const { page } = Astro.props;
                 </section>
     
               </div>
-              <hr class="border-[1px] border-[#5A5880] mt-4 mb-8 lg:hidden" />
+              <hr class="border-[1px] border-[#5A5880] mt-4 mb-8 md:hidden" />
     
             ))
           }
