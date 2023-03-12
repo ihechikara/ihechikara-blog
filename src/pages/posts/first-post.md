@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "Quick Sort – Algorithm Time Complexity with C++ and Java Code Example"
+title: "Quick Sort Algorithm - Time Complexity with C++ and Java Code Example"
 description: "Lorem ipsum dolor sit amet"
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
