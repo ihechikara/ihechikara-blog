@@ -80,18 +80,18 @@ const { page } = Astro.props;
         <section class=" mx-6 md:grid md:grid-cols-2 lg:grid lg:grid-cols-2 xl:grid xl:grid-cols-3">
           {
             page.data.map((post) => (
-              <div class="flex md:flex md:flex-col md:mr-8 md:mb-16 xl:mb-16 xl:mr-12">
+              <div class="flex flex-col md:flex md:flex-col md:mr-8 md:mb-16 xl:mb-16 xl:mr-12">
                 
                 <section >
                     <a href={post.url}>
                       <img
                         src={post.frontmatter.heroImage}
-                        class="w-[250px] h-[150px] md:w-max md:h-[180px] lg:w-max lg:h-[180px] xl:w-[350px] xl:h-[180px]"
+                        class="w-full h-full"
                       />
                     </a>
                 </section>
     
-                <section class="ml-3">
+                <section class="">
     
                   <p class="text-[9.6px] lg:text-sm xl:text-sm font-medium text-[#E3E3EA] mb-2 mt-2">
                     <time datetime={post.frontmatter.pubDate}>
@@ -106,7 +106,7 @@ const { page } = Astro.props;
                     </time>
                   </p>
     
-                  <p class="font-normal text-base mb-2 max-w-full tracking-widest w-[157px] xl:w-[190px] xl:text-xl">
+                  <p class="font-normal text-base mb-2 max-w-full tracking-widest  xl:w-[190px] xl:text-xl">
                     <a href={post.url}>
                       {post.frontmatter.title}
                     </a>
