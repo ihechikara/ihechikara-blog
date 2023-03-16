@@ -39,7 +39,7 @@ const filteredPosts = posts.filter((post) => post.frontmatter.tags.includes(tag)
 
   <body class="bg-[#232055] text-white">
     <Header HREF={HOME_PAGE} />
-    <main class="md:flex xl:flex">
+    <main class="flex flex-col-reverse md:flex md:flex-row xl:flex">
       <div class="md:flex md:justify-evenly xl:flex  xl:justify-evenly">
         <section
             class="mx-6 md:w-44 lg:w-64 xl:mx-8 xl:w-64"
@@ -68,7 +68,7 @@ const filteredPosts = posts.filter((post) => post.frontmatter.tags.includes(tag)
 
          <div>
 
-          <h2 class="mx-6 mb-10 md:mt-16 md:mb-6 lg:mb-6 mt-2 lg:mt-16 xl:mt-24 font-[Work_Sans] font-normal lg:font-semibold xl:font-semibold leading-[1.5625rem] text-[1.3rem] lg:text-[24px] xl:text-[2rem]">
+          <h2 class="mx-6 mb-8 mt-8 md:mt-16 md:mb-6 lg:mb-6 lg:mt-16 xl:mt-24 font-[Work_Sans] font-normal lg:font-semibold xl:font-semibold leading-[1.5625rem] text-[1.3rem] lg:text-[24px] xl:text-[2rem]">
             Posts tagged with {tag}
           </h2>
     
