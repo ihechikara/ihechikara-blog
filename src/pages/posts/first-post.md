@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "This Is a Test Blog post Used for the Purpose of Beta Testing"
+title: "Beta Test Blog Post for Analytics and User Experience"
 description: "Lorem ipsum dolor sit amet"
 pubDate: "Jul 08 2022"
 heroImage: "/placeholder-hero.jpg"
