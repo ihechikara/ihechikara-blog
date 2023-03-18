@@ -17,6 +17,7 @@
     "astro": "^1.2.1"
   },
   "devDependencies": {
+    "@astrojs/partytown": "^1.1.1",
     "@tailwindcss/typography": "^0.5.9"
   }
 }
