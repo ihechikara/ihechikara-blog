@@ -2,211 +2,85 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script
-      type="text/partytown"
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-MPXRHH8QR5"
-    ></script>
-    <script type="text/partytown">
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-MPXRHH8QR5"></script>
+      <script type="text/partytown">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-      gtag('config', 'G-MPXRHH8QR5');
-    </script>
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <!-- Global Metadata -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="ihechikara-pfp.ico" />
-    <meta name="generator" content="Astro v1.2.1" />
+        gtag('config', 'G-MPXRHH8QR5');
+      </script>
+      <link rel="sitemap" href="/sitemap-index.xml">
+    <!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="ihechikara-pfp.ico">
+<meta name="generator" content="Astro v1.2.1">
 
-    <!-- Primary Meta Tags -->
-    <title>Ihechikara Abba</title>
-    <meta name="title" content="Ihechikara Abba" />
-    <meta name="description" content="Ihechikara's blog" />
+<!-- Primary Meta Tags -->
+<title>Ihechikara Abba</title>
+<meta name="title" content="Ihechikara Abba">
+<meta name="description" content="Ihechikara's blog">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ihechikara.com/" />
-    <meta property="og:title" content="Ihechikara Abba" />
-    <meta property="og:description" content="Ihechikara's blog" />
-    <meta
-      property="og:image"
-      content="https://ihechikara.com/placeholder-social.jpg"
-    />
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ihechikara.com/">
+<meta property="og:title" content="Ihechikara Abba">
+<meta property="og:description" content="Ihechikara's blog">
+<meta property="og:image" content="https://ihechikara.com/placeholder-social.jpg">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://ihechikara.com/" />
-    <meta property="twitter:title" content="Ihechikara Abba" />
-    <meta property="twitter:description" content="Ihechikara's blog" />
-    <meta
-      property="twitter:image"
-      content="https://ihechikara.com/placeholder-social.jpg"
-    />
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://ihechikara.com/">
+<meta property="twitter:title" content="Ihechikara Abba">
+<meta property="twitter:description" content="Ihechikara's blog">
+<meta property="twitter:image" content="https://ihechikara.com/placeholder-social.jpg">
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/assets/b39286fb.b6788a03.css" />
-    <script type="module">
-      let e = document.getElementById("hamBurger-img"),
-        t = document.getElementById("mobileNav");
-      e.addEventListener("click", () => {
-        t.classList.toggle("hidden");
-      });
-    </script>
-    <script>
-      !(function (w, p, f, c) {
-        c = w[p] = Object.assign(w[p] || {}, {
-          lib: "/~partytown/",
-          debug: false,
-        });
-        c[f] = (c[f] || []).concat(["dataLayer.push"]);
-      })(window, "partytown", "forward"); /* Partytown 0.7.5 - MIT builder.io */
-      !(function (t, e, n, i, r, o, a, d, s, c, p, l) {
-        function u() {
-          l ||
-            ((l = 1),
-            "/" ==
-              (a = (o.lib || "/~partytown/") + (o.debug ? "debug/" : ""))[0] &&
-              ((s = e.querySelectorAll('script[type="text/partytown"]')),
-              i != t
-                ? i.dispatchEvent(new CustomEvent("pt1", { detail: t }))
-                : ((d = setTimeout(f, 1e4)),
-                  e.addEventListener("pt0", w),
-                  r
-                    ? h(1)
-                    : n.serviceWorker
-                    ? n.serviceWorker
-                        .register(a + (o.swPath || "partytown-sw.js"), {
-                          scope: a,
-                        })
-                        .then(function (t) {
-                          t.active
-                            ? h()
-                            : t.installing &&
-                              t.installing.addEventListener(
-                                "statechange",
-                                function (t) {
-                                  "activated" == t.target.state && h();
-                                }
-                              );
-                        }, console.error)
-                    : f())));
-        }
-        function h(t) {
-          (c = e.createElement(t ? "script" : "iframe")),
-            t ||
-              (c.setAttribute(
-                "style",
-                "display:block;width:0;height:0;border:0;visibility:hidden"
-              ),
-              c.setAttribute("aria-hidden", !0)),
-            (c.src =
-              a +
-              "partytown-" +
-              (t ? "atomics.js?v=0.7.5" : "sandbox-sw.html?" + Date.now())),
-            e.body.appendChild(c);
-        }
-        function f(n, r) {
-          for (
-            w(),
-              i == t &&
-                (o.forward || []).map(function (e) {
-                  delete t[e.split(".")[0]];
-                }),
-              n = 0;
-            n < s.length;
-            n++
-          )
-            ((r = e.createElement("script")).innerHTML = s[n].innerHTML),
-              e.head.appendChild(r);
-          c && c.parentNode.removeChild(c);
-        }
-        function w() {
-          clearTimeout(d);
-        }
-        (o = t.partytown || {}),
-          i == t &&
-            (o.forward || []).map(function (e) {
-              (p = t),
-                e.split(".").map(function (e, n, i) {
-                  p = p[i[n]] =
-                    n + 1 < i.length
-                      ? "push" == i[n + 1]
-                        ? []
-                        : p[i[n]] || {}
-                      : function () {
-                          (t._ptf = t._ptf || []).push(i, arguments);
-                        };
-                });
-            }),
-          "complete" == e.readyState
-            ? u()
-            : (t.addEventListener("DOMContentLoaded", u),
-              t.addEventListener("load", u));
-      })(window, document, navigator, top, window.crossOriginIsolated);
-    </script>
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/4a9ee3cf.a1f6e6a0.css" /><script type="module">let e=document.getElementById("hamBurger-img"),t=document.getElementById("mobileNav");e.addEventListener("click",()=>{t.classList.toggle("hidden")});
+</script>
+<script>!(function(w,p,f,c){c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[]).concat(["dataLayer.push"])})(window,'partytown','forward');/* Partytown 0.7.5 - MIT builder.io */
+!function(t,e,n,i,r,o,a,d,s,c,p,l){function u(){l||(l=1,"/"==(a=(o.lib||"/~partytown/")+(o.debug?"debug/":""))[0]&&(s=e.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(f,1e4),e.addEventListener("pt0",w),r?h(1):n.serviceWorker?n.serviceWorker.register(a+(o.swPath||"partytown-sw.js"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&h()}))}),console.error):f())))}function h(t){c=e.createElement(t?"script":"iframe"),t||(c.setAttribute("style","display:block;width:0;height:0;border:0;visibility:hidden"),c.setAttribute("aria-hidden",!0)),c.src=a+"partytown-"+(t?"atomics.js?v=0.7.5":"sandbox-sw.html?"+Date.now()),e.body.appendChild(c)}function f(n,r){for(w(),i==t&&(o.forward||[]).map((function(e){delete t[e.split(".")[0]]})),n=0;n<s.length;n++)(r=e.createElement("script")).innerHTML=s[n].innerHTML,e.head.appendChild(r);c&&c.parentNode.removeChild(c)}function w(){clearTimeout(d)}o=t.partytown||{},i==t&&(o.forward||[]).map((function(e){p=t,e.split(".").map((function(e,n,i){p=p[i[n]]=n+1<i.length?"push"==i[n+1]?[]:p[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),"complete"==e.readyState?u():(t.addEventListener("DOMContentLoaded",u),t.addEventListener("load",u))}(window,document,navigator,top,window.crossOriginIsolated);</script></head>
   <body class="bg-[#232055] text-white">
     <header>
-      <nav class="">
-        <div
-          class="flex justify-between items-center mt-11 mx-6 md:mx-[3rem] xl:mx-[8.25rem] md:my-[1.63rem]"
-        >
-          <a href="/" class="cursor-pointer"
-            ><h1
-              class="text-2xl md:text-[2.4rem] leading-7 md:leading-[2.79rem] font-extrabold"
-            >
-              IHECHIKARA<span class="text-[#87E0B2]">.</span>
-            </h1>
-          </a>
+  <nav class="">
+    <div class="flex justify-between items-center mt-11 mx-6 md:mx-[3rem] xl:mx-[8.25rem] md:my-[1.63rem]">
+      <a href="/" class="cursor-pointer"><h1 class="text-2xl md:text-[2.4rem] leading-7 md:leading-[2.79rem] font-extrabold">
+          IHECHIKARA<span class="text-[#87E0B2]">.</span>
+        </h1>
+      </a>
 
-          <img
-            id="hamBurger-img"
-            src="/bx_menu.svg"
-            alt=""
-            class="p-2 pr-0 border-white lg:hidden"
-          />
-          <!-- desktop menu -->
-          <div
-            class="items-center leading-[1.56rem] text-[1.3rem] font-[Work_Sans] cursor-pointer hidden lg:flex"
-          >
-            <a href="/" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Home</a>
-            <a href="/blog/" class="hidden lg:block mr-[2rem] xl:mr-[3rem]"
-              >Blog</a
-            >
+      <img id="hamBurger-img" src="/bx_menu.svg" alt="" class="p-2 pr-0 border-white lg:hidden">
+      <!-- desktop menu -->
+      <div class="items-center leading-[1.56rem] text-[1.3rem] font-[Work_Sans] cursor-pointer hidden lg:flex">
+        <a href="/" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Home</a>
+        <a href="/blog/" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Blog</a>
 
-            <form class="flex items-center text-xs">
-              <button class="p-[1.17rem] bg-[#87E0B2]">
-                <img src="/search.svg" alt="" />
-              </button>
-              <div class="w-[25rem]">
-                <input
-                  type="text"
-                  name="text"
-                  placeholder="Search for articles"
-                  class="w-full text-[1.3rem] py-[0.97rem] px-[1rem] xl:px-[1.5rem] cursor-text tracking-wider text-[black]"
-                />
-              </div>
-            </form>
+        <form class="flex items-center text-xs">
+          <button class="p-[1.05rem] bg-[#87E0B2] "><div class="font-extrabold">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+              </svg>
+              
           </div>
-          <!-- end of desktop for menu -->
+          </button>
+          <div class="w-[25rem]">
+          <input type="text" name="text" placeholder="Search for articles" class="w-full text-[1.3rem] py-[0.97rem] px-[1rem] xl:px-[1.5rem] cursor-text tracking-wider text-[black] border-none outline-none">
         </div>
+        </form>
+      </div>
+      <!-- end of desktop for menu -->
+    </div>
 
-        <hr class="border-[1px] border-[#5A5880] mt-[19.5px]" />
-        <!-- <HeaderLink href="/"></HeaderLink> -->
-        <!-- <HeaderLink href="/blog">Blog</HeaderLink>
+    <hr class="border-[1px] border-[#5A5880] mt-[19.5px]">
+    <!-- <HeaderLink href="/"></HeaderLink> -->
+    <!-- <HeaderLink href="/blog">Blog</HeaderLink>
 		<HeaderLink href="/about">About</HeaderLink> -->
-        <!-- <HeaderLink href="https://twitter.com/Ihechikara2" target="_blank">Twitter</HeaderLink>
+    <!-- <HeaderLink href="https://twitter.com/Ihechikara2" target="_blank">Twitter</HeaderLink>
 		<HeaderLink href="https://github.com/ihechikara" target="_blank">GitHub</HeaderLink> -->
 
-        <!-- Nav for Mobile -->
-        <div id="mobileNav" class="bg-[#5A5880] w-full py-6 px-6 hidden">
-          <!-- <form class="flex items-center text-xs mb-6 w-full">
+    <!-- Nav for Mobile -->
+    <div id="mobileNav" class="bg-[#5A5880] w-full py-6 px-6 hidden">
+      <!-- <form class="flex items-center text-xs mb-6 w-full">
         <button
           class="p-[0.92rem] bg-[#87E0B2] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.5rem]"
           ><img src={search} alt="" />
@@ -219,383 +93,164 @@
           class="py-[0.75rem] pl-[1.9rem] pr-[4.5rem] w-full text-[#C8C7D5] text-[1rem] cursor-text tracking-wider leading-6"
         />
       </form> -->
-          <a href="/">
-            <button
-              class="p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"
-            >
-              <img src="/home.svg" alt="" class="pr-[0.92rem]" />
-              <p
-                class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]"
-              >
-                Home
-              </p>
-            </button>
-          </a>
+      <a href="/">
+        <button class="p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"><img src="/home.svg" alt="" class="pr-[0.92rem]">
+          <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Home</p>
+        </button>
 
-          <a href="/blog/">
-            <button
-              class="p-[0.92rem] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"
-            >
-              <img src="/blog.svg" alt="" class="pr-[0.92rem]" />
-              <p
-                class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]"
-              >
-                Blog
-              </p>
-            </button>
-          </a>
-        </div>
+      </a>
 
-        <!-- End of Nav for Mobile -->
-      </nav>
-    </header>
+      <a href="/blog/">
+
+        <button class="p-[0.92rem] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"><img src="/blog.svg" alt="" class="pr-[0.92rem]">
+          <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Blog</p>
+          
+        </button>
+      </a>
+    </div>
+
+    <!-- End of Nav for Mobile -->
+  </nav>
+</header>
+
+
 
     <main>
-      <section
-        class="mx-6 md:mb-6 md:my-0 md:mx-auto md:w-[46.5rem] md:text-center md:flex md:flex-col md:items-center"
-      >
-        <h1
-          class="font-semibold leading-[33px] md:leading-[2.75rem] text-[28.43px] md:text-[2.5rem] font-[Work_Sans] mt-16 mb-8 md:mb-10 md:mt-[9rem]"
-        >
-          Access to thousands of programmming, Blockchain, and Web development
-          resources.
+      <section class="mx-6 md:mb-6 md:my-0 md:mx-auto md:w-[46.5rem] md:text-center md:flex md:flex-col md:items-center">
+        <h1 class="font-semibold leading-[33px] md:leading-[2.75rem] text-[28.43px] md:text-[2.5rem] font-[Work_Sans] mt-16 mb-8 md:mb-10 md:mt-[9rem]">
+          Web Development | Embedded Systems & IOT | Programming
         </h1>
 
         <div class="flex flex-wrap">
-          <p
-            class="mr-2 md:mr-6 mb-10 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium"
-          >
-            <a href="/tags/css" class="py-3 px-6 bg-[#87E0B2]"> css </a>
-          </p>
-          <p
-            class="mr-2 md:mr-6 mb-10 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium"
-          >
-            <a href="/tags/java" class="py-3 px-6 bg-[#87E0B2]"> java </a>
-          </p>
-          <p
-            class="mr-2 md:mr-6 mb-10 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium"
-          >
-            <a href="/tags/javascript" class="py-3 px-6 bg-[#87E0B2]">
-              javascript
-            </a>
-          </p>
-          <p
-            class="mr-2 md:mr-6 mb-10 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium"
-          >
-            <a href="/tags/mdx" class="py-3 px-6 bg-[#87E0B2]"> mdx </a>
-          </p>
-          <p
-            class="mr-2 md:mr-6 mb-10 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium"
-          >
-            <a href="/tags/web-dev" class="py-3 px-6 bg-[#87E0B2]"> web-dev </a>
-          </p>
+          <p class="mr-2 md:mr-6 mb-10 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium">
+                <a href="/tags/Arduino" class="py-3 px-6 bg-[#87E0B2]">
+                  Arduino
+                </a>
+              </p>
         </div>
       </section>
 
+
       <section class="py-16 px-6 font-[Work_Sans] xl:px-[6rem] w-full">
-        <h2
-          class="font-[Work_Sans] font-normal md:font-semibold leading-[1.5625rem] text-[1.3rem] md:text-[2rem] mb-8 md:mb-20 xl:px-[2rem]"
-        >
+        <h2 class="font-[Work_Sans] font-normal md:font-semibold leading-[1.5625rem] text-[1.3rem] md:text-[2rem] mb-8 md:mb-20 xl:px-[2rem]">
           Latest articles
         </h2>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-8 lg:px-8">
           <div class="mb-10">
-            <div class="">
-              <img src="/placeholder-hero.jpg" class="w-full h-full" />
-            </div>
-
-            <p class="text-[0.6rem] my-[0.5rem] font-medium text-[#E3E3EA]">
-              <time datetime="Jul 22 2022"> Jul 22, 2022 </time>
-            </p>
-
-            <p
-              class="font-normal text-base mb-[0.5rem] max-w-full tracking-widest"
-            >
-              This Is a Test Blog post Used for the Purpose of Beta Testing
-            </p>
-
-            <div class="flex justify-between items-center gap-[2rem] mb-4">
-              <p
-                class="py-[4px] px-[8px] text-[#232055] bg-[#87E0B2] text-sm mr-2"
-              >
-                <a href="/tags/java">java</a>
-              </p>
-            </div>
-
-            <a href="/posts/second-post">
-              <div
-                class="px-[4rem] py-3 border-2 border-[#87E0B2] text-[#87E0B2] border-solid tracking-wider w-full flex justify-center items-center"
-              >
-                <button>Read article</button>
-              </div>
-            </a>
+      
+          <div class="">
+            <img src="/how-to-use-push-button-with-arduino/how-to-use-a-push-button-with-arduino.png" class="w-full h-full">
           </div>
-          <div class="mb-10">
-            <div class="">
-              <img src="/placeholder-hero.jpg" class="w-full h-full" />
-            </div>
-
-            <p class="text-[0.6rem] my-[0.5rem] font-medium text-[#E3E3EA]">
-              <time datetime="Jul 15 2022"> Jul 15, 2022 </time>
+          
+          <p class="text-[0.6rem] my-[0.5rem] font-medium text-[#E3E3EA]">
+            <time datetime="March 25 2023">
+              Mar 25, 2023
+            </time>
+          </p>
+      
+          <p class="font-normal text-base mb-[0.5rem] max-w-full tracking-widest">
+            How To Connect and Use a Push Button With Arduino
+          </p>
+      
+          <div class="flex justify-between items-center gap-[2rem] mb-4">
+           
+            <p class="py-[4px] px-[8px] text-[#232055] bg-[#87E0B2] text-sm mr-2">
+              <a href="/tags/Arduino">Arduino</a>
             </p>
-
-            <p
-              class="font-normal text-base mb-[0.5rem] max-w-full tracking-widest"
-            >
-              This Is a Test Blog post Used for the Purpose of Beta Testing
-            </p>
-
-            <div class="flex justify-between items-center gap-[2rem] mb-4">
-              <p
-                class="py-[4px] px-[8px] text-[#232055] bg-[#87E0B2] text-sm mr-2"
-              >
-                <a href="/tags/java">java</a>
-              </p>
-            </div>
-
-            <a href="/posts/third-post">
-              <div
-                class="px-[4rem] py-3 border-2 border-[#87E0B2] text-[#87E0B2] border-solid tracking-wider w-full flex justify-center items-center"
-              >
-                <button>Read article</button>
-              </div>
-            </a>
+        </div>
+      
+        <a href="/posts/how-to-use-push-button-with-arduino">
+          <div class="px-[4rem] py-3 border-2 border-[#87E0B2] text-[#87E0B2] border-solid tracking-wider w-full flex justify-center items-center">
+            <button> Read article </button>
           </div>
-          <div class="mb-10">
-            <div class="">
-              <img src="/placeholder-hero.jpg" class="w-full h-full" />
-            </div>
+        </a>
+    </div>
 
-            <p class="text-[0.6rem] my-[0.5rem] font-medium text-[#E3E3EA]">
-              <time datetime="Jul 08 2022"> Jul 8, 2022 </time>
-            </p>
 
-            <p
-              class="font-normal text-base mb-[0.5rem] max-w-full tracking-widest"
-            >
-              Beta Test Blog Post for Analytics and User Experience
-            </p>
-
-            <div class="flex justify-between items-center gap-[2rem] mb-4">
-              <p
-                class="py-[4px] px-[8px] text-[#232055] bg-[#87E0B2] text-sm mr-2"
-              >
-                <a href="/tags/javascript">javascript</a>
-              </p>
-            </div>
-
-            <a href="/posts/first-post">
-              <div
-                class="px-[4rem] py-3 border-2 border-[#87E0B2] text-[#87E0B2] border-solid tracking-wider w-full flex justify-center items-center"
-              >
-                <button>Read article</button>
-              </div>
-            </a>
-          </div>
-          <div class="mb-10">
-            <div class="">
-              <img src="/placeholder-hero.jpg" class="w-full h-full" />
-            </div>
-
-            <p class="text-[0.6rem] my-[0.5rem] font-medium text-[#E3E3EA]">
-              <time datetime="Jul 02 2022"> Jul 2, 2022 </time>
-            </p>
-
-            <p
-              class="font-normal text-base mb-[0.5rem] max-w-full tracking-widest"
-            >
-              This Is a Test Blog post Used for the Purpose of Beta Testing
-            </p>
-
-            <div class="flex justify-between items-center gap-[2rem] mb-4">
-              <p
-                class="py-[4px] px-[8px] text-[#232055] bg-[#87E0B2] text-sm mr-2"
-              >
-                <a href="/tags/mdx">mdx</a>
-              </p>
-            </div>
-
-            <a href="/posts/using-mdx">
-              <div
-                class="px-[4rem] py-3 border-2 border-[#87E0B2] text-[#87E0B2] border-solid tracking-wider w-full flex justify-center items-center"
-              >
-                <button>Read article</button>
-              </div>
-            </a>
-          </div>
-          <div class="mb-10">
-            <div class="">
-              <img src="/placeholder-hero.jpg" class="w-full h-full" />
-            </div>
-
-            <p class="text-[0.6rem] my-[0.5rem] font-medium text-[#E3E3EA]">
-              <time datetime="Jul 01 2022"> Jul 1, 2022 </time>
-            </p>
-
-            <p
-              class="font-normal text-base mb-[0.5rem] max-w-full tracking-widest"
-            >
-              This Is a Test Blog post Used for the Purpose of Beta Testing
-            </p>
-
-            <div class="flex justify-between items-center gap-[2rem] mb-4">
-              <p
-                class="py-[4px] px-[8px] text-[#232055] bg-[#87E0B2] text-sm mr-2"
-              >
-                <a href="/tags/web-dev">web-dev</a>
-              </p>
-            </div>
-
-            <a href="/posts/markdown-style-guide">
-              <div
-                class="px-[4rem] py-3 border-2 border-[#87E0B2] text-[#87E0B2] border-solid tracking-wider w-full flex justify-center items-center"
-              >
-                <button>Read article</button>
-              </div>
-            </a>
-          </div>
-
-          <!-- <p class="text-[0.6rem] font-medium text-[#E3E3EA] pr-[6.8rem]"> -->
-          <!-- Author: {post.frontmatter.author} -->
-          <!-- </p> -->
+ <!-- <p class="text-[0.6rem] font-medium text-[#E3E3EA] pr-[6.8rem]"> -->
+              <!-- Author: {post.frontmatter.author} -->
+            <!-- </p> -->
         </div>
       </section>
 
       <a href="/blog">
-        <div
-          class="px-6 pb-36 md:pr-[2rem] lg:pr-[8rem] md:flex lg:justify-end items-center"
-        >
-          <div
-            class="px-[4rem] lg:px[6rem] py-3 border-2 border-[#FFFFFF] text-[#FFFFFF] border-solid tracking-wider w-full flex justify-center lg:justify-end items-center lg:w-[19.5rem]"
-          >
+        <div class="px-6 pb-36 md:pr-[2rem] lg:pr-[8rem] md:flex lg:justify-end items-center">
+          <div class="px-[4rem] lg:px[6rem] py-3 border-2 border-[#FFFFFF] text-[#FFFFFF] border-solid tracking-wider w-full flex justify-center lg:justify-end items-center lg:w-[19.5rem]">
             <button>See more articles</button>
           </div>
         </div>
       </a>
 
-      <section
-        class="bg-[#87E0B2] mb-6 px-6 py-7 md:py-[6.9rem] font-[Work_Sans] text-[#232055] md:flex md:flex-col md:items-center w-full"
-      >
-        <h2
-          class="font-normal text-[1.3rem] md:text-[2.37rem] leading-[1.56rem] md:leading-[2.6rem] tracking-wide mb-2 md:mb-3 w-[18.4rem] md:w-[32.8rem] md:font-semibold"
-        >
-          Subscribe to my Newsletter
-        </h2>
-        <p
-          class="text-[0.6rem] md:text-[1rem] font-medium md:font-normal leading-[0.7rem] md:leading-[1.5rem] mb-6 md:mb-[2.75rem] md:w-[30rem]"
-        >
-          Stay tuned so you never miss any of our latest updates and new
-          resources. We send you these updates just once a week.
-        </p>
+      <section class="bg-[#87E0B2] mb-6 px-6 py-7 md:py-[6.9rem] font-[Work_Sans] text-[#232055] md:flex md:flex-col md:items-center w-full">
+  <h2 class="font-normal text-[1.3rem] md:text-[2.37rem] leading-[1.56rem] md:leading-[2.6rem] tracking-wide mb-2 md:mb-3 w-[18.4rem] md:w-[32.8rem] md:font-semibold">
+    Subscribe to my Newsletter
+  </h2>
+  <p class="text-[0.6rem] md:text-[1rem] font-medium md:font-normal leading-[0.7rem] md:leading-[1.5rem] mb-6 md:mb-[2.75rem] md:w-[30rem]">
+    Stay tuned so you never miss any of our latest updates and new resources. We
+    send you these updates just once a week.
+  </p>
 
-        <form
-          action="https://ihechikaraabba.podia.com/email_lists/486740/subscriptions"
-          accept-charset="UTF-8"
-          method="post"
-          class="flex items-center text-xs"
-        >
-          <div class="md:w-[32rem]">
-            <input
-              type="email"
-              name="email"
-              required="required"
-              id="email"
-              placeholder="Your email address"
-              class="py-[1.06rem] md:py-[1.72rem] px-4 md:pl-[3rem] w-full text-[black] cursor-text tracking-wider md:text-[1.3rem]"
-            />
-          </div>
-          <input
-            type="submit"
-            value="Sign me up!"
-            class="py-[1.0625rem] md:py-[2rem] px-[1rem] md:px-[3.5rem] bg-[#232055] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem]"
-          />
-        </form>
-      </section>
-      <section
-        class="px-6 md:w-8/12 font-[Work_Sans] font-normal pb-[10rem] grid grid-cols-1 md:grid-cols-2 xl:pl-[8rem] md:gap-4 lg:gap-5"
-      >
-        <h2
-          class="text-[1.3rem] lg:text-[2.4rem] font-semibold leading-[1.56rem] tracking-wider md:tracking-normal mb-8 md:mb-0 md:order-2 lg:mt-[2rem]"
-        >
-          About Ihechikara
-        </h2>
+  <form action="https://ihechikaraabba.podia.com/email_lists/486740/subscriptions" accept-charset="UTF-8" method="post" class="flex items-center text-xs">
+    <div class="md:w-[32rem]"><input type="email" name="email" required="required" id="email" placeholder="Your email address" class="py-[1.06rem] md:py-[1.72rem] px-4 md:pl-[3rem] w-full text-[black] cursor-text tracking-wider md:text-[1.3rem] border-none outline-none"></div>
+    <input type="submit" value="Sign me up!" class="py-[1.0625rem] md:py-[2rem] px-[1rem] md:px-[3.5rem] bg-[#232055] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] ">
+  </form>
+</section>
+      <section class="px-6 md:w-8/12 font-[Work_Sans] font-normal pb-[10rem] grid grid-cols-1 md:grid-cols-2 xl:pl-[8rem] md:gap-4 lg:gap-5">
+  <h2 class="text-[1.3rem] lg:text-[2.4rem] font-semibold leading-[1.56rem] tracking-wider md:tracking-normal mb-8 md:mb-0 md:order-2 lg:mt-[2rem]">
+    About Ihechikara
+  </h2>
 
-        <img src="/ihechikara.svg" class="mb-8 row-span-2 md:order-1 w-full" />
-        <p
-          class="text-[1rem] leading-6 md:leading-5 lg:leading-7 md:order-2 md:w-[28rem] lg:w-[32.25rem] md:h-[13rem] lg:h-[15rem] md:text-xs lg:text-base text-[#E3E3EA]"
-        >
-          For athletes, high altitude produces two contradictory effects on
-          performance. For explosive events (sprints up to 400 metres, long
-          jump, triple jump) the reduction in atmospheric pressure means there
-          is less resistance from the atmosphere and the athlete's performance
-          will generally be better at high altitude. <br />
-          <br />For athletes, high altitude produces two contradictory effects
-          on performance. For explosive events (sprints up to 400 metres, long
-          jump, triple jump).
-        </p>
-      </section>
+  <img src="/ihechikara.svg" class="mb-8 row-span-2 md:order-1 w-full">
+  <p class="text-[1rem] leading-6 md:leading-5 lg:leading-7 md:order-2 md:w-[28rem] lg:w-[32.25rem] md:h-[13rem] lg:h-[15rem] md:text-xs lg:text-base text-[#E3E3EA]">
+    For athletes, high altitude produces two contradictory effects on
+    performance. For explosive events (sprints up to 400 metres, long jump,
+    triple jump) the reduction in atmospheric pressure means there is less
+    resistance from the atmosphere and the athlete's performance will generally
+    be better at high altitude. <br>
+    <br>For athletes, high altitude produces two contradictory effects on
+    performance. For explosive events (sprints up to 400 metres, long jump,
+    triple jump).
+  </p>
+</section>
     </main>
 
-    <footer
-      class="px-6 lg:px-[8.3rem] pt-[1.9rem] lg:pt-[3.75rem] bg-[#5A5880] leading-7"
-    >
-      <div class="lg:flex lg:justify-between lg:w-full">
-        <div>
-          <h1 class="text-2xl lg:text-[2.4rem] font-extrabold mb-8">
-            IHECHIKARA<span class="text-[#87E0B2]">.</span>
-          </h1>
-        </div>
-        <div class="">
-          <p
-            class="font-[Work_Sans] tracking-wider text-base md:text-[1.3rem] mb-2 md:mb-[1rem]"
-          >
-            Contact me
-          </p>
-          <div
-            class="flex items-center justify:center gap-4 lg:gap-[2.63rem] mb-[3.9rem] cursor-pointer"
-          >
-            <!-- Twitter -->
-            <a
-              href="https://twitter.com/Ihechikara2"
-              target="_blank"
-              class="cursor-pointer md:mb-8 md:h-8 md:w-8"
-            >
-              <img src="/twitter.svg" class="w-[100%] h-[100%]" />
-            </a>
+    <footer class="px-6 lg:px-[8.3rem] pt-[1.9rem] lg:pt-[3.75rem] bg-[#5A5880] leading-7">
+  <div class="lg:flex lg:justify-between lg:w-full">
+    <div>
+      <h1 class="text-2xl lg:text-[2.4rem] font-extrabold mb-8">
+        IHECHIKARA<span class="text-[#87E0B2]">.</span>
+      </h1>
+    </div>
+    <div class="">
+      <p class="font-[Work_Sans] tracking-wider text-base md:text-[1.3rem] mb-2 md:mb-[1rem]">
+        Contact me
+      </p>
+      <div class="flex items-center justify:center gap-4 lg:gap-[2.63rem] mb-[3.9rem] cursor-pointer">
+      <!-- Twitter -->
+        <a href="https://twitter.com/Ihechikara2" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
+          <img src="/twitter.svg" class="w-[100%] h-[100%]">
+        </a>
 
-            <!-- Mail -->
-            <a
-              href="mailto:ihechikara.dev@gmail.com"
-              target="_blank"
-              class="cursor-pointer md:mb-8 md:h-8 md:w-8"
-            >
-              <img src="/mail.svg" class="w-[100%] h-[100%]" />
-            </a>
+        <!-- Mail -->
+        <a href="mailto:ihechikara.dev@gmail.com" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
+          <img src="/mail.svg" class="w-[100%] h-[100%]">
+        </a>
 
-            <!-- LinkedIn -->
-            <a
-              href="https://www.linkedin.com/in/ihechikara-vincent-abba-983a411b9/"
-              target="_blank"
-              class="cursor- md:mb-8 md:h-8 md:w-8"
-            >
-              <img src="/linkedin.svg" class="w-[100%] h-[100%]" />
-            </a>
-
-            <!-- GitHub -->
-            <a
-              href="https://github.com/ihechikara"
-              target="_blank"
-              class="cursor-pointer md:mb-8 md:h-8 md:w-8"
-            >
-              <img src="/github.svg" class="w-[100%] h-[100%]" />
-            </a>
-          </div>
-        </div>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/ihechikara-vincent-abba-983a411b9/" target="_blank" class="cursor- md:mb-8 md:h-8 md:w-8">
+          <img src="/linkedin.svg" class="w-[100%] h-[100%]">
+        </a>
+        
+        <!-- GitHub -->
+        <a href="https://github.com/ihechikara" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
+          <img src="/github.svg" class="w-[100%] h-[100%]">
+        </a>
       </div>
-      <div class="text-center">
-        <small>&copy; 2023 Ihechikara.</small>
-      </div>
-    </footer>
-  </body>
-</html>
+    </div>
+  </div>
+  <div class="text-center">
+    <small>&copy; 2023 Ihechikara.</small>
+  </div>
+</footer>
+  </body></html>

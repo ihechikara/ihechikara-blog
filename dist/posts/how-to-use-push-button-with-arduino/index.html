@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-MPXRHH8QR5"></script>
+    <script type="text/partytown">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MPXRHH8QR5');
+    </script>
+    <link rel="sitemap" href="/sitemap-index.xml">
+    <!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="ihechikara-pfp.ico">
+<meta name="generator" content="Astro v1.2.1">
+
+<!-- Primary Meta Tags -->
+<title>How To Connect and Use a Push Button With Arduino</title>
+<meta name="title" content="How To Connect and Use a Push Button With Arduino">
+<meta name="description" content="Lorem ipsum dolor sit amet">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ihechikara.com/posts/how-to-use-push-button-with-arduino/">
+<meta property="og:title" content="How To Connect and Use a Push Button With Arduino">
+<meta property="og:description" content="Lorem ipsum dolor sit amet">
+<meta property="og:image" content="https://ihechikara.com/how-to-use-push-button-with-arduino/how-to-use-a-push-button-with-arduino.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://ihechikara.com/posts/how-to-use-push-button-with-arduino/">
+<meta property="twitter:title" content="How To Connect and Use a Push Button With Arduino">
+<meta property="twitter:description" content="Lorem ipsum dolor sit amet">
+<meta property="twitter:image" content="https://ihechikara.com/how-to-use-push-button-with-arduino/how-to-use-a-push-button-with-arduino.png">
+
+  <link rel="stylesheet" href="/assets/4a9ee3cf.a1f6e6a0.css" /><script type="module">let e=document.getElementById("hamBurger-img"),t=document.getElementById("mobileNav");e.addEventListener("click",()=>{t.classList.toggle("hidden")});
+</script>
+<script>!(function(w,p,f,c){c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[]).concat(["dataLayer.push"])})(window,'partytown','forward');/* Partytown 0.7.5 - MIT builder.io */
+!function(t,e,n,i,r,o,a,d,s,c,p,l){function u(){l||(l=1,"/"==(a=(o.lib||"/~partytown/")+(o.debug?"debug/":""))[0]&&(s=e.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(f,1e4),e.addEventListener("pt0",w),r?h(1):n.serviceWorker?n.serviceWorker.register(a+(o.swPath||"partytown-sw.js"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&h()}))}),console.error):f())))}function h(t){c=e.createElement(t?"script":"iframe"),t||(c.setAttribute("style","display:block;width:0;height:0;border:0;visibility:hidden"),c.setAttribute("aria-hidden",!0)),c.src=a+"partytown-"+(t?"atomics.js?v=0.7.5":"sandbox-sw.html?"+Date.now()),e.body.appendChild(c)}function f(n,r){for(w(),i==t&&(o.forward||[]).map((function(e){delete t[e.split(".")[0]]})),n=0;n<s.length;n++)(r=e.createElement("script")).innerHTML=s[n].innerHTML,e.head.appendChild(r);c&&c.parentNode.removeChild(c)}function w(){clearTimeout(d)}o=t.partytown||{},i==t&&(o.forward||[]).map((function(e){p=t,e.split(".").map((function(e,n,i){p=p[i[n]]=n+1<i.length?"push"==i[n+1]?[]:p[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),"complete"==e.readyState?u():(t.addEventListener("DOMContentLoaded",u),t.addEventListener("load",u))}(window,document,navigator,top,window.crossOriginIsolated);</script></head>
+
+  <body class="bg-[#232055] text-white">
+    <header>
+  <nav class="">
+    <div class="flex justify-between items-center mt-11 mx-6 md:mx-[3rem] xl:mx-[8.25rem] md:my-[1.63rem]">
+      <a href="/blog" class="cursor-pointer"><h1 class="text-2xl md:text-[2.4rem] leading-7 md:leading-[2.79rem] font-extrabold">
+          IHECHIKARA<span class="text-[#87E0B2]">.</span>
+        </h1>
+      </a>
+
+      <img id="hamBurger-img" src="/bx_menu.svg" alt="" class="p-2 pr-0 border-white lg:hidden">
+      <!-- desktop menu -->
+      <div class="items-center leading-[1.56rem] text-[1.3rem] font-[Work_Sans] cursor-pointer hidden lg:flex">
+        <a href="/" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Home</a>
+        <a href="/blog/" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Blog</a>
+
+        <form class="flex items-center text-xs">
+          <button class="p-[1.05rem] bg-[#87E0B2] "><div class="font-extrabold">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+              </svg>
+              
+          </div>
+          </button>
+          <div class="w-[25rem]">
+          <input type="text" name="text" placeholder="Search for articles" class="w-full text-[1.3rem] py-[0.97rem] px-[1rem] xl:px-[1.5rem] cursor-text tracking-wider text-[black] border-none outline-none">
+        </div>
+        </form>
+      </div>
+      <!-- end of desktop for menu -->
+    </div>
+
+    <hr class="border-[1px] border-[#5A5880] mt-[19.5px]">
+    <!-- <HeaderLink href="/"></HeaderLink> -->
+    <!-- <HeaderLink href="/blog">Blog</HeaderLink>
+		<HeaderLink href="/about">About</HeaderLink> -->
+    <!-- <HeaderLink href="https://twitter.com/Ihechikara2" target="_blank">Twitter</HeaderLink>
+		<HeaderLink href="https://github.com/ihechikara" target="_blank">GitHub</HeaderLink> -->
+
+    <!-- Nav for Mobile -->
+    <div id="mobileNav" class="bg-[#5A5880] w-full py-6 px-6 hidden">
+      <!-- <form class="flex items-center text-xs mb-6 w-full">
+        <button
+          class="p-[0.92rem] bg-[#87E0B2] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.5rem]"
+          ><img src={search} alt="" />
+        </button>
+        <input
+          type="text"
+          id="text"
+          name="text"
+          placeholder="Search for articles"
+          class="py-[0.75rem] pl-[1.9rem] pr-[4.5rem] w-full text-[#C8C7D5] text-[1rem] cursor-text tracking-wider leading-6"
+        />
+      </form> -->
+      <a href="/">
+        <button class="p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"><img src="/home.svg" alt="" class="pr-[0.92rem]">
+          <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Home</p>
+        </button>
+
+      </a>
+
+      <a href="/blog/">
+
+        <button class="p-[0.92rem] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"><img src="/blog.svg" alt="" class="pr-[0.92rem]">
+          <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Blog</p>
+          
+        </button>
+      </a>
+    </div>
+
+    <!-- End of Nav for Mobile -->
+  </nav>
+</header>
+
+
+    <main class="lg:mx-[16.5rem] lg:mt-[7.5rem] text-gray-100">
+      <article class=" mt-16 mx-6">
+        <h1 class="text-[28.43px] lg:text-[37.9px] font-semibold lg:mb-[1.6rem]">How To Connect and Use a Push Button With Arduino</h1>
+        <div class="sm:flex justify-between lg:text-[1rem] lg:mb-[1rem]">
+        <p class="mt-2">Author: Ihechikara Abba</p>
+        <div class="mt-2">
+          <time>March 25 2023</time>
+        </div>
+      </div>
+
+        <hr class="border-[1px] border-[#5A5880] my-4 lg:mb-[2rem]">
+
+        <img width="720" height="360" src="/how-to-use-push-button-with-arduino/how-to-use-a-push-button-with-arduino.png" alt="" class="sm:w-full">
+
+        <hr class="border-[1px] border-[#5A5880] mt-4 mb-12 lg:mt-[2rem]">
+
+        
+        <!-- {
+          updatedDate && (
+            <div>
+              Last updated on <time>{updatedDate}</time>
+            </div>
+          )
+        } -->
+
+
+
+        <!-- <hr /> -->
+        <div class="prose sm:prose-xl max-w-none text-gray-100 prose-headings:text-gray-100 prose-code:text-[#87E0B2] prose-a:text-blue-600">
+
+          <p>You can use push-buttons in Arduino for different reasons in Arduino, such as tunring on/off LEDs, starting and stopping a motor, interrupting and triggering certain actions in a program, and so on.</p>
+<p>In this article, you’ll learn how to connect a push-button to an Arduino board. You’ll also see how to interact with a push-button using code.</p>
+<p>You’ll make basic connections using jumper wires and a resistor (including diagrams), and how to get the current state of a push-button using Arduino code.</p>
+<p>This article is beginner friendly so you can still follow along even if you don’t have a solid understanding of how Arduino works. This should help you expand your knowledge on it.</p>
+<p>Let’s get started!</p>
+<h2 id="hardware-components">Hardware Components</h2>
+<ul>
+<li>Arduino UNO.</li>
+<li>Breadboard.</li>
+<li>Jumper wires.</li>
+<li>1K Ohm resistor.</li>
+<li>Push-button.</li>
+</ul>
+<h2 id="how-to-connect-a-push-button-to-arduino-board">How To Connect a Push Button to Arduino Board</h2>
+<p>In this section, you’ll learn how to connect a push-button to an arduino board.</p>
+<p>There are different ways of connecting a push-button to the Arduino board:</p>
+<ul>
+<li>You can connect to power source and ground (GND), then specify if the push-button will be a pull-up or pull-down input.</li>
+<li>You can use a resistor to connect the push-button as either pull-up or pull-down.</li>
+</ul>
+<p>None of the connections above are wrong - it’s up to you to decide. In this article, we’lluse the latter.</p>
+<p>A pull-up resistor sets the initial state of the push-button as <code>HIGH</code> while a pull-down resistor will set the current state as <code>LOW</code>.</p>
+<p>Here’s the circuit diagram for the connection:</p>
+<p><img src="/how-to-use-push-button-with-arduino/circuit-diagram-arduino.png" alt="Circuit diagram for push-button connection in an Arduino UNO board"></p>
+<p>From the circuit above, you can connect a push-button to the Arduino board by connecting:</p>
+<ul>
+<li>One leg of the push-button to 5 volt power supply on the UNO board.</li>
+<li>The other leg to GND through a pull-down resistor.</li>
+<li>A digital pin (pin 8 in our circuit) to the other end of the GND leg.</li>
+</ul>
+<p>Connecting the resistor to GND sets the push-button’s state to <code>LOW</code> (0). The resistor is known as a pull-down resistor.</p>
+<p>On the other hand, it would be a pull-up resistor if it was connected to the power supply. This would set the initial state to <code>HIGH</code> (1).</p>
+<p>To be sure our connection is working, let’s print the current state of the push-button to the serial monitor using code:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">int</span><span style="color: #C9D1D9"> push_btn_pin </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">8</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #FF7B72">int</span><span style="color: #C9D1D9"> pushBTN_state;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">setup</span><span style="color: #C9D1D9">(){</span></span>
+<span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">begin</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">9600</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #D2A8FF">pinMode</span><span style="color: #C9D1D9">(push_btn_pin, INPUT);</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">loop</span><span style="color: #C9D1D9">(){</span></span>
+<span class="line"><span style="color: #C9D1D9">  pushBTN_state </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">digitalRead</span><span style="color: #C9D1D9">(push_btn_pin);</span></span>
+<span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">println</span><span style="color: #C9D1D9">(pushBTN_state);</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #D2A8FF">delay</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">500</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>Let’s break down the code to help you understand each part.</p>
+<p>We created two variables — <code>push_btn_pin</code> and <code>pushBTN_state</code>.</p>
+<p><code>push_btn_pin</code>, which denotes digital pin 8 connected to the push-button in the circuit, stores the current value (state of the push-button) of the push-button.</p>
+<p><code>pushBTN_state</code> will be used to read the current state of the <code>push_btn_pin</code> variable.</p>
+<p>In the <code>setup()</code> function, we initailized the serial monitor, and set the digital pin (<code>push_btn_pin</code>) as an input pin:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">setup</span><span style="color: #C9D1D9">(){</span></span>
+<span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">begin</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">9600</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #D2A8FF">pinMode</span><span style="color: #C9D1D9">(push_btn_pin, INPUT);</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>In the <code>loop()</code> function, we read the value of <code>push_btn_pin</code> using the <code>digitalRead()</code> function. The value is stored in the <code>pushBTN_state</code> variable which was created at the beginning of the code:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">pushBTN_state </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">digitalRead</span><span style="color: #C9D1D9">(push_btn_pin);</span></span></code></pre>
+<p>Lastly, we print the value read to the serial monitor with a delay of 500 milliseconds:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">println</span><span style="color: #C9D1D9">(pushBTN_state);</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #D2A8FF">delay</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">500</span><span style="color: #C9D1D9">);</span></span></code></pre>
+<p>When you compile and run the code, you’ll see 0 (zero) printed continuosly in the serial monitor. This is happeninmg because the initial state of the push-button was set to <code>LOW</code> using a pull-down resistor.</p>
+<p>When you push down the push-button, the value will be changed to 1 (<code>HIGH</code>). When you release the buton, it’ll return back to 0.</p>
+<p>You’ve successfully connected and read the value of a push-button connected to an Arduino board!</p>
+<h2 id="summary">Summary</h2>
+<p>Push-buttons are one of the most commonly used components in embedded systems. They can be used in different ways.</p>
+<p>As you begin your journey with Arduino, it’s one of the components you’ll most likely learn about.</p>
+<p>This article focused on connecting a push-button to an Arduino board with a circuit diagram, and steps involved in connecting it as a pull-up or pull-down input.</p>
+<p>It also showed how you can read the value of a push-button. Reading the value of a push-button is necessary when you want to perform certain actions like turning on and off an LED.</p>
+<p>Happy coding! You can find me on Twitter <a href="https://twitter.com/Ihechikara2">@Ihechikara2</a></p>
+        </div>
+
+        <div class="flex flex-col mt-[6.25rem] mb-[8rem] ">
+          <p class="mb-[2rem]">Tags:</p>
+          <div class="flex space-x-2">
+            <ul>
+                <li class="py-[4px] px-[8px] text-[#232055] bg-[#87E0B2] text-sm mr-2"><a href="/tags/Arduino">Arduino</a></li>
+              </ul>
+          </div>
+        </div>
+
+      </article>
+    </main>
+    <!-- <p > </p> -->
+    <footer class="px-6 lg:px-[8.3rem] pt-[1.9rem] lg:pt-[3.75rem] bg-[#5A5880] leading-7">
+  <div class="lg:flex lg:justify-between lg:w-full">
+    <div>
+      <h1 class="text-2xl lg:text-[2.4rem] font-extrabold mb-8">
+        IHECHIKARA<span class="text-[#87E0B2]">.</span>
+      </h1>
+    </div>
+    <div class="">
+      <p class="font-[Work_Sans] tracking-wider text-base md:text-[1.3rem] mb-2 md:mb-[1rem]">
+        Contact me
+      </p>
+      <div class="flex items-center justify:center gap-4 lg:gap-[2.63rem] mb-[3.9rem] cursor-pointer">
+      <!-- Twitter -->
+        <a href="https://twitter.com/Ihechikara2" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
+          <img src="/twitter.svg" class="w-[100%] h-[100%]">
+        </a>
+
+        <!-- Mail -->
+        <a href="mailto:ihechikara.dev@gmail.com" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
+          <img src="/mail.svg" class="w-[100%] h-[100%]">
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/ihechikara-vincent-abba-983a411b9/" target="_blank" class="cursor- md:mb-8 md:h-8 md:w-8">
+          <img src="/linkedin.svg" class="w-[100%] h-[100%]">
+        </a>
+        
+        <!-- GitHub -->
+        <a href="https://github.com/ihechikara" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
+          <img src="/github.svg" class="w-[100%] h-[100%]">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <small>&copy; 2023 Ihechikara.</small>
+  </div>
+</footer>
+  </body></html>

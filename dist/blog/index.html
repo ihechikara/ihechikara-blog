@@ -35,7 +35,7 @@
 <meta property="twitter:description" content="Ihechikara's blog">
 <meta property="twitter:image" content="https://ihechikara.com/placeholder-social.jpg">
 
-  <link rel="stylesheet" href="/assets/b39286fb.b6788a03.css" /><script type="module">let e=document.getElementById("hamBurger-img"),t=document.getElementById("mobileNav");e.addEventListener("click",()=>{t.classList.toggle("hidden")});
+  <link rel="stylesheet" href="/assets/4a9ee3cf.a1f6e6a0.css" /><script type="module">let e=document.getElementById("hamBurger-img"),t=document.getElementById("mobileNav");e.addEventListener("click",()=>{t.classList.toggle("hidden")});
 </script>
 <script>!(function(w,p,f,c){c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[]).concat(["dataLayer.push"])})(window,'partytown','forward');/* Partytown 0.7.5 - MIT builder.io */
 !function(t,e,n,i,r,o,a,d,s,c,p,l){function u(){l||(l=1,"/"==(a=(o.lib||"/~partytown/")+(o.debug?"debug/":""))[0]&&(s=e.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(f,1e4),e.addEventListener("pt0",w),r?h(1):n.serviceWorker?n.serviceWorker.register(a+(o.swPath||"partytown-sw.js"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&h()}))}),console.error):f())))}function h(t){c=e.createElement(t?"script":"iframe"),t||(c.setAttribute("style","display:block;width:0;height:0;border:0;visibility:hidden"),c.setAttribute("aria-hidden",!0)),c.src=a+"partytown-"+(t?"atomics.js?v=0.7.5":"sandbox-sw.html?"+Date.now()),e.body.appendChild(c)}function f(n,r){for(w(),i==t&&(o.forward||[]).map((function(e){delete t[e.split(".")[0]]})),n=0;n<s.length;n++)(r=e.createElement("script")).innerHTML=s[n].innerHTML,e.head.appendChild(r);c&&c.parentNode.removeChild(c)}function w(){clearTimeout(d)}o=t.partytown||{},i==t&&(o.forward||[]).map((function(e){p=t,e.split(".").map((function(e,n,i){p=p[i[n]]=n+1<i.length?"push"==i[n+1]?[]:p[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),"complete"==e.readyState?u():(t.addEventListener("DOMContentLoaded",u),t.addEventListener("load",u))}(window,document,navigator,top,window.crossOriginIsolated);</script></head>
@@ -55,10 +55,15 @@
         <a href="/blog/" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Blog</a>
 
         <form class="flex items-center text-xs">
-          <button class="p-[1.17rem] bg-[#87E0B2]"><img src="/search.svg" alt="">
+          <button class="p-[1.05rem] bg-[#87E0B2] "><div class="font-extrabold">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+              </svg>
+              
+          </div>
           </button>
           <div class="w-[25rem]">
-          <input type="text" name="text" placeholder="Search for articles" class="w-full text-[1.3rem] py-[0.97rem] px-[1rem] xl:px-[1.5rem] cursor-text tracking-wider text-[black]">
+          <input type="text" name="text" placeholder="Search for articles" class="w-full text-[1.3rem] py-[0.97rem] px-[1rem] xl:px-[1.5rem] cursor-text tracking-wider text-[black] border-none outline-none">
         </div>
         </form>
       </div>
@@ -121,24 +126,8 @@
     
             <div class="flex flex-wrap">
               <p class="mr-2 lg:mr-4 xl:mr-6 mb-10 lg:mb-12 xl:mb-12 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium">
-                    <a href="/tags/css" class="py-3 px-6 bg-[#87E0B2] ">
-                      css
-                    </a>
-                  </p><p class="mr-2 lg:mr-4 xl:mr-6 mb-10 lg:mb-12 xl:mb-12 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium">
-                    <a href="/tags/java" class="py-3 px-6 bg-[#87E0B2] ">
-                      java
-                    </a>
-                  </p><p class="mr-2 lg:mr-4 xl:mr-6 mb-10 lg:mb-12 xl:mb-12 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium">
-                    <a href="/tags/javascript" class="py-3 px-6 bg-[#87E0B2] ">
-                      javascript
-                    </a>
-                  </p><p class="mr-2 lg:mr-4 xl:mr-6 mb-10 lg:mb-12 xl:mb-12 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium">
-                    <a href="/tags/mdx" class="py-3 px-6 bg-[#87E0B2] ">
-                      mdx
-                    </a>
-                  </p><p class="mr-2 lg:mr-4 xl:mr-6 mb-10 lg:mb-12 xl:mb-12 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium">
-                    <a href="/tags/web-dev" class="py-3 px-6 bg-[#87E0B2] ">
-                      web-dev
+                    <a href="/tags/Arduino" class="py-3 px-6 bg-[#87E0B2] ">
+                      Arduino
                     </a>
                   </p>
             </div>
@@ -160,158 +149,30 @@
           <div class="flex flex-col md:flex md:flex-col md:mr-8 md:mb-16 xl:mb-16 xl:mr-12">
                 
                 <section>
-                    <a href="/posts/second-post">
-                      <img src="/placeholder-hero.jpg" class="w-full h-full">
+                    <a href="/posts/how-to-use-push-button-with-arduino">
+                      <img src="/how-to-use-push-button-with-arduino/how-to-use-a-push-button-with-arduino.png" class="w-full h-full">
                     </a>
                 </section>
     
                 <section class="">
     
                   <p class="text-[9.6px] lg:text-sm xl:text-sm font-medium text-[#E3E3EA] mb-2 mt-2">
-                    <time datetime="Jul 22 2022">
-                      Jul 22, 2022
+                    <time datetime="March 25 2023">
+                      Mar 25, 2023
                     </time>
                   </p>
     
                   <p class="font-normal text-base mb-2 max-w-full tracking-widest xl:text-xl">
-                    <a href="/posts/second-post">
-                      This Is a Test Blog post Used for the Purpose of Beta Testing
+                    <a href="/posts/how-to-use-push-button-with-arduino">
+                      How To Connect and Use a Push Button With Arduino
                     </a>
                   </p>
     
                   <div class="">
                
                     <button class="font-medium py-1 px-2 text-xs lg:text-sm xl:text-sm text-center text-[#232055] bg-[#87E0B2] ">
-                      <a href="/tags/java">
-                        java
-                      </a>
-                    </button>
-                  </div>
-                </section>
-    
-              </div><hr class="border-[1px] border-[#5A5880] mt-4 mb-8 md:hidden"><div class="flex flex-col md:flex md:flex-col md:mr-8 md:mb-16 xl:mb-16 xl:mr-12">
-                
-                <section>
-                    <a href="/posts/third-post">
-                      <img src="/placeholder-hero.jpg" class="w-full h-full">
-                    </a>
-                </section>
-    
-                <section class="">
-    
-                  <p class="text-[9.6px] lg:text-sm xl:text-sm font-medium text-[#E3E3EA] mb-2 mt-2">
-                    <time datetime="Jul 15 2022">
-                      Jul 15, 2022
-                    </time>
-                  </p>
-    
-                  <p class="font-normal text-base mb-2 max-w-full tracking-widest xl:text-xl">
-                    <a href="/posts/third-post">
-                      This Is a Test Blog post Used for the Purpose of Beta Testing
-                    </a>
-                  </p>
-    
-                  <div class="">
-               
-                    <button class="font-medium py-1 px-2 text-xs lg:text-sm xl:text-sm text-center text-[#232055] bg-[#87E0B2] ">
-                      <a href="/tags/java">
-                        java
-                      </a>
-                    </button>
-                  </div>
-                </section>
-    
-              </div><hr class="border-[1px] border-[#5A5880] mt-4 mb-8 md:hidden"><div class="flex flex-col md:flex md:flex-col md:mr-8 md:mb-16 xl:mb-16 xl:mr-12">
-                
-                <section>
-                    <a href="/posts/first-post">
-                      <img src="/placeholder-hero.jpg" class="w-full h-full">
-                    </a>
-                </section>
-    
-                <section class="">
-    
-                  <p class="text-[9.6px] lg:text-sm xl:text-sm font-medium text-[#E3E3EA] mb-2 mt-2">
-                    <time datetime="Jul 08 2022">
-                      Jul 8, 2022
-                    </time>
-                  </p>
-    
-                  <p class="font-normal text-base mb-2 max-w-full tracking-widest xl:text-xl">
-                    <a href="/posts/first-post">
-                      Beta Test Blog Post for Analytics and User Experience
-                    </a>
-                  </p>
-    
-                  <div class="">
-               
-                    <button class="font-medium py-1 px-2 text-xs lg:text-sm xl:text-sm text-center text-[#232055] bg-[#87E0B2] ">
-                      <a href="/tags/javascript">
-                        javascript
-                      </a>
-                    </button>
-                  </div>
-                </section>
-    
-              </div><hr class="border-[1px] border-[#5A5880] mt-4 mb-8 md:hidden"><div class="flex flex-col md:flex md:flex-col md:mr-8 md:mb-16 xl:mb-16 xl:mr-12">
-                
-                <section>
-                    <a href="/posts/using-mdx">
-                      <img src="/placeholder-hero.jpg" class="w-full h-full">
-                    </a>
-                </section>
-    
-                <section class="">
-    
-                  <p class="text-[9.6px] lg:text-sm xl:text-sm font-medium text-[#E3E3EA] mb-2 mt-2">
-                    <time datetime="Jul 02 2022">
-                      Jul 2, 2022
-                    </time>
-                  </p>
-    
-                  <p class="font-normal text-base mb-2 max-w-full tracking-widest xl:text-xl">
-                    <a href="/posts/using-mdx">
-                      This Is a Test Blog post Used for the Purpose of Beta Testing
-                    </a>
-                  </p>
-    
-                  <div class="">
-               
-                    <button class="font-medium py-1 px-2 text-xs lg:text-sm xl:text-sm text-center text-[#232055] bg-[#87E0B2] ">
-                      <a href="/tags/mdx">
-                        mdx
-                      </a>
-                    </button>
-                  </div>
-                </section>
-    
-              </div><hr class="border-[1px] border-[#5A5880] mt-4 mb-8 md:hidden"><div class="flex flex-col md:flex md:flex-col md:mr-8 md:mb-16 xl:mb-16 xl:mr-12">
-                
-                <section>
-                    <a href="/posts/markdown-style-guide">
-                      <img src="/placeholder-hero.jpg" class="w-full h-full">
-                    </a>
-                </section>
-    
-                <section class="">
-    
-                  <p class="text-[9.6px] lg:text-sm xl:text-sm font-medium text-[#E3E3EA] mb-2 mt-2">
-                    <time datetime="Jul 01 2022">
-                      Jul 1, 2022
-                    </time>
-                  </p>
-    
-                  <p class="font-normal text-base mb-2 max-w-full tracking-widest xl:text-xl">
-                    <a href="/posts/markdown-style-guide">
-                      This Is a Test Blog post Used for the Purpose of Beta Testing
-                    </a>
-                  </p>
-    
-                  <div class="">
-               
-                    <button class="font-medium py-1 px-2 text-xs lg:text-sm xl:text-sm text-center text-[#232055] bg-[#87E0B2] ">
-                      <a href="/tags/web-dev">
-                        web-dev
+                      <a href="/tags/Arduino">
+                        Arduino
                       </a>
                     </button>
                   </div>
