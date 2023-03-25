@@ -40,12 +40,12 @@ const {
 
   <body class="bg-[#232055] text-white">
     <Header HREF={BLOG_HOME_PAGE} />
-    <main class="lg:mx-[16.5rem] lg:mt-[7.5rem]">
+    <main class="lg:mx-[16.5rem] lg:mt-[7.5rem] text-gray-100">
       <article class=" mt-16 mx-6">
         <h1 class="text-[28.43px] lg:text-[37.9px] font-semibold lg:mb-[1.6rem]">{title}</h1>
         <div class="sm:flex justify-between lg:text-[1rem] lg:mb-[1rem]">
-        <p class="mt-2 text-gray-300">Author: {author}</p>
-        <div class="mt-2 text-gray-300">
+        <p class="mt-2">Author: {author}</p>
+        <div class="mt-2">
           {pubDate && <time>{pubDate}</time>}
         </div>
       </div>
@@ -68,7 +68,7 @@ const {
 
 
         <!-- <hr /> -->
-        <div class="prose sm:prose-xl max-w-none text-white prose-headings:text-white prose-code:text-blue-300">
+        <div class="prose sm:prose-xl max-w-none text-gray-100 prose-headings:text-gray-100 prose-code:text-[#87E0B2] prose-a:text-blue-600">
 
           <slot />
         </div>
