@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "How To Connect and Use a Push Button With Arduino"
-description: "Lorem ipsum dolor sit amet"
+description: "One leg of push-button to 5V. Other leg to GND through a pull-down resistor. Digital pin (pin 8 in our circuit) to the other end of the GND leg."
 pubDate: "March 25 2023"
 heroImage: "/how-to-use-push-button-with-arduino/how-to-use-a-push-button-with-arduino.png"
 author: "Ihechikara Abba"
