@@ -27,7 +27,7 @@ Let's get started!
 - Push-button.
   
 ## How To Connect a Push Button to Arduino Board
-In this section, you'll learn how to connect a push-button to an arduino board. 
+In this section, you'll learn how to connect a push-button to an Arduino board. 
 
 There are different ways of connecting a push-button to the Arduino board: 
 - You can connect to power source and ground (GND), then specify if the push-button will be a pull-up or pull-down input. 
