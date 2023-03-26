@@ -9,7 +9,7 @@ tags:
     - Arduino
 ---
 
-You can use push-buttons in Arduino for different reasons in Arduino, such as tunring on/off LEDs, starting and stopping a motor, interrupting and triggering certain actions in a program, and so on. 
+You can use push-buttons for different reasons in Arduino, such as tunring on/off LEDs, starting and stopping a motor, interrupting and triggering certain actions in a program, and so on. 
 
 In this article, you'll learn how to connect a push-button to an Arduino board. You'll also see how to interact with a push-button using code.
 
@@ -33,7 +33,7 @@ There are different ways of connecting a push-button to the Arduino board:
 - You can connect to power source and ground (GND), then specify if the push-button will be a pull-up or pull-down input. 
 - You can use a resistor to connect the push-button as either pull-up or pull-down. 
 
-None of the connections above are wrong - it's up to you to decide. In this article, we'lluse the latter. 
+None of the connections above are wrong - it's up to you to decide. In this article, we'll use the latter. 
 
 A pull-up resistor sets the initial state of the push-button as `HIGH` while a pull-down resistor will set the current state as `LOW`. 
 
