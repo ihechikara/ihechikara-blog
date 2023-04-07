@@ -1,37 +1,46 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "Express Route Parameters - How To Use Route Parameters in Express.js"
-description: "You can use route parameters in Express.js to create dynamic routes based on user request. Users can add a specific variable(s) to the request URL which Express.js will extract and return data based on the value of the varaiable/parameter"
-pubDate: "April 5 2023"
+description: "You can use parameters in Express.js to create dynamic routes based on user input/request. Users can add a specific parameter(s) to the request URL which Express.js will extract and return data based on the value of the parameter"
+pubDate: "April 7 2023"
 heroImage: "/express-route-parameters/express-route-parameters.png"
 author: "Ihechikara Abba"
 tags:
-    - Node.js
     - Express.js
+    - Node.js
 ---
-
-You can use route parameters in Express.js to create dynamic routes based on user request. Users can add a specific variable(s) to the request URL which Express.js will extract and return data based on the value of the varaiable/parameter.
+You can use route parameters in Express.js to create dynamic routes based on user input. Users can add a specific variable(s) to the request URL which Express.js will extract and return data based on the value of the varaiable/parameter.
 
 In this article, you'll learn how to create dynamic routes based on user input using Express.js. 
 
 We'll be fetching data from a JSON object with a collection of users. Using route parameters, we'll get users based on their ID.
 
-This is a beginner friendly tutorial so some concepts and steps will be a bit in-depth.
+This is a beginner friendly tutorial, so some concepts and steps will be explained in-depth.
 
 ## Table of conents
-- [Hello World](#item-one)
-- [First Item](#item-two)
-- [Second Item](#item-three)
+- [Prerequisites](#prerequisites)
+- [How To Set Up Express](#how-to-set-up-express)
+- [How To Create Route Parameters](#how-to-create-route-parameters)
+  - [Example 1 - How To Create Routes Without Parameters](#example-1---how-to-create-routes-without-parameters)
+  - [Example 2 - How To Create Routes With Parameters](#example-2---how-to-create-routes-with-parameters)
 
 ## Prerequisites
 To follow along with this tutorial, you should have the following: 
-- Knowledge of JavaScript, Node.js and Express.js
-- Node and Express installed.
+- Knowledge of JavaScript, Node.js and Express.js.
+- [Node.js](https://nodejs.org/en) installed.
 
 Before we dive into creating route parameters, let's set up the Express app/server.
 
 ## How To Set Up Express
-Here's the basic setup:
+To be able to use Express.js, you must have [Node.js](https://nodejs.org/en) installed on your computer. 
+
+To install Express, run the command below in your terminal:
+
+```bash
+npm init
+```
+After the installation is complete, you can then set up an Express server.
+Here's a basic setup:
 
 ```js
 // app.js
@@ -49,11 +58,11 @@ app.listen(port, () => {
 })
 ```
 
-Now that you have the setup done, you can start the server. The server should be running on localhost 5000 (http://localhost:5000/)
+Now that you have the setup done, you can start the server. The server should be running on localhost:5000 (http://localhost:5000/)
 
 You can start the server manually by running the `node app.js` command in the terminal. Note that `app.js` is the name of my file - make sure you replace it with yours if your file has a different name. 
 
-Alternatively, you can use [nodemon](https://www.npmjs.com/package/nodemon) to automate the process. 
+Alternatively, you can use [nodemon](https://www.npmjs.com/package/nodemon) to automate the process of restarting your server whenever you make a change. 
 
 ## How To Create Route Parameters
 The JSON data we'll be working with will be stored in a file called `users.json`. Here's what the data looks like:
@@ -84,9 +93,12 @@ const port = 5000
 
 const {users} = require('./users.json')
 
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
 app.get('/api/users/1', (req, res) =>{
     const user1 = users.find((user) => user.id === 1)
-
     res.json(user1)
 })
 
@@ -107,7 +119,6 @@ The user is stored in a varaible called `user1`. After that, we return a JSON ob
 ```js
 app.get('/api/users/1', (req, res) =>{
     const user1 = users.find((user) => user.id === 1)
-
     res.json(user1)
 })
 ```
@@ -118,7 +129,7 @@ The problem with this approach is that you'd have to manually create routes for 
 In the next example, you'll see how to make the requests dynamic based of user request/input instead of creating them manually.
 
 ### Example 2 - How To Create Routes With Parameters
-To use route parameters, you have to add a parameter name/variable denoting the parameter to the URL/route. You can call this variable whatever you want. Since we're look for a user ID, we'll use an `id` varaible. 
+To use route parameters, you have to add a parameter name/variable to the URL/route. You can call this variable whatever you want. Since we're look for a user ID, we'll use an `id` varaible. 
 
 We'll have something like this: `/api/users/:id`
 
@@ -131,6 +142,10 @@ const app = express()
 const port = 5000
 
 const {users} = require('./users.json')
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
 app.get('/api/users/:id', (req, res) => {
   const userID = parseInt(req.params.id)
@@ -160,7 +175,7 @@ res.json(user)
 ```
 So any user whose ID matches the `userID` parameter will be returned in the response object. 
 
-The http://localhost:5000/api/users/1 route, will return the user with an ID of 1: 
+The http://localhost:5000/api/users/1 route will return the user with an ID of 1: 
 ```json
 {
 "name": "John",
@@ -174,3 +189,46 @@ http://localhost:5000/api/users/4 returns the user with an ID of 4:
 "id": 4
 }
 ```
+
+Now you can access different users using their ID dynamically. We've eliminated the process of creating a new route for each user in the code. 
+
+Note that when the user requests for an ID that doesn't exist in the JSON object, an empty page would be served. In this case, you can send a custom response to notify them that the user doesn't exist. 
+
+You can do that using an `if` statement. That is: 
+
+```js
+const express = require('express')
+const app = express()
+const port = 5000
+
+const {users} = require('./users.json')
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.get('/api/users/:id', (req, res) => {
+  const userID = parseInt(req.params.id)
+
+  const user = users.find((user) => user.id === userID)
+
+  if(!user){
+    return res.status(404).send(`No user with the ID of ${userID}`)
+  }
+
+  res.json(user)
+})
+
+app.listen(port, () => {
+  console.log(`App is listening on port ${port}`)
+})
+```
+
+## Summary
+Route parameters are a fun way to make user's interaction with your data more dynamic. 
+
+This article focused on the basics of creating route parameters using Express.js. 
+
+We saw some code examples on how to install and set up an Express server. We then saw how to create routes with and without route parameters. 
+
+Happy coding! You can find me on Twitter [@Ihechikara2](https://twitter.com/Ihechikara2)

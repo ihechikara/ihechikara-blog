@@ -26,7 +26,7 @@ const allPosts = (await Astro.glob("../pages/posts/*.{md,mdx}")).sort(
           </p>
       
           <p class="font-normal text-base mb-[0.5rem] max-w-full tracking-widest">
-            {post.frontmatter.title}
+            {post.frontmatter.title.length < 55 ? post.frontmatter.title : post.frontmatter.title.slice(0,55) + "..."}
           </p>
       
           <div class="flex justify-between items-center gap-[2rem] mb-4">

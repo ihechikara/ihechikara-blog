@@ -31,7 +31,7 @@ import github from "/github.svg";
           target="_blank"
           class="cursor-pointer md:mb-8 md:h-8 md:w-8"
         >
-          <img src={twitter} class="w-[100%] h-[100%]" />
+          <img src={twitter} class="w-[30px] h-[30px] lg:w-full lg:h-full" />
         </a>
 
         <!-- Mail -->
@@ -40,12 +40,12 @@ import github from "/github.svg";
           target="_blank"
           class="cursor-pointer md:mb-8 md:h-8 md:w-8"
         >
-          <img src={mail} class="w-[100%] h-[100%]" />
+          <img src={mail} class="w-[30px] h-[30px] lg:w-full lg:h-full" />
         </a>
 
         <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/ihechikara-vincent-abba-983a411b9/" target="_blank" class="cursor- md:mb-8 md:h-8 md:w-8">
-          <img src={linkedin} class="w-[100%] h-[100%]" />
+          <img src={linkedin} class="w-[30px] h-[30px] w-full h-full" />
         </a>
         
         <!-- GitHub -->
@@ -54,12 +54,14 @@ import github from "/github.svg";
           target="_blank"
           class="cursor-pointer md:mb-8 md:h-8 md:w-8"
         >
-          <img src={github} class="w-[100%] h-[100%]" />
+          <img src={github} class="w-[30px] h-[30px] lg:w-full lg:h-full" />
         </a>
       </div>
     </div>
   </div>
-  <div class="text-center">
-    <small>&copy; {today.getFullYear()} Ihechikara.</small>
+  <div class="text-center flex flex-col lg:flex-row lg:justify-center">
+    <p class="text-base lg:mr-6 lg:text-lg"> Built with <span class="text-[#87E0B2] underline text-xl font-bold"> <a href="https://astro.build/"> Astro </a> </span></p>
+    <p class="text-base lg:mr-6 lg:text-lg"> Styled with <span class="text-[#87E0B2] underline text-xl font-bold"> <a href="https://tailwindcss.com/"> Tailwind CSS </a> </span> </p>
+    <p class="text-base lg:text-lg"> Hosted on <span class="text-[#87E0B2] underline text-xl font-bold"> <a href="https://www.netlify.com/">Netlify</a>  </span> </p>
   </div>
 </footer>

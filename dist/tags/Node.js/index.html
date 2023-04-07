@@ -35,7 +35,7 @@
 <meta property="twitter:description" content="Ihechikara's blog">
 <meta property="twitter:image" content="https://ihechikara.com/img-card.png">
 
-  <link rel="stylesheet" href="/assets/fa6675e0.b14c7fb8.css" /><script type="module">let e=document.getElementById("hamBurger-img"),t=document.getElementById("mobileNav");e.addEventListener("click",()=>{t.classList.toggle("hidden")});
+  <link rel="stylesheet" href="/assets/23d0c1c3.59922cb5.css" /><script type="module">let e=document.getElementById("hamBurger-img"),t=document.getElementById("mobileNav");e.addEventListener("click",()=>{t.classList.toggle("hidden")});
 </script>
 <script>!(function(w,p,f,c){c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[]).concat(["dataLayer.push"])})(window,'partytown','forward');/* Partytown 0.7.5 - MIT builder.io */
 !function(t,e,n,i,r,o,a,d,s,c,p,l){function u(){l||(l=1,"/"==(a=(o.lib||"/~partytown/")+(o.debug?"debug/":""))[0]&&(s=e.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(f,1e4),e.addEventListener("pt0",w),r?h(1):n.serviceWorker?n.serviceWorker.register(a+(o.swPath||"partytown-sw.js"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&h()}))}),console.error):f())))}function h(t){c=e.createElement(t?"script":"iframe"),t||(c.setAttribute("style","display:block;width:0;height:0;border:0;visibility:hidden"),c.setAttribute("aria-hidden",!0)),c.src=a+"partytown-"+(t?"atomics.js?v=0.7.5":"sandbox-sw.html?"+Date.now()),e.body.appendChild(c)}function f(n,r){for(w(),i==t&&(o.forward||[]).map((function(e){delete t[e.split(".")[0]]})),n=0;n<s.length;n++)(r=e.createElement("script")).innerHTML=s[n].innerHTML,e.head.appendChild(r);c&&c.parentNode.removeChild(c)}function w(){clearTimeout(d)}o=t.partytown||{},i==t&&(o.forward||[]).map((function(e){p=t,e.split(".").map((function(e,n,i){p=p[i[n]]=n+1<i.length?"push"==i[n+1]?[]:p[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),"complete"==e.readyState?u():(t.addEventListener("DOMContentLoaded",u),t.addEventListener("load",u))}(window,document,navigator,top,window.crossOriginIsolated);</script></head>
@@ -52,31 +52,35 @@
       <img id="hamBurger-img" src="/bx_menu.svg" alt="" class="p-2 pr-0 border-white lg:hidden">
       <!-- desktop menu -->
       <div class="items-center leading-[1.56rem] text-[1.3rem] font-[Work_Sans] cursor-pointer hidden lg:flex">
-        <a href="/" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Home</a>
-        <a href="/blog/" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Blog</a>
+      <a href="/blog/" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Blog</a>
+      <a href="mailto:ihechikara.dev@gmail.com" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Contact</a>
+      <!-- <a href="#about" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">About</a>
+      <a href="#newsletter" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Newsletter</a> -->
 
-        <form class="flex items-center text-xs">
-          <button class="p-[1.05rem] bg-[#87E0B2] "><div class="font-extrabold">
+        <!-- <form class="flex items-center text-xs">
+          <button class="p-[1.05rem] bg-[#87E0B2] "
+            ><div class="font-extrabold">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"></path>
+                <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd" />
               </svg>
               
           </div>
           </button>
           <div class="w-[25rem]">
-          <input type="text" name="text" placeholder="Search for articles" class="w-full text-[1.3rem] py-[0.97rem] px-[1rem] xl:px-[1.5rem] cursor-text tracking-wider text-[black] border-none outline-none">
+          <input
+            type="text"
+            name="text"
+            placeholder="Search for articles"
+            class="w-full text-[1.3rem] py-[0.97rem] px-[1rem] xl:px-[1.5rem] cursor-text tracking-wider text-[black] border-none outline-none"
+          />
         </div>
-        </form>
+        </form> -->
       </div>
       <!-- end of desktop for menu -->
     </div>
 
     <hr class="border-[1px] border-[#5A5880] mt-[19.5px]">
-    <!-- <HeaderLink href="/"></HeaderLink> -->
-    <!-- <HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink> -->
-    <!-- <HeaderLink href="https://twitter.com/Ihechikara2" target="_blank">Twitter</HeaderLink>
-		<HeaderLink href="https://github.com/ihechikara" target="_blank">GitHub</HeaderLink> -->
+
 
     <!-- Nav for Mobile -->
     <div id="mobileNav" class="bg-[#5A5880] w-full py-6 px-6 hidden">
@@ -93,20 +97,29 @@
           class="py-[0.75rem] pl-[1.9rem] pr-[4.5rem] w-full text-[#C8C7D5] text-[1rem] cursor-text tracking-wider leading-6"
         />
       </form> -->
-      <a href="/">
-        <button class="p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"><img src="/home.svg" alt="" class="pr-[0.92rem]">
-          <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Home</p>
-        </button>
-
-      </a>
-
       <a href="/blog/">
-
-        <button class="p-[0.92rem] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"><img src="/blog.svg" alt="" class="pr-[0.92rem]">
+        <button class="p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"><img src="/blog.svg" alt="" class="pr-[0.92rem]">
           <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Blog</p>
-          
         </button>
       </a>
+
+      <a href="mailto:ihechikara.dev@gmail.com">
+        <button class="p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"><img src="/blog.svg" alt="" class="pr-[0.92rem]">
+          <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Contact</p>
+        </button>
+      </a>
+
+        <!-- <a href="#newsletter">
+  
+          <button
+            class="p-[0.92rem] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"
+            ><img src={blog} alt="" class="pr-[0.92rem]" />
+            <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Newsletter</p>
+          </button>
+        </a> -->
+
+      
+
     </div>
 
     <!-- End of Nav for Mobile -->
@@ -128,6 +141,14 @@
                       Arduino
                     </a>
                   </p><p class="mr-2 lg:mr-4 xl:mr-6 mb-10 lg:mb-12 xl:mb-12 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium">
+                    <a href="/tags/Express.js" class="py-3 px-6 bg-[#87E0B2] ">
+                      Express.js
+                    </a>
+                  </p><p class="mr-2 lg:mr-4 xl:mr-6 mb-10 lg:mb-12 xl:mb-12 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium">
+                    <a href="/tags/Node.js" class="py-3 px-6 bg-[#87E0B2] ">
+                      Node.js
+                    </a>
+                  </p><p class="mr-2 lg:mr-4 xl:mr-6 mb-10 lg:mb-12 xl:mb-12 text-base leading-[14px] text-[#232055] font-[Work_Sans] font-medium">
                     <a href="/tags/React" class="py-3 px-6 bg-[#87E0B2] ">
                       React
                     </a>
@@ -146,7 +167,37 @@
     
         <!-- articles section -->
         <section class="mx-6 md:grid md:grid-cols-2 xl:grid xl:grid-cols-3">
-          
+          <div class="flex flex-col md:mb-16 md:mr-8 xl:mr-12">
+              <section>
+                    <a href="/posts/how-to-use-route-parameter-in-expressjs">
+                      <img src="/express-route-parameters/express-route-parameters.png" class="w-full h-full">
+                    </a>
+                </section>
+
+                <section class="">
+    
+                  <p class="text-[9.6px] md:text-sm xl:text-sm font-medium text-[#E3E3EA] mb-2 mt-2">
+                    <time datetime="April 7 2023">
+                      Apr 7, 2023
+                    </time>
+                  </p>
+    
+                  <p class="font-normal text-base xl:text-xl mb-2 max-w-full tracking-widest">
+                    <a href="/posts/how-to-use-route-parameter-in-expressjs">
+                      Express Route Parameters - How To Use Route Parameters in Express.js
+                    </a>
+                  </p>
+    
+                  <div class="">
+               
+                    <button class="font-medium py-1 px-2 text-xs md:text-sm xl:text-sm text-center text-[#232055] bg-[#87E0B2] ">
+                      <a href="/tags/Express.js">
+                        Express.js
+                      </a>
+                    </button>
+                  </div>
+                </section>
+            </div><hr class="border-[1px] border-[#5A5880] mt-4 mb-8 md:hidden">
 
         </section>
       </div>
@@ -165,28 +216,30 @@
       <div class="flex items-center justify:center gap-4 lg:gap-[2.63rem] mb-[3.9rem] cursor-pointer">
       <!-- Twitter -->
         <a href="https://twitter.com/Ihechikara2" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
-          <img src="/twitter.svg" class="w-[100%] h-[100%]">
+          <img src="/twitter.svg" class="w-[30px] h-[30px] lg:w-full lg:h-full">
         </a>
 
         <!-- Mail -->
         <a href="mailto:ihechikara.dev@gmail.com" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
-          <img src="/mail.svg" class="w-[100%] h-[100%]">
+          <img src="/mail.svg" class="w-[30px] h-[30px] lg:w-full lg:h-full">
         </a>
 
         <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/ihechikara-vincent-abba-983a411b9/" target="_blank" class="cursor- md:mb-8 md:h-8 md:w-8">
-          <img src="/linkedin.svg" class="w-[100%] h-[100%]">
+          <img src="/linkedin.svg" class="w-[30px] h-[30px] w-full h-full">
         </a>
         
         <!-- GitHub -->
         <a href="https://github.com/ihechikara" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
-          <img src="/github.svg" class="w-[100%] h-[100%]">
+          <img src="/github.svg" class="w-[30px] h-[30px] lg:w-full lg:h-full">
         </a>
       </div>
     </div>
   </div>
-  <div class="text-center">
-    <small>&copy; 2023 Ihechikara.</small>
+  <div class="text-center flex flex-col lg:flex-row lg:justify-center">
+    <p class="text-base lg:mr-6 lg:text-lg"> Built with <span class="text-[#87E0B2] underline text-xl font-bold"> <a href="https://astro.build/"> Astro </a> </span></p>
+    <p class="text-base lg:mr-6 lg:text-lg"> Styled with <span class="text-[#87E0B2] underline text-xl font-bold"> <a href="https://tailwindcss.com/"> Tailwind CSS </a> </span> </p>
+    <p class="text-base lg:text-lg"> Hosted on <span class="text-[#87E0B2] underline text-xl font-bold"> <a href="https://www.netlify.com/">Netlify</a>  </span> </p>
   </div>
 </footer>
   </body></html>
