@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "Python Map – How To Use Map Function in Python"
-description: "The map() method can be used to perform an operation on every element in a data collection."
+description: "The map() function in Python can be used to perform an operation on every element in a data collection."
 pubDate: "April 18 2023"
 heroImage: "/how-to-use-map-function-in-python/how-to-use-map-function-in-python.png"
 author: "Ihechikara Abba"
