@@ -16,23 +16,23 @@
 <meta name="generator" content="Astro v1.2.1">
 
 <!-- Primary Meta Tags -->
-<title>How To Connect and Use a Push Button With Arduino</title>
-<meta name="title" content="How To Connect and Use a Push Button With Arduino">
-<meta name="description" content="One leg of push-button to 5V. Other leg to GND through a pull-down resistor. Digital pin (pin 8 in our circuit) to the other end of the GND leg.">
+<title>Python Map – How To Use Map Function in Python</title>
+<meta name="title" content="Python Map – How To Use Map Function in Python">
+<meta name="description" content="The map() method can be used to perform an operation on every element in a data collection.">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://ihechikara.com/posts/how-to-use-push-button-with-arduino/">
-<meta property="og:title" content="How To Connect and Use a Push Button With Arduino">
-<meta property="og:description" content="One leg of push-button to 5V. Other leg to GND through a pull-down resistor. Digital pin (pin 8 in our circuit) to the other end of the GND leg.">
-<meta property="og:image" content="https://ihechikara.com/how-to-use-push-button-with-arduino/how-to-use-a-push-button-with-arduino.png">
+<meta property="og:url" content="https://ihechikara.com/posts/how-to-use-map-function-in-python/">
+<meta property="og:title" content="Python Map – How To Use Map Function in Python">
+<meta property="og:description" content="The map() method can be used to perform an operation on every element in a data collection.">
+<meta property="og:image" content="https://ihechikara.com/how-to-use-map-function-in-python/how-to-use-map-function-in-python.png">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://ihechikara.com/posts/how-to-use-push-button-with-arduino/">
-<meta property="twitter:title" content="How To Connect and Use a Push Button With Arduino">
-<meta property="twitter:description" content="One leg of push-button to 5V. Other leg to GND through a pull-down resistor. Digital pin (pin 8 in our circuit) to the other end of the GND leg.">
-<meta property="twitter:image" content="https://ihechikara.com/how-to-use-push-button-with-arduino/how-to-use-a-push-button-with-arduino.png">
+<meta property="twitter:url" content="https://ihechikara.com/posts/how-to-use-map-function-in-python/">
+<meta property="twitter:title" content="Python Map – How To Use Map Function in Python">
+<meta property="twitter:description" content="The map() method can be used to perform an operation on every element in a data collection.">
+<meta property="twitter:image" content="https://ihechikara.com/how-to-use-map-function-in-python/how-to-use-map-function-in-python.png">
 
   <link rel="stylesheet" href="/assets/fcfb0dd5.59922cb5.css" /><script type="module">let e=document.getElementById("hamBurger-img"),t=document.getElementById("mobileNav");e.addEventListener("click",()=>{t.classList.toggle("hidden")});
 </script>
@@ -128,17 +128,17 @@
 
     <main class="lg:mx-[16.5rem] lg:mt-[7.5rem] text-gray-100">
       <article class=" mt-16 mx-6">
-        <h1 class="text-[28.43px] lg:text-[37.9px] font-semibold lg:mb-[1.6rem]">How To Connect and Use a Push Button With Arduino</h1>
+        <h1 class="text-[28.43px] lg:text-[37.9px] font-semibold lg:mb-[1.6rem]">Python Map – How To Use Map Function in Python</h1>
         <div class="sm:flex justify-between lg:text-[1rem] lg:mb-[1rem]">
         <p class="mt-2">Author: Ihechikara Abba</p>
         <div class="mt-2">
-          <time>March 25 2023</time>
+          <time>April 18 2023</time>
         </div>
       </div>
 
         <hr class="border-[1px] border-[#5A5880] my-4 lg:mb-[2rem]">
 
-        <img width="720" height="360" src="/how-to-use-push-button-with-arduino/how-to-use-a-push-button-with-arduino.png" alt="" class="sm:w-full">
+        <img width="720" height="360" src="/how-to-use-map-function-in-python/how-to-use-map-function-in-python.png" alt="" class="sm:w-full">
 
         <hr class="border-[1px] border-[#5A5880] mt-4 mb-12 lg:mt-[2rem]">
 
@@ -156,74 +156,57 @@
         <!-- <hr /> -->
         <div class="prose sm:prose-xl max-w-none text-gray-100 prose-headings:text-gray-100 prose-code:text-[#87E0B2] prose-a:text-blue-600">
 
-          <p>You can use push-buttons for different reasons in Arduino, such as tunring on/off LEDs, starting and stopping a motor, interrupting and triggering certain actions in a program, and so on.</p>
-<p>In this article, you’ll learn how to connect a push-button to an Arduino board. You’ll also see how to interact with a push-button using code.</p>
-<p>You’ll make basic connections using jumper wires and a resistor (including diagrams), and how to get the current state of a push-button using Arduino code.</p>
-<p>This article is beginner friendly so you can still follow along even if you don’t have a solid understanding of how Arduino works. This should help you expand your knowledge on it.</p>
-<p>Let’s get started!</p>
-<h2 id="hardware-components">Hardware Components</h2>
+          <p>You can use the <code>map()</code> function in Python to execute ablock of code for each element in an iterable object.</p>
+<p>In this article, you’ll learn the syntax, and how to use the <code>map()</code> function to write shorter and cleaner code in Python.</p>
+<h2 id="map-function-syntax-in-python"><code>map()</code> Function Syntax in Python</h2>
+<p>The map function takes in two parameters — a function and an iterable object like a list, tuple, and so on.</p>
+<p>Here’s what the syntax looks like:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">map(function, iterable(s))</span></span></code></pre>
+<p>Let’s break down the syntax:</p>
 <ul>
-<li>Arduino UNO.</li>
-<li>Breadboard.</li>
-<li>Jumper wires.</li>
-<li>1K Ohm resistor.</li>
-<li>Push-button.</li>
+<li>The <code>function</code> parameter denotes the function that’ll be used to execute code for each item.</li>
+<li>The <code>iterable(s)</code> parameter denotes the collection or iterable object. You can pass in many iterable objects at the same time.</li>
 </ul>
-<h2 id="how-to-connect-a-push-button-to-arduino-board">How To Connect a Push Button to Arduino Board</h2>
-<p>In this section, you’ll learn how to connect a push-button to an Arduino board.</p>
-<p>There are different ways of connecting a push-button to the Arduino board:</p>
-<ul>
-<li>You can connect to power source and ground (GND), then specify if the push-button will be a pull-up or pull-down input.</li>
-<li>You can use a resistor to connect the push-button as either pull-up or pull-down.</li>
-</ul>
-<p>None of the connections above are wrong - it’s up to you to decide. In this article, we’ll use the latter.</p>
-<p>A pull-up resistor sets the initial state of the push-button as <code>HIGH</code> while a pull-down resistor will set the current state as <code>LOW</code>.</p>
-<p>Here’s the circuit diagram for the connection:</p>
-<p><img src="/how-to-use-push-button-with-arduino/circuit-diagram-arduino.png" alt="Circuit diagram for push-button connection in an Arduino UNO board"></p>
-<p>From the circuit above, you can connect a push-button to the Arduino board by connecting:</p>
-<ul>
-<li>One leg of the push-button to 5 volt power supply on the UNO board.</li>
-<li>The other leg to GND through a pull-down resistor.</li>
-<li>A digital pin (pin 8 in our circuit) to the other end of the GND leg.</li>
-</ul>
-<p>Connecting the resistor to GND sets the push-button’s state to <code>LOW</code> (0). The resistor is known as a pull-down resistor.</p>
-<p>On the other hand, it would be a pull-up resistor if it was connected to the power supply. This would set the initial state to <code>HIGH</code> (1).</p>
-<p>To be sure our connection is working, let’s print the current state of the push-button to the serial monitor using code:</p>
-<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">int</span><span style="color: #C9D1D9"> push_btn_pin </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">8</span><span style="color: #C9D1D9">;</span></span>
-<span class="line"><span style="color: #FF7B72">int</span><span style="color: #C9D1D9"> pushBTN_state;</span></span>
+<p>Now that we know what the syntax looks like, let’s see some practical examples.</p>
+<h2 id="how-to-use-map-function-in-python">How To Use Map Function in Python</h2>
+<p>In this section, you’ll learn how to use the <code>map()</code> function in Python to execute code for all the elements in a list.</p>
+<p>Before that, let’s see an example that doesn’t use the <code>map()</code> function. This will help you understand it better.</p>
+<h3 id="example-1---how-to-square-elements-of-a-list-without-map-function">Example #1 - How to Square Elements of a List Without <code>map()</code> Function</h3>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">def</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">square</span><span style="color: #C9D1D9">(num):</span></span>
+<span class="line"><span style="color: #C9D1D9">	</span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> num </span><span style="color: #FF7B72">*</span><span style="color: #C9D1D9"> num</span></span>
+<span class="line"><span style="color: #C9D1D9">	</span></span>
+<span class="line"><span style="color: #C9D1D9">numbers </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">4</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">6</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">8</span><span style="color: #C9D1D9">]</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">setup</span><span style="color: #C9D1D9">(){</span></span>
-<span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">begin</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">9600</span><span style="color: #C9D1D9">);</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #D2A8FF">pinMode</span><span style="color: #C9D1D9">(push_btn_pin, INPUT);</span></span>
-<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"><span style="color: #C9D1D9">squared_list </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> []</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">loop</span><span style="color: #C9D1D9">(){</span></span>
-<span class="line"><span style="color: #C9D1D9">  pushBTN_state </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">digitalRead</span><span style="color: #C9D1D9">(push_btn_pin);</span></span>
-<span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">println</span><span style="color: #C9D1D9">(pushBTN_state);</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #D2A8FF">delay</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">500</span><span style="color: #C9D1D9">);</span></span>
-<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
-<p>Let’s break down the code to help you understand each part.</p>
-<p>We created two variables — <code>push_btn_pin</code> and <code>pushBTN_state</code>.</p>
-<p><code>push_btn_pin</code>, which denotes digital pin 8 connected to the push-button in the circuit, stores the current value (state of the push-button) of the push-button.</p>
-<p><code>pushBTN_state</code> will be used to read the current state of the <code>push_btn_pin</code> variable.</p>
-<p>In the <code>setup()</code> function, we initailized the serial monitor, and set the digital pin (<code>push_btn_pin</code>) as an input pin:</p>
-<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">setup</span><span style="color: #C9D1D9">(){</span></span>
-<span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">begin</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">9600</span><span style="color: #C9D1D9">);</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #D2A8FF">pinMode</span><span style="color: #C9D1D9">(push_btn_pin, INPUT);</span></span>
-<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
-<p>In the <code>loop()</code> function, we read the value of <code>push_btn_pin</code> using the <code>digitalRead()</code> function. The value is stored in the <code>pushBTN_state</code> variable which was created at the beginning of the code:</p>
-<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">pushBTN_state </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">digitalRead</span><span style="color: #C9D1D9">(push_btn_pin);</span></span></code></pre>
-<p>Lastly, we print the value read to the serial monitor with a delay of 500 milliseconds:</p>
-<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">println</span><span style="color: #C9D1D9">(pushBTN_state);</span></span>
-<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #D2A8FF">delay</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">500</span><span style="color: #C9D1D9">);</span></span></code></pre>
-<p>When you compile and run the code, you’ll see 0 (zero) printed continuosly in the serial monitor. This is happeninmg because the initial state of the push-button was set to <code>LOW</code> using a pull-down resistor.</p>
-<p>When you push down the push-button, the value will be changed to 1 (<code>HIGH</code>). When you release the buton, it’ll return back to 0.</p>
-<p>You’ve successfully connected and read the value of a push-button connected to an Arduino board!</p>
+<span class="line"><span style="color: #FF7B72">for</span><span style="color: #C9D1D9"> num </span><span style="color: #FF7B72">in</span><span style="color: #C9D1D9"> numbers:</span></span>
+<span class="line"><span style="color: #C9D1D9">    squared_list.append(square(num))</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span></span>
+<span class="line"><span style="color: #79C0FF">print</span><span style="color: #C9D1D9">(squared_list) </span><span style="color: #8B949E"># [4, 16, 36, 64]</span></span>
+<span class="line"></span></code></pre>
+<p>In the example above, we created a function — <code>square()</code> — that returns the square of a number.</p>
+<p>We then created a list called <code>numbers</code>.</p>
+<p>In order to sqaure all the values, we created an empty list called <code>squared_list</code>, then looped through and squared the elemenrts in the first list. After that, we stored the squared values in the new list.</p>
+<p>Although this method works, it’s not really efficient. We had to make use of two lists and a <code>for</code> loop.</p>
+<p>Now let’s see a shorter way of doing this in the next example.</p>
+<h3 id="example-2---how-to-square-elements-of-a-list-with-map-function">Example #2 - How to Square Elements of a List With <code>map()</code> Function</h3>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">def</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">square</span><span style="color: #C9D1D9">(num):</span></span>
+<span class="line"><span style="color: #C9D1D9">	</span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> num </span><span style="color: #FF7B72">*</span><span style="color: #C9D1D9"> num</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">numbers </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">4</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">6</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">8</span><span style="color: #C9D1D9">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">result </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">map</span><span style="color: #C9D1D9">(square, numbers)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #79C0FF">print</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">list</span><span style="color: #C9D1D9">(result)) </span><span style="color: #8B949E"># [4, 16, 36, 64]</span></span></code></pre>
+<p>In the code above, we created a function that squares the value of its parameter. The same function we used in the last example.</p>
+<p>We then created the <code>numbers</code> list.</p>
+<p>Next, we passed the function and the list as a parameter to the <code>map()</code> function: <code>map(square, numbers)</code>.</p>
+<p>The result was a new list with all the numbers squared. From [2, 4, 6, 8] to [4, 16, 36, 64].</p>
+<p>The <code>map()</code> function will automatically execute the function that loops through the list and squares each element.</p>
 <h2 id="summary">Summary</h2>
-<p>Push-buttons are one of the most commonly used components in embedded systems. They can be used in different ways.</p>
-<p>As you begin your journey with Arduino, it’s one of the components you’ll most likely learn about.</p>
-<p>This article focused on connecting a push-button to an Arduino board with a circuit diagram, and steps involved in connecting it as a pull-up or pull-down input.</p>
-<p>It also showed how you can read the value of a push-button. Reading the value of a push-button is necessary when you want to perform certain actions like turning on and off an LED.</p>
+<p>In this article, we talked about the <code>map()</code> function in Python. It is used to execute code for every element in an iterable object.</p>
+<p>We began by explaining the parameters used for the <code>map()</code> function.</p>
+<p>We then saw examples that showed how to square all the elements of a list with and without the <code>map()</code> function.</p>
 <p>Happy coding! You can find me on Twitter <a href="https://twitter.com/Ihechikara2">@Ihechikara2</a></p>
         </div>
 
@@ -231,7 +214,7 @@
           <p class="mb-[2rem]">Tags:</p>
           <div class="flex space-x-2">
             <ul>
-                <li class="py-[4px] px-[8px] text-[#232055] bg-[#87E0B2] text-sm mr-2"><a href="/tags/Arduino">Arduino</a></li>
+                <li class="py-[4px] px-[8px] text-[#232055] bg-[#87E0B2] text-sm mr-2"><a href="/tags/Python">Python</a></li>
               </ul>
           </div>
         </div>
