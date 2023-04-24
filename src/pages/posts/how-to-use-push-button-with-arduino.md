@@ -9,13 +9,13 @@ tags:
     - Arduino
 ---
 
-You can use push-buttons for different reasons in Arduino, such as tunring on/off LEDs, starting and stopping a motor, interrupting and triggering certain actions in a program, and so on. 
+You can use push-buttons for different reasons in Arduino, such as turning on/off LEDs, starting and stopping a motor, interrupting and triggering certain actions in a program, and so on. 
 
 In this article, you'll learn how to connect a push-button to an Arduino board. You'll also see how to interact with a push-button using code.
 
 You'll make basic connections using jumper wires and a resistor (including diagrams), and how to get the current state of a push-button using Arduino code. 
 
-This article is beginner friendly so you can still follow along even if you don't have a solid understanding of how Arduino works. This should help you expand your knowledge on it.
+This article is beginner friendly so you can still follow along even if you don't have a solid understanding of how Arduino works. This should help you expand your knowledge of it.
 
 Let's get started!
 
@@ -30,7 +30,7 @@ Let's get started!
 In this section, you'll learn how to connect a push-button to an Arduino board. 
 
 There are different ways of connecting a push-button to the Arduino board: 
-- You can connect to power source and ground (GND), then specify if the push-button will be a pull-up or pull-down input. 
+- You can connect to a power source and ground (GND), then specify if the push-button will be a pull-up or pull-down input. 
 - You can use a resistor to connect the push-button as either pull-up or pull-down. 
 
 None of the connections above are wrong - it's up to you to decide. In this article, we'll use the latter. 
@@ -42,7 +42,7 @@ Here's the circuit diagram for the connection:
 ![Circuit diagram for push-button connection in an Arduino UNO board](/how-to-use-push-button-with-arduino/circuit-diagram-arduino.png)
 
 From the circuit above, you can connect a push-button to the Arduino board by connecting: 
-- One leg of the push-button to 5 volt power supply on the UNO board. 
+- One leg of the push-button to 5-volt power supply on the UNO board. 
 - The other leg to GND through a pull-down resistor. 
 - A digital pin (pin 8 in our circuit) to the other end of the GND leg.
 
@@ -75,7 +75,7 @@ We created two variables -- `push_btn_pin` and `pushBTN_state`.
 
 `pushBTN_state` will be used to read the current state of the `push_btn_pin` variable. 
 
-In the `setup()` function, we initailized the serial monitor, and set the digital pin (`push_btn_pin`) as an input pin: 
+In the `setup()` function, we initialized the serial monitor, and set the digital pin (`push_btn_pin`) as an input pin: 
 
 ```cpp
 void setup(){
@@ -95,18 +95,18 @@ Lastly, we print the value read to the serial monitor with a delay of 500 millis
   delay(500);
 ```
 
-When you compile and run the code, you'll see 0 (zero) printed continuosly in the serial monitor. This is happeninmg because the initial state of the push-button was set to `LOW` using a pull-down resistor. 
+When you compile and run the code, you'll see 0 (zero) printed continuously on the serial monitor. This is happening because the initial state of the push-button was set to `LOW` using a pull-down resistor. 
 
-When you push down the push-button, the value will be changed to 1 (`HIGH`). When you release the buton, it'll return back to 0. 
+When you push down the push-button, the value will be changed to 1 (`HIGH`). When you release the button, it'll return back to 0. 
 
 You've successfully connected and read the value of a push-button connected to an Arduino board!
 
 ## Summary
-Push-buttons are one of the most commonly used components in embedded systems. They can be used in different ways. 
+Push buttons are one of the most commonly used components in embedded systems. They can be used in different ways. 
 
 As you begin your journey with Arduino, it's one of the components you'll most likely learn about. 
 
-This article focused on connecting a push-button to an Arduino board with a circuit diagram, and steps involved in connecting it as a pull-up or pull-down input. 
+This article focused on connecting a push-button to an Arduino board with a circuit diagram, and the steps involved in connecting it as a pull-up or pull-down input. 
 
 It also showed how you can read the value of a push-button. Reading the value of a push-button is necessary when you want to perform certain actions like turning on and off an LED. 
 
