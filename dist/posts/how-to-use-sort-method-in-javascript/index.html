@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-MPXRHH8QR5"></script>
+    <script type="text/partytown">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MPXRHH8QR5');
+    </script>
+    <link rel="sitemap" href="/sitemap-index.xml">
+    <!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="ihechikara-pfp.ico">
+<meta name="generator" content="Astro v1.2.1">
+
+<!-- Primary Meta Tags -->
+<title>JavaScript Sort – How To Use Sort Method in JavaScript</title>
+<meta name="title" content="JavaScript Sort – How To Use Sort Method in JavaScript">
+<meta name="description" content="The sort method in JavaScript sorts an array in ascending order. The sort method works differently with strings and numbers. It evaluates the value of elements in a collection and arranges them based on their Unicode value. Using a compare function, you can sort numbers in either ascending or descending order">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ihechikara.com/posts/how-to-use-sort-method-in-javascript/">
+<meta property="og:title" content="JavaScript Sort – How To Use Sort Method in JavaScript">
+<meta property="og:description" content="The sort method in JavaScript sorts an array in ascending order. The sort method works differently with strings and numbers. It evaluates the value of elements in a collection and arranges them based on their Unicode value. Using a compare function, you can sort numbers in either ascending or descending order">
+<meta property="og:image" content="https://ihechikara.com/how-to-use-sort-method-in-javascript/how-to-use-sort-method-in-javascript.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://ihechikara.com/posts/how-to-use-sort-method-in-javascript/">
+<meta property="twitter:title" content="JavaScript Sort – How To Use Sort Method in JavaScript">
+<meta property="twitter:description" content="The sort method in JavaScript sorts an array in ascending order. The sort method works differently with strings and numbers. It evaluates the value of elements in a collection and arranges them based on their Unicode value. Using a compare function, you can sort numbers in either ascending or descending order">
+<meta property="twitter:image" content="https://ihechikara.com/how-to-use-sort-method-in-javascript/how-to-use-sort-method-in-javascript.png">
+
+  <link rel="stylesheet" href="/assets/9186d599.59922cb5.css" /><script type="module">let e=document.getElementById("hamBurger-img"),t=document.getElementById("mobileNav");e.addEventListener("click",()=>{t.classList.toggle("hidden")});
+</script>
+<script>!(function(w,p,f,c){c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[]).concat(["dataLayer.push"])})(window,'partytown','forward');/* Partytown 0.7.5 - MIT builder.io */
+!function(t,e,n,i,r,o,a,d,s,c,p,l){function u(){l||(l=1,"/"==(a=(o.lib||"/~partytown/")+(o.debug?"debug/":""))[0]&&(s=e.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(f,1e4),e.addEventListener("pt0",w),r?h(1):n.serviceWorker?n.serviceWorker.register(a+(o.swPath||"partytown-sw.js"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&h()}))}),console.error):f())))}function h(t){c=e.createElement(t?"script":"iframe"),t||(c.setAttribute("style","display:block;width:0;height:0;border:0;visibility:hidden"),c.setAttribute("aria-hidden",!0)),c.src=a+"partytown-"+(t?"atomics.js?v=0.7.5":"sandbox-sw.html?"+Date.now()),e.body.appendChild(c)}function f(n,r){for(w(),i==t&&(o.forward||[]).map((function(e){delete t[e.split(".")[0]]})),n=0;n<s.length;n++)(r=e.createElement("script")).innerHTML=s[n].innerHTML,e.head.appendChild(r);c&&c.parentNode.removeChild(c)}function w(){clearTimeout(d)}o=t.partytown||{},i==t&&(o.forward||[]).map((function(e){p=t,e.split(".").map((function(e,n,i){p=p[i[n]]=n+1<i.length?"push"==i[n+1]?[]:p[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),"complete"==e.readyState?u():(t.addEventListener("DOMContentLoaded",u),t.addEventListener("load",u))}(window,document,navigator,top,window.crossOriginIsolated);</script></head>
+
+  <body class="bg-[#232055] text-white">
+    <header>
+  <nav class="">
+    <div class="flex justify-between items-center mt-11 mx-6 md:mx-[3rem] xl:mx-[8.25rem] md:my-[1.63rem]">
+      <a href="/blog" class="cursor-pointer"><h1 class="text-2xl md:text-[2.4rem] leading-7 md:leading-[2.79rem] font-extrabold">
+          IHECHIKARA<span class="text-[#87E0B2]">.</span>
+        </h1>
+      </a>
+
+      <img id="hamBurger-img" src="/bx_menu.svg" alt="" class="p-2 pr-0 border-white lg:hidden">
+      <!-- desktop menu -->
+      <div class="items-center leading-[1.56rem] text-[1.3rem] font-[Work_Sans] cursor-pointer hidden lg:flex">
+      <a href="/blog/" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Blog</a>
+      <a href="mailto:ihechikara.dev@gmail.com" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Contact</a>
+      <!-- <a href="#about" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">About</a>
+      <a href="#newsletter" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Newsletter</a> -->
+
+        <!-- <form class="flex items-center text-xs">
+          <button class="p-[1.05rem] bg-[#87E0B2] "
+            ><div class="font-extrabold">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd" />
+              </svg>
+              
+          </div>
+          </button>
+          <div class="w-[25rem]">
+          <input
+            type="text"
+            name="text"
+            placeholder="Search for articles"
+            class="w-full text-[1.3rem] py-[0.97rem] px-[1rem] xl:px-[1.5rem] cursor-text tracking-wider text-[black] border-none outline-none"
+          />
+        </div>
+        </form> -->
+      </div>
+      <!-- end of desktop for menu -->
+    </div>
+
+    <hr class="border-[1px] border-[#5A5880] mt-[19.5px]">
+
+
+    <!-- Nav for Mobile -->
+    <div id="mobileNav" class="bg-[#5A5880] w-full py-6 px-6 hidden">
+      <!-- <form class="flex items-center text-xs mb-6 w-full">
+        <button
+          class="p-[0.92rem] bg-[#87E0B2] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.5rem]"
+          ><img src={search} alt="" />
+        </button>
+        <input
+          type="text"
+          id="text"
+          name="text"
+          placeholder="Search for articles"
+          class="py-[0.75rem] pl-[1.9rem] pr-[4.5rem] w-full text-[#C8C7D5] text-[1rem] cursor-text tracking-wider leading-6"
+        />
+      </form> -->
+      <a href="/blog/">
+        <button class="p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"><img src="/blog.svg" alt="" class="pr-[0.92rem]">
+          <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Blog</p>
+        </button>
+      </a>
+
+      <a href="mailto:ihechikara.dev@gmail.com">
+        <button class="p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"><img src="/blog.svg" alt="" class="pr-[0.92rem]">
+          <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Contact</p>
+        </button>
+      </a>
+
+        <!-- <a href="#newsletter">
+  
+          <button
+            class="p-[0.92rem] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"
+            ><img src={blog} alt="" class="pr-[0.92rem]" />
+            <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Newsletter</p>
+          </button>
+        </a> -->
+
+      
+
+    </div>
+
+    <!-- End of Nav for Mobile -->
+  </nav>
+</header>
+
+
+    <main class="lg:mx-[16.5rem] lg:mt-[7.5rem] text-gray-100">
+      <article class=" mt-16 mx-6">
+        <h1 class="text-[28.43px] lg:text-[37.9px] font-semibold lg:mb-[1.6rem]">JavaScript Sort – How To Use Sort Method in JavaScript</h1>
+        <div class="sm:flex justify-between lg:text-[1rem] lg:mb-[1rem]">
+        <p class="mt-2">Author: Ihechikara Abba</p>
+        <div class="mt-2">
+          <time>August 20 2023</time>
+        </div>
+      </div>
+
+        <hr class="border-[1px] border-[#5A5880] my-4 lg:mb-[2rem]">
+
+        <img width="720" height="360" src="/how-to-use-sort-method-in-javascript/how-to-use-sort-method-in-javascript.png" alt="" class="sm:w-full">
+
+        <hr class="border-[1px] border-[#5A5880] mt-4 mb-12 lg:mt-[2rem]">
+
+        
+        <!-- {
+          updatedDate && (
+            <div>
+              Last updated on <time>{updatedDate}</time>
+            </div>
+          )
+        } -->
+
+
+
+        <!-- <hr /> -->
+        <div class="prose sm:prose-xl max-w-none text-gray-100 prose-headings:text-gray-100 prose-code:text-[#87E0B2] prose-a:text-blue-600">
+
+          <p>You can use the <code>sort()</code> method in JavaScript to sort the elements of an array in ascending order.</p>
+<p>In this article, you’ll learn how to sort strings and numbers in JavaScript using the <code>sort()</code> method.</p>
+<h2 id="sort-method-syntax-in-javascript"><code>sort()</code> Method Syntax in JavaScript</h2>
+<p>You can simply use dot notation to attach the <code>sort()</code> method to a collection in order to sort it. Here’s what the syntax looks like:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">array.sort(compareFunction)</span></span></code></pre>
+<p>In the syntax above, <code>array</code> denotes the array to be sorted which is followed by the <code>sort</code> method with a <code>compareFunction</code> parameter. The <code>compareFunction</code> is an optional parameter that is mostly used when sorting numbers.</p>
+<p>Let’s take a look at some examples to help you understand the syntax.</p>
+<h3 id="example-1---how-to-sort-an-array-of-strings-in-javascript">Example #1 - How to Sort an Array of Strings in JavaScript</h3>
+<p>You can sort an array of strings in JavaScript using the <code>sort()</code> method. Here’s how:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">users</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span><span style="color: #A5D6FF">"John"</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">"Doe"</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">"Ihechikara"</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">"Peter"</span><span style="color: #C9D1D9">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">users.</span><span style="color: #D2A8FF">sort</span><span style="color: #C9D1D9">()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">console.</span><span style="color: #D2A8FF">log</span><span style="color: #C9D1D9">(users)</span></span>
+<span class="line"><span style="color: #8B949E">// [ "Doe", "Ihechikara", "John", "Peter" ]</span></span></code></pre>
+<p>In the code above, we created an array of strings called <code>users</code> with four elements: “John”, “Doe”, “Ihechikara”, “Peter”. We then sorted the array using the <code>sort()</code> method: <code>users.sort()</code>.</p>
+<p>The result was an array with its elements sorted in alphabetical and ascending order: “Doe”, “Ihechikara”, “John”, “Peter”.</p>
+<p>Sorting strings is pretty straightforward. All you have to do is attach the <code>sort()</code> method to the array name. As you’ll see in the next example, thing are a bit different with numbers.</p>
+<h3 id="example-2---how-to-sort-an-array-of-numbers-in-javascript">Example #2 - How to Sort an Array of Numbers in JavaScript</h3>
+<p>In general, the <code>sort()</code> method compares each value based on their Unicode value, and this applies to number too.</p>
+<p>Consider the example below:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">numArr</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span><span style="color: #79C0FF">40</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">6</span><span style="color: #C9D1D9">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">numArr.</span><span style="color: #D2A8FF">sort</span><span style="color: #C9D1D9">()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">console.</span><span style="color: #D2A8FF">log</span><span style="color: #C9D1D9">(numArr)</span></span>
+<span class="line"><span style="color: #8B949E">// [ 40, 6 ]</span></span></code></pre>
+<p>In the code above, we have an array with three numbers — 2, 40, and 6. After sorting the array, the numbers remain the same and unsorted. Based on how the <code>sort()</code> method works, the array has been sorted.</p>
+<p>40 is placed before 6 in the sorted array because when their Unicode values are compared, the 4 in 40 comes before 6.</p>
+<p>We can fix this using a compare function which evaluates the values of elements before placing them in specific positions.</p>
+<h3 id="how-to-use-the-compare-function-to-sort-an-array-in-javascript">How to Use the Compare Function to Sort an Array in JavaScript</h3>
+<p>Here’s what a compare function looks like:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> (</span><span style="color: #FFA657">a</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">b</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> a </span><span style="color: #FF7B72">-</span><span style="color: #C9D1D9"> b</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>The two parameters in the function above — <code>a</code> and <code>b</code> — represents two elements being compared in the array.</p>
+<ul>
+<li>If <code>a - b</code> returns a value less than 0, then <code>a</code> comes before <code>b</code>.</li>
+<li>If <code>a - b</code> returns a value greater than 0, then <code>b</code> comes before <code>a</code>.</li>
+<li>If <code>a - b</code> returns a value 0, then the order of <code>a</code> and <code>b</code> remains the same.</li>
+</ul>
+<p>Now let’s use the compare function with an array of numbers:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">numArr</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span><span style="color: #79C0FF">40</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">6</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">numArr.</span><span style="color: #D2A8FF">sort</span><span style="color: #C9D1D9">(</span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9">(</span><span style="color: #FFA657">a</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">b</span><span style="color: #C9D1D9">){ </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> a </span><span style="color: #FF7B72">-</span><span style="color: #C9D1D9"> b })</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">console.</span><span style="color: #D2A8FF">log</span><span style="color: #C9D1D9">(numArr)</span></span>
+<span class="line"><span style="color: #8B949E">// [ 2, 6, 40 ]</span></span></code></pre>
+<p>Passing the compare function as a parameter to the <code>sort()</code>, we got a sorted array of numbers in ascending order. If you change the return statement of the compare function to <code>b - a</code> then the sorted array will be in descending order.</p>
+<h2 id="summary">Summary</h2>
+<p>In this article, we talked about the <code>sort()</code> method in JavaScript. You can use it to sort an array in asceneding order.</p>
+<p>The first example showed how to sort an array of strings in ascending order using the <code>sort()</code> method.</p>
+<p>We then saw another example that uses a compare function to sort an array of numbers in either ascending or descending order.</p>
+<p>Happy coding! You can find me on Twitter <a href="https://twitter.com/Ihechikara2">@Ihechikara2</a></p>
+        </div>
+
+        <div class="flex flex-col mt-[6.25rem] mb-[8rem] ">
+          <p class="mb-[2rem]">Tags:</p>
+          <div class="flex space-x-2">
+            <ul>
+                <li class="py-[4px] px-[8px] text-[#232055] bg-[#87E0B2] text-sm mr-2"><a href="/tags/JavaScript">JavaScript</a></li>
+              </ul>
+          </div>
+        </div>
+
+      </article>
+    </main>
+    <!-- <p > </p> -->
+    <footer class="px-6 lg:px-[8.3rem] pt-[1.9rem] lg:pt-[3.75rem] bg-[#5A5880] leading-7">
+  <div class="lg:flex lg:justify-between lg:w-full">
+    <div>
+      <h1 class="text-2xl lg:text-[2.4rem] font-extrabold mb-8">
+        IHECHIKARA<span class="text-[#87E0B2]">.</span>
+      </h1>
+    </div>
+    <div class="">
+      <p class="font-[Work_Sans] tracking-wider text-base md:text-[1.3rem] mb-2 md:mb-[1rem]">
+        Contact me
+      </p>
+      <div class="flex items-center justify:center gap-4 lg:gap-[2.63rem] mb-[3.9rem] cursor-pointer">
+      <!-- Twitter -->
+        <a href="https://twitter.com/Ihechikara2" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
+          <img src="/twitter.svg" class="w-[30px] h-[30px] lg:w-full lg:h-full">
+        </a>
+
+        <!-- Mail -->
+        <a href="mailto:ihechikara.dev@gmail.com" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
+          <img src="/mail.svg" class="w-[30px] h-[30px] lg:w-full lg:h-full">
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/ihechikara-vincent-abba-983a411b9/" target="_blank" class="cursor- md:mb-8 md:h-8 md:w-8">
+          <img src="/linkedin.svg" class="w-[30px] h-[30px] w-full h-full">
+        </a>
+        
+        <!-- GitHub -->
+        <a href="https://github.com/ihechikara" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
+          <img src="/github.svg" class="w-[30px] h-[30px] lg:w-full lg:h-full">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="text-center flex flex-col lg:flex-row lg:justify-center">
+    <p class="text-base lg:mr-6 lg:text-lg"> Built with <span class="text-[#87E0B2] underline text-xl font-bold"> <a href="https://astro.build/"> Astro </a> </span></p>
+    <p class="text-base lg:mr-6 lg:text-lg"> Styled with <span class="text-[#87E0B2] underline text-xl font-bold"> <a href="https://tailwindcss.com/"> Tailwind CSS </a> </span> </p>
+    <p class="text-base lg:text-lg"> Hosted on <span class="text-[#87E0B2] underline text-xl font-bold"> <a href="https://www.netlify.com/">Netlify</a>  </span> </p>
+  </div>
+</footer>
+  </body></html>
