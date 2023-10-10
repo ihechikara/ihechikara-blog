@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-MPXRHH8QR5"></script>
+    <script type="text/partytown">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MPXRHH8QR5');
+    </script>
+    <link rel="sitemap" href="/sitemap-index.xml">
+    <!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="ihechikara-pfp.ico">
+<meta name="generator" content="Astro v1.2.1">
+
+<!-- Primary Meta Tags -->
+<title>How to use Props in Astro</title>
+<meta name="title" content="How to use Props in Astro">
+<meta name="description" content="You can use props to make the flow of data in your project dynamic by sharing a piece of data across multiple components. It also prevents you from rewriting code logic every time you want to create certain functionalities. Props are useful when working with components that should have dynamic (not-static) values">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ihechikara.com/posts/how-to-use-props-in-astro/">
+<meta property="og:title" content="How to use Props in Astro">
+<meta property="og:description" content="You can use props to make the flow of data in your project dynamic by sharing a piece of data across multiple components. It also prevents you from rewriting code logic every time you want to create certain functionalities. Props are useful when working with components that should have dynamic (not-static) values">
+<meta property="og:image" content="https://ihechikara.com/how-to-use-props-in-astro/astro-props-cover.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://ihechikara.com/posts/how-to-use-props-in-astro/">
+<meta property="twitter:title" content="How to use Props in Astro">
+<meta property="twitter:description" content="You can use props to make the flow of data in your project dynamic by sharing a piece of data across multiple components. It also prevents you from rewriting code logic every time you want to create certain functionalities. Props are useful when working with components that should have dynamic (not-static) values">
+<meta property="twitter:image" content="https://ihechikara.com/how-to-use-props-in-astro/astro-props-cover.png">
+
+  <link rel="stylesheet" href="/assets/b6ceedf7.0b83936f.css" /><script type="module">let e=document.getElementById("hamBurger-img"),t=document.getElementById("mobileNav");e.addEventListener("click",()=>{t.classList.toggle("hidden")});
+</script>
+<script>!(function(w,p,f,c){c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[]).concat(["dataLayer.push"])})(window,'partytown','forward');/* Partytown 0.7.5 - MIT builder.io */
+!function(t,e,n,i,r,o,a,d,s,c,p,l){function u(){l||(l=1,"/"==(a=(o.lib||"/~partytown/")+(o.debug?"debug/":""))[0]&&(s=e.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(f,1e4),e.addEventListener("pt0",w),r?h(1):n.serviceWorker?n.serviceWorker.register(a+(o.swPath||"partytown-sw.js"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&h()}))}),console.error):f())))}function h(t){c=e.createElement(t?"script":"iframe"),t||(c.setAttribute("style","display:block;width:0;height:0;border:0;visibility:hidden"),c.setAttribute("aria-hidden",!0)),c.src=a+"partytown-"+(t?"atomics.js?v=0.7.5":"sandbox-sw.html?"+Date.now()),e.body.appendChild(c)}function f(n,r){for(w(),i==t&&(o.forward||[]).map((function(e){delete t[e.split(".")[0]]})),n=0;n<s.length;n++)(r=e.createElement("script")).innerHTML=s[n].innerHTML,e.head.appendChild(r);c&&c.parentNode.removeChild(c)}function w(){clearTimeout(d)}o=t.partytown||{},i==t&&(o.forward||[]).map((function(e){p=t,e.split(".").map((function(e,n,i){p=p[i[n]]=n+1<i.length?"push"==i[n+1]?[]:p[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),"complete"==e.readyState?u():(t.addEventListener("DOMContentLoaded",u),t.addEventListener("load",u))}(window,document,navigator,top,window.crossOriginIsolated);</script></head>
+
+  <body class="bg-[#232055] text-white">
+    <header>
+  <nav class="">
+    <div class="flex justify-between items-center mt-11 mx-6 md:mx-[3rem] xl:mx-[8.25rem] md:my-[1.63rem]">
+      <a href="/blog" class="cursor-pointer"><h1 class="text-2xl md:text-[2.4rem] leading-7 md:leading-[2.79rem] font-extrabold">
+          IHECHIKARA<span class="text-[#87E0B2]">.</span>
+        </h1>
+      </a>
+
+      <img id="hamBurger-img" src="/bx_menu.svg" alt="" class="p-2 pr-0 border-white lg:hidden">
+      <!-- desktop menu -->
+      <div class="items-center leading-[1.56rem] text-[1.3rem] font-[Work_Sans] cursor-pointer hidden lg:flex">
+      <a href="/blog/" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Blog</a>
+      <a href="mailto:ihechikara.dev@gmail.com" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Contact</a>
+      <!-- <a href="#about" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">About</a>
+      <a href="#newsletter" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Newsletter</a> -->
+
+        <!-- <form class="flex items-center text-xs">
+          <button class="p-[1.05rem] bg-[#87E0B2] "
+            ><div class="font-extrabold">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd" />
+              </svg>
+              
+          </div>
+          </button>
+          <div class="w-[25rem]">
+          <input
+            type="text"
+            name="text"
+            placeholder="Search for articles"
+            class="w-full text-[1.3rem] py-[0.97rem] px-[1rem] xl:px-[1.5rem] cursor-text tracking-wider text-[black] border-none outline-none"
+          />
+        </div>
+        </form> -->
+      </div>
+      <!-- end of desktop for menu -->
+    </div>
+
+    <hr class="border-[1px] border-[#5A5880] mt-[19.5px]">
+
+
+    <!-- Nav for Mobile -->
+    <div id="mobileNav" class="bg-[#5A5880] w-full py-6 px-6 hidden">
+      <!-- <form class="flex items-center text-xs mb-6 w-full">
+        <button
+          class="p-[0.92rem] bg-[#87E0B2] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.5rem]"
+          ><img src={search} alt="" />
+        </button>
+        <input
+          type="text"
+          id="text"
+          name="text"
+          placeholder="Search for articles"
+          class="py-[0.75rem] pl-[1.9rem] pr-[4.5rem] w-full text-[#C8C7D5] text-[1rem] cursor-text tracking-wider leading-6"
+        />
+      </form> -->
+      <a href="/blog/">
+        <button class="p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"><img src="/blog.svg" alt="" class="pr-[0.92rem]">
+          <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Blog</p>
+        </button>
+      </a>
+
+      <a href="mailto:ihechikara.dev@gmail.com">
+        <button class="p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"><img src="/blog.svg" alt="" class="pr-[0.92rem]">
+          <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Contact</p>
+        </button>
+      </a>
+
+        <!-- <a href="#newsletter">
+  
+          <button
+            class="p-[0.92rem] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"
+            ><img src={blog} alt="" class="pr-[0.92rem]" />
+            <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Newsletter</p>
+          </button>
+        </a> -->
+
+      
+
+    </div>
+
+    <!-- End of Nav for Mobile -->
+  </nav>
+</header>
+
+
+    <main class="lg:mx-[16.5rem] lg:mt-[7.5rem] text-gray-100">
+      <article class=" mt-16 mx-6">
+        <h1 class="text-[28.43px] lg:text-[37.9px] font-semibold lg:mb-[1.6rem]">How to use Props in Astro</h1>
+        <div class="sm:flex justify-between lg:text-[1rem] lg:mb-[1rem]">
+        <p class="mt-2">Author: Ihechikara Abba</p>
+        <div class="mt-2">
+          <time>October 10 2023</time>
+        </div>
+      </div>
+
+        <hr class="border-[1px] border-[#5A5880] my-4 lg:mb-[2rem]">
+
+        <img width="720" height="360" src="/how-to-use-props-in-astro/astro-props-cover.png" alt="" class="sm:w-full">
+
+        <hr class="border-[1px] border-[#5A5880] mt-4 mb-12 lg:mt-[2rem]">
+
+        
+        <!-- {
+          updatedDate && (
+            <div>
+              Last updated on <time>{updatedDate}</time>
+            </div>
+          )
+        } -->
+
+
+
+        <!-- <hr /> -->
+        <div class="prose sm:prose-xl max-w-none text-gray-100 prose-headings:text-gray-100 prose-code:text-[#87E0B2] prose-a:text-blue-600">
+
+          <p>You can use props to keep the flow of data dynamic by sharing a piece of code logic and data across components.</p>
+<p>In this article, you’ll learn how to use props in Astro with examples.</p>
+<h2 id="how-to-use-props-in-astro">How to use Props in Astro</h2>
+<p>Without props, you’ll have to rewrite code logic every time you want to create certain functionalities. For example, let’s create a component that shows the username and favorite language of a developer. We’ll call this component <code>About.astro</code>:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// ./src/components/About.astro</span></span>
+<span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">    &#x3C;</span><span style="color: #7EE787">h1</span><span style="color: #C9D1D9">>My name is Ihechikara&#x3C;/</span><span style="color: #7EE787">h1</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">    &#x3C;</span><span style="color: #7EE787">h1</span><span style="color: #C9D1D9">>I code using JavScript&#x3C;/</span><span style="color: #7EE787">h1</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">></span></span></code></pre>
+<p>Next, we’ll import it in the <code>index.astro</code> file:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// ./src/pages/iindex.astro</span></span>
+<span class="line"><span style="color: #FF7B72">---</span></span>
+<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> About </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">"../components/About.astro"</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #FF7B72">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">	&#x3C;</span><span style="color: #7EE787">About</span><span style="color: #C9D1D9">/></span></span>
+<span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">></span></span>
+<span class="line"></span></code></pre>
+<p>This is what you should see in the browser:</p>
+<p><img src="/how-to-use-props-in-astro/browser-output.png" alt="browser output for imported component"></p>
+<p>While this functionality works, it isn’t dynamic. What if we have more developers? The name and language of the developer is static so we’d have to create a new component for each developer.</p>
+<p>With props, you can create the component once, and specify the username and language for each developer when you import and use the component. Let me show you how.</p>
+<h3 id="how-to-use-props-in-astro-example">How to use Props in Astro Example</h3>
+<p>Here’s the code we’ll use for creating props:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// ./src/components/About.astro</span></span>
+<span class="line"><span style="color: #FF7B72">---</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> { </span><span style="color: #79C0FF">username</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">language</span><span style="color: #C9D1D9"> } </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> Astro.props</span></span>
+<span class="line"><span style="color: #FF7B72">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">    &#x3C;</span><span style="color: #7EE787">h1</span><span style="color: #C9D1D9">>My name is </span><span style="color: #FF7B72">{</span><span style="color: #C9D1D9">username</span><span style="color: #FF7B72">}</span><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">h1</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">    &#x3C;</span><span style="color: #7EE787">h1</span><span style="color: #C9D1D9">>I code using </span><span style="color: #FF7B72">{</span><span style="color: #C9D1D9">language</span><span style="color: #FF7B72">}</span><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">h1</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">></span></span></code></pre>
+<p>I’ll break down the code into steps to help you understand what happens at each stage</p>
+<h4 id="step-1---create-props-variables">Step #1 - Create <code>props</code> variable(s)</h4>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// ./src/components/About.astro</span></span>
+<span class="line"><span style="color: #FF7B72">---</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> { </span><span style="color: #79C0FF">username</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">language</span><span style="color: #C9D1D9"> } </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> Astro.props</span></span>
+<span class="line"><span style="color: #FF7B72">---</span></span></code></pre>
+<p>In the code above, we defined the variables to be used as props and assigned them to the <code>Astro.props</code> object. The object contains values created as props and let’s you access and modify them in other components.</p>
+<p>We used destructuring in the code to assign values to the <code>Astro.props</code>. If you find that confusing, then this is what it looks like without destructuring:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// ./src/components/About.astro</span></span>
+<span class="line"><span style="color: #FF7B72">---</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">username</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> Astro.props.username</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">language</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> Astro.props.language</span></span>
+<span class="line"><span style="color: #FF7B72">---</span></span></code></pre>
+<h4 id="step-2---use-props-variables-in-your-html-code">Step #2 - Use <code>props</code> variables in your HTML Code</h4>
+<p>Now that we’ve defined the variable, we can use them directly in the HTML code:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// ./src/components/About.astro</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">    &#x3C;</span><span style="color: #7EE787">h1</span><span style="color: #C9D1D9">>My name is </span><span style="color: #FF7B72">{</span><span style="color: #C9D1D9">username</span><span style="color: #FF7B72">}</span><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">h1</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">    &#x3C;</span><span style="color: #7EE787">h1</span><span style="color: #C9D1D9">>I code using </span><span style="color: #FF7B72">{</span><span style="color: #C9D1D9">language</span><span style="color: #FF7B72">}</span><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">h1</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">></span></span></code></pre>
+<p>Next, we’ll use the <code>About.astro</code> component in other components to create and modify the values of <code>username</code> and <code>language</code> for each developer.</p>
+<h4 id="step-3---import-and-use-aboutastro-component-in-another-component">Step #3 - Import and use <code>About.astro</code> Component in another Component</h4>
+<p>In the <code>index.astro</code> component, we’ll import the <code>About.astro</code> component and use its attributes to dynamically render different values:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// ./src/pages/iindex.astro</span></span>
+<span class="line"><span style="color: #FF7B72">---</span></span>
+<span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> About </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">"../components/About.astro"</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #FF7B72">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">	&#x3C;</span><span style="color: #7EE787">About</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">username</span><span style="color: #FF7B72">=</span><span style="color: #A5D6FF">"Ihechikara"</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">language</span><span style="color: #FF7B72">=</span><span style="color: #A5D6FF">"JavaScript"</span><span style="color: #C9D1D9">/></span></span>
+<span class="line"><span style="color: #C9D1D9">	&#x3C;</span><span style="color: #7EE787">About</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">username</span><span style="color: #FF7B72">=</span><span style="color: #A5D6FF">"Abba"</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">language</span><span style="color: #FF7B72">=</span><span style="color: #A5D6FF">"Python"</span><span style="color: #C9D1D9">/></span></span>
+<span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">></span></span></code></pre>
+<p>First, we imported the component within the component’s code fence:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> About </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">"../components/About.astro"</span><span style="color: #C9D1D9">;</span></span></code></pre>
+<p>We then assigned <code>username</code> and <code>language</code> attributes to the <code>&#x3C;About/></code> tag which denotes the <code>About.astro</code> component:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">About</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">username</span><span style="color: #FF7B72">=</span><span style="color: #A5D6FF">"Ihechikara"</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">language</span><span style="color: #FF7B72">=</span><span style="color: #A5D6FF">"JavaScript"</span><span style="color: #C9D1D9">/></span></span>
+<span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">About</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">username</span><span style="color: #FF7B72">=</span><span style="color: #A5D6FF">"Abba"</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">language</span><span style="color: #FF7B72">=</span><span style="color: #A5D6FF">"Python"</span><span style="color: #C9D1D9">/></span></span></code></pre>
+<p>This is what you should see in the browser:
+<img src="/how-to-use-props-in-astro/about-astro-component.png" alt="browser output for imported component"></p>
+<p>All you have to do now is use the <code>&#x3C;About/></code> tag and assign new values to its attributes (<code>username</code> and <code>language</code>), and you’ll have the template for a new developer created</p>
+<h2 id="summary">Summary</h2>
+<p>You can use props to make the flow of data in your projects dynamic by sharing code and data across multiple components. It also prevents you from rewriting code logic every time you want to create a specific functionality.</p>
+<p>Props are useful when working with components that should have dynamic (not-static) values.</p>
+<p>This article showed you how to use props in Astro with code examples.</p>
+<p>Happy coding! You can find me on X (formerly Twitter) <a href="https://twitter.com/Ihechikara2">@Ihechikara2</a></p>
+        </div>
+
+        <div class="flex flex-col mt-[6.25rem] mb-[8rem] ">
+          <p class="mb-[2rem]">Tags:</p>
+          <div class="flex space-x-2">
+            <ul>
+                <li class="py-[4px] px-[8px] text-[#232055] bg-[#87E0B2] text-sm mr-2"><a href="/tags/Astro">Astro</a></li>
+              </ul>
+          </div>
+        </div>
+
+      </article>
+    </main>
+    <!-- <p > </p> -->
+    <footer class="px-6 lg:px-[8.3rem] pt-[1.9rem] lg:pt-[3.75rem] bg-[#5A5880] leading-7">
+  <div class="lg:flex lg:justify-between lg:w-full">
+    <div>
+      <h1 class="text-2xl lg:text-[2.4rem] font-extrabold mb-8">
+        IHECHIKARA<span class="text-[#87E0B2]">.</span>
+      </h1>
+    </div>
+    <div class="">
+      <p class="font-[Work_Sans] tracking-wider text-base md:text-[1.3rem] mb-2 md:mb-[1rem]">
+        Contact me
+      </p>
+      <div class="flex items-center justify:center gap-4 lg:gap-[2.63rem] mb-[3.9rem] cursor-pointer">
+      <!-- Twitter -->
+        <a href="https://twitter.com/Ihechikara2" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
+          <img src="/twitter.svg" class="w-[30px] h-[30px] lg:w-full lg:h-full">
+        </a>
+
+        <!-- Mail -->
+        <a href="mailto:ihechikara.dev@gmail.com" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
+          <img src="/mail.svg" class="w-[30px] h-[30px] lg:w-full lg:h-full">
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/ihechikara-vincent-abba-983a411b9/" target="_blank" class="cursor- md:mb-8 md:h-8 md:w-8">
+          <img src="/linkedin.svg" class="w-[30px] h-[30px] w-full h-full">
+        </a>
+        
+        <!-- GitHub -->
+        <a href="https://github.com/ihechikara" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
+          <img src="/github.svg" class="w-[30px] h-[30px] lg:w-full lg:h-full">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="text-center flex flex-col lg:flex-row lg:justify-center">
+    <p class="text-base lg:mr-6 lg:text-lg"> Built with <span class="text-[#87E0B2] underline text-xl font-bold"> <a href="https://astro.build/"> Astro </a> </span></p>
+    <p class="text-base lg:mr-6 lg:text-lg"> Styled with <span class="text-[#87E0B2] underline text-xl font-bold"> <a href="https://tailwindcss.com/"> Tailwind CSS </a> </span> </p>
+    <p class="text-base lg:text-lg"> Hosted on <span class="text-[#87E0B2] underline text-xl font-bold"> <a href="https://www.netlify.com/">Netlify</a>  </span> </p>
+  </div>
+</footer>
+  </body></html>
