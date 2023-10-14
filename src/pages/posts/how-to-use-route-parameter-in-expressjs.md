@@ -17,7 +17,7 @@ We'll be fetching data from a JSON object with a collection of users. Using rout
 
 This is a beginner friendly tutorial, so some concepts and steps will be explained in-depth.
 
-## Table of conents
+## Table of Contents
 - [Prerequisites](#prerequisites)
 - [How To Set Up Express](#how-to-set-up-express)
 - [How To Create Route Parameters](#how-to-create-route-parameters)
