@@ -32,12 +32,11 @@ To follow along with this tutorial, you should have the following:
 Before we dive into creating route parameters, let's set up the Express app/server.
 
 ## How To Set Up Express
-To be able to use Express.js, you must have [Node.js](https://nodejs.org/en) installed on your computer. 
 
-To install Express, run the command below in your terminal:
+To install Express, run the `npm init`command to create a `package.json` file (you can skip this command if you already have the file). Then run the command below to install Express:
 
 ```bash
-npm init
+npm install express
 ```
 After the installation is complete, you can then set up an Express server.
 Here's a basic setup:
