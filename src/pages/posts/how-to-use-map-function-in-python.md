@@ -92,4 +92,6 @@ We began by explaining the parameters used for the `map()` function.
 
 We then saw examples that showed how to square all the elements of a list with and without the `map()` function. 
 
-Happy coding! You can find me on Twitter [@Ihechikara2](https://twitter.com/Ihechikara2)
+Happy coding! Check out [my YouTube channel](https://www.youtube.com/@Ihechikara) for tutorials about embedded systems, IoT, and web development.
+
+You can find me on Twitter [@Ihechikara2](https://twitter.com/Ihechikara2)

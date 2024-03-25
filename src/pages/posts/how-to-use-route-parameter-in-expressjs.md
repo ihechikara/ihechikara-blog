@@ -230,4 +230,6 @@ This article focused on the basics of creating route parameters using Express.js
 
 We saw some code examples on how to install and set up an Express server. We then saw how to create routes with and without route parameters. 
 
-Happy coding! You can find me on Twitter [@Ihechikara2](https://twitter.com/Ihechikara2)
+Happy coding! Check out [my YouTube channel](https://www.youtube.com/@Ihechikara) for tutorials about embedded systems, IoT, and web development.
+
+You can find me on Twitter [@Ihechikara2](https://twitter.com/Ihechikara2)

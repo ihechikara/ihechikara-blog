@@ -231,3 +231,5 @@ I was able to buy new hardware for my workspace as well.
 I'll talk in more detail about what to expect from the channel in the coming days. You can follow me on [Twitter](https://twitter.com/Ihechikara2) so you don't miss it.
 
 Thank you for reading, and have a fantastic 2024!
+
+Check out [my YouTube channel](https://www.youtube.com/@Ihechikara) for tutorials about embedded systems, IoT, and web development.

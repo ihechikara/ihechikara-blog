@@ -139,4 +139,6 @@ The code examples in this article also showed how you can iterate through the va
 
 The same functionality applies to data coming from API calls or data from a database. 
 
-Happy coding! You can find me on Twitter [@Ihechikara2](https://twitter.com/Ihechikara2)
+Happy coding! Check out [my YouTube channel](https://www.youtube.com/@Ihechikara) for tutorials about embedded systems, IoT, and web development.
+
+You can find me on Twitter [@Ihechikara2](https://twitter.com/Ihechikara2)

@@ -135,4 +135,6 @@ Props are useful when working with components that should have dynamic (not-stat
 
 This article showed you how to use props in Astro with code examples. 
 
-Happy coding! You can find me on X (formerly Twitter) [@Ihechikara2](https://twitter.com/Ihechikara2)
+Happy coding! Check out [my YouTube channel](https://www.youtube.com/@Ihechikara) for tutorials about embedded systems, IoT, and web development.
+
+You can find me on Twitter [@Ihechikara2](https://twitter.com/Ihechikara2)

@@ -101,4 +101,6 @@ The first example showed how to sort an array of strings in ascending order usin
 
 We then saw another example that uses a compare function to sort an array of numbers in either ascending or descending order.
 
-Happy coding! You can find me on Twitter [@Ihechikara2](https://twitter.com/Ihechikara2)
+Happy coding! Check out [my YouTube channel](https://www.youtube.com/@Ihechikara) for tutorials about embedded systems, IoT, and web development.
+
+You can find me on Twitter [@Ihechikara2](https://twitter.com/Ihechikara2)

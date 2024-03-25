@@ -110,4 +110,6 @@ This article focused on connecting a push-button to an Arduino board with a circ
 
 It also showed how you can read the value of a push-button. Reading the value of a push-button is necessary when you want to perform certain actions like turning on and off an LED. 
 
-Happy coding! You can find me on Twitter [@Ihechikara2](https://twitter.com/Ihechikara2)
+Happy coding! Check out [my YouTube channel](https://www.youtube.com/@Ihechikara) for tutorials about embedded systems, IoT, and web development.
+
+You can find me on Twitter [@Ihechikara2](https://twitter.com/Ihechikara2)

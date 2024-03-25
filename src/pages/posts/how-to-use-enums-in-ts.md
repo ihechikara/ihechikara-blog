@@ -131,4 +131,6 @@ These constant variables have numeric values by default, but can also have strin
 
 We saw examples that showed how to create enums using default values. We also saw how to create and initialize enums using both numeric and string values. 
 
-Happy coding! You can find me on Twitter [@Ihechikara2](https://twitter.com/Ihechikara2)
+Happy coding! Check out [my YouTube channel](https://www.youtube.com/@Ihechikara) for tutorials about embedded systems, IoT, and web development.
+
+You can find me on Twitter [@Ihechikara2](https://twitter.com/Ihechikara2)
