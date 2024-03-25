@@ -13,6 +13,7 @@
 - Embedded sytems and IoT (Arduino).
 - Programming languages (Python, Java, C++).
 
-Check out [my blog posts](https://ihechikara.com/blog/) 
+Check out [my blog posts](https://ihechikara.com/blog/)
+Check out [my YouTube channel](https://www.youtube.com/@Ihechikara)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/aa687d64-0414-44ac-99fc-72aaf216535b/deploy-status)](https://app.netlify.com/sites/ihechikara-blog-prod/deploys)
