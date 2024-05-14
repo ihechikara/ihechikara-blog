@@ -17,6 +17,8 @@ We'll be fetching data from a JSON object with a collection of users. Using rout
 
 This is a beginner friendly tutorial, so some concepts and steps will be explained in-depth.
 
+You can watch the video version of this article [here](https://youtu.be/8PyrqrHqj1g?si=2bqSWzcpBcYvh0qB).
+
 ## Table of Contents
 - [Prerequisites](#prerequisites)
 - [How To Set Up Express](#how-to-set-up-express)
@@ -42,7 +44,7 @@ After the installation is complete, you can then set up an Express server.
 Here's a basic setup:
 
 ```js
-// app.js
+// server.js
 
 const express = require('express')
 const app = express()
@@ -59,9 +61,7 @@ app.listen(port, () => {
 
 Now that you have the setup done, you can start the server. The server should be running on localhost:5000 (http://localhost:5000/)
 
-You can start the server manually by running the `node app.js` command in the terminal. Note that `app.js` is the name of my file - make sure you replace it with yours if your file has a different name. 
-
-Alternatively, you can use [nodemon](https://www.npmjs.com/package/nodemon) to automate the process of restarting your server whenever you make a change. 
+You can start the server to watch for changes automatically by running the `node --watch server.js` command in the terminal. Note that `server.js` is the name of my file - make sure you replace it with yours if your file has a different name. 
 
 ## How To Create Route Parameters
 The JSON data we'll be working with will be stored in a file called `users.json`. Here's what the data looks like:

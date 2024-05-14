@@ -167,6 +167,7 @@
 <p>In this article, you’ll learn how to create dynamic routes based on user input using Express.js.</p>
 <p>We’ll be fetching data from a JSON object with a collection of users. Using route parameters, we’ll get users based on their ID.</p>
 <p>This is a beginner friendly tutorial, so some concepts and steps will be explained in-depth.</p>
+<p>You can watch the video version of this article <a href="https://youtu.be/8PyrqrHqj1g?si=2bqSWzcpBcYvh0qB">here</a>.</p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
 <li><a href="#prerequisites">Prerequisites</a></li>
@@ -190,7 +191,7 @@
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">npm install express</span></span></code></pre>
 <p>After the installation is complete, you can then set up an Express server.
 Here’s a basic setup:</p>
-<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// app.js</span></span>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// server.js</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">express</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">require</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'express'</span><span style="color: #C9D1D9">)</span></span>
 <span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">app</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">express</span><span style="color: #C9D1D9">()</span></span>
@@ -204,8 +205,7 @@ Here’s a basic setup:</p>
 <span class="line"><span style="color: #C9D1D9">  console.</span><span style="color: #D2A8FF">log</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">`App is listening on port ${</span><span style="color: #C9D1D9">port</span><span style="color: #A5D6FF">}`</span><span style="color: #C9D1D9">)</span></span>
 <span class="line"><span style="color: #C9D1D9">})</span></span></code></pre>
 <p>Now that you have the setup done, you can start the server. The server should be running on localhost:5000 (<a href="http://localhost:5000/">http://localhost:5000/</a>)</p>
-<p>You can start the server manually by running the <code>node app.js</code> command in the terminal. Note that <code>app.js</code> is the name of my file - make sure you replace it with yours if your file has a different name.</p>
-<p>Alternatively, you can use <a href="https://www.npmjs.com/package/nodemon">nodemon</a> to automate the process of restarting your server whenever you make a change.</p>
+<p>You can start the server to watch for changes automatically by running the <code>node --watch server.js</code> command in the terminal. Note that <code>server.js</code> is the name of my file - make sure you replace it with yours if your file has a different name.</p>
 <h2 id="how-to-create-route-parameters">How To Create Route Parameters</h2>
 <p>The JSON data we’ll be working with will be stored in a file called <code>users.json</code>. Here’s what the data looks like:</p>
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// users.json</span></span>
