@@ -144,7 +144,7 @@ This looks similar to the example we used in the `for` loop section, but you'll 
 
 #### When to Use a `for` Loop
 
-You should use a `for` loop when you know how many times the loop should run. The example used in the `for` loop section is a good example—we knew that the loop will the loop will run ten times based on the variable and condition given. 
+You should use a `for` loop when you know how many times the loop should run. The example used in the `for` loop section is a good example—we knew that the loop will run ten times based on the variable and condition given. 
 
 Let's assume that you were given a task to print 1 to 20 in the serial monitor. The first thing you'll do is to define your initialization variable and a condition that keeps the variable within the expected range.
 
@@ -181,7 +181,7 @@ A `for` loop can also be used for the following:
 
 You should use `while` loop when the number of iterations isn't predefined. That is, the termination of the loop is dependent on a condition that isn't controlled by the loop.
 
-The example we saw in the "How to Use a `while` Loop in Arduino" section just showed how the syntax works. Here is a practical examples:
+The example we saw in the "How to Use a `while` Loop in Arduino" section just showed how the syntax works. Here is a practical example:
 
 ```cpp
 void setup() {

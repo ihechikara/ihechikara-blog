@@ -275,7 +275,7 @@
 <p>This looks similar to the example we used in the <code>for</code> loop section, but you’ll see their differences and use cases in actual projects. Let’s discuss some of those use cases.</p>
 <h3 id="for-loop-vs-while-loop--which-one-should-you-use"><code>for</code> Loop vs <code>while</code> Loop – Which One Should You Use?</h3>
 <h4 id="when-to-use-a-for-loop">When to Use a <code>for</code> Loop</h4>
-<p>You should use a <code>for</code> loop when you know how many times the loop should run. The example used in the <code>for</code> loop section is a good example—we knew that the loop will the loop will run ten times based on the variable and condition given.</p>
+<p>You should use a <code>for</code> loop when you know how many times the loop should run. The example used in the <code>for</code> loop section is a good example—we knew that the loop will run ten times based on the variable and condition given.</p>
 <p>Let’s assume that you were given a task to print 1 to 20 in the serial monitor. The first thing you’ll do is to define your initialization variable and a condition that keeps the variable within the expected range.</p>
 <p>If you’re going to print 1 to 20 then the initialization variable should be 1 because it’ll be printed first. This should be followed by a condition that terminates the loop after 20 has been printed: <code>i &#x3C; 21</code>. Here’s what the code will look like:</p>
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">setup</span><span style="color: #C9D1D9">() {</span></span>
@@ -304,7 +304,7 @@
 </ul>
 <h4 id="when-to-use-a-while-loop">When to Use a <code>while</code> Loop</h4>
 <p>You should use <code>while</code> loop when the number of iterations isn’t predefined. That is, the termination of the loop is dependent on a condition that isn’t controlled by the loop.</p>
-<p>The example we saw in the “How to Use a <code>while</code> Loop in Arduino” section just showed how the syntax works. Here is a practical examples:</p>
+<p>The example we saw in the “How to Use a <code>while</code> Loop in Arduino” section just showed how the syntax works. Here is a practical example:</p>
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">setup</span><span style="color: #C9D1D9">() {</span></span>
 <span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">begin</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">9600</span><span style="color: #C9D1D9">);</span></span>
 <span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">println</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"Please enter a character and press Enter:"</span><span style="color: #C9D1D9">);</span></span>
