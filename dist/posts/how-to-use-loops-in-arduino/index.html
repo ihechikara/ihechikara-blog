@@ -1,0 +1,476 @@
+<!DOCTYPE html><html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-MPXRHH8QR5"></script>
+    <script type="text/partytown">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MPXRHH8QR5');
+    </script>
+    <link rel="sitemap" href="/sitemap-index.xml">
+    <!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="ihechikara-pfp.ico">
+<meta name="generator" content="Astro v1.2.1">
+
+<!-- Primary Meta Tags -->
+<title>How to Use Loops in Arduino</title>
+<meta name="title" content="How to Use Loops in Arduino">
+<meta name="description" content="Loops let you execute a block of code multiple times until a specific condition has been met. In Arduino, you can use different types of loops like the for loop, while loop, do...while loop, and the loop function. Knowing the differences between each of them helps you write more efficient code">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ihechikara.com/posts/how-to-use-loops-in-arduino/">
+<meta property="og:title" content="How to Use Loops in Arduino">
+<meta property="og:description" content="Loops let you execute a block of code multiple times until a specific condition has been met. In Arduino, you can use different types of loops like the for loop, while loop, do...while loop, and the loop function. Knowing the differences between each of them helps you write more efficient code">
+<meta property="og:image" content="https://ihechikara.com/how-to-use-loops-in-arduino/loops-in-arduino.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://ihechikara.com/posts/how-to-use-loops-in-arduino/">
+<meta property="twitter:title" content="How to Use Loops in Arduino">
+<meta property="twitter:description" content="Loops let you execute a block of code multiple times until a specific condition has been met. In Arduino, you can use different types of loops like the for loop, while loop, do...while loop, and the loop function. Knowing the differences between each of them helps you write more efficient code">
+<meta property="twitter:image" content="https://ihechikara.com/how-to-use-loops-in-arduino/loops-in-arduino.png">
+
+  <link rel="stylesheet" href="/assets/243eab94.a535c9ed.css" /><script type="module">let e=document.getElementById("hamBurger-img"),t=document.getElementById("mobileNav");e.addEventListener("click",()=>{t.classList.toggle("hidden")});
+</script>
+<script>!(function(w,p,f,c){c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[]).concat(["dataLayer.push"])})(window,'partytown','forward');/* Partytown 0.7.5 - MIT builder.io */
+!function(t,e,n,i,r,o,a,d,s,c,p,l){function u(){l||(l=1,"/"==(a=(o.lib||"/~partytown/")+(o.debug?"debug/":""))[0]&&(s=e.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(f,1e4),e.addEventListener("pt0",w),r?h(1):n.serviceWorker?n.serviceWorker.register(a+(o.swPath||"partytown-sw.js"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&h()}))}),console.error):f())))}function h(t){c=e.createElement(t?"script":"iframe"),t||(c.setAttribute("style","display:block;width:0;height:0;border:0;visibility:hidden"),c.setAttribute("aria-hidden",!0)),c.src=a+"partytown-"+(t?"atomics.js?v=0.7.5":"sandbox-sw.html?"+Date.now()),e.body.appendChild(c)}function f(n,r){for(w(),i==t&&(o.forward||[]).map((function(e){delete t[e.split(".")[0]]})),n=0;n<s.length;n++)(r=e.createElement("script")).innerHTML=s[n].innerHTML,e.head.appendChild(r);c&&c.parentNode.removeChild(c)}function w(){clearTimeout(d)}o=t.partytown||{},i==t&&(o.forward||[]).map((function(e){p=t,e.split(".").map((function(e,n,i){p=p[i[n]]=n+1<i.length?"push"==i[n+1]?[]:p[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),"complete"==e.readyState?u():(t.addEventListener("DOMContentLoaded",u),t.addEventListener("load",u))}(window,document,navigator,top,window.crossOriginIsolated);</script></head>
+
+  <body class="bg-[#232055] text-white">
+    <header>
+  <nav class="">
+    <div class="flex justify-between items-center mt-11 mx-6 md:mx-[3rem] xl:mx-[8.25rem] md:my-[1.63rem]">
+      <a href="/blog" class="cursor-pointer"><h1 class="text-2xl md:text-[2.4rem] leading-7 md:leading-[2.79rem] font-extrabold">
+          IHECHIKARA<span class="text-[#87E0B2]">.</span>
+        </h1>
+      </a>
+
+      <img id="hamBurger-img" src="/bx_menu.svg" alt="" class="p-2 pr-0 border-white lg:hidden">
+      <!-- desktop menu -->
+      <div class="items-center leading-[1.56rem] text-[1.3rem] font-[Work_Sans] cursor-pointer hidden lg:flex">
+      <a href="/blog/" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Blog</a>
+      <a href="https://www.youtube.com/@Ihechikara" target="_blank" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">YouTube</a>
+      <a href="https://ihechikara.substack.com/embed" target="_blank" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Newsletter</a>
+      <!-- <a href="#about" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">About</a>
+      <a href="#newsletter" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Newsletter</a> -->
+
+        <!-- <form class="flex items-center text-xs">
+          <button class="p-[1.05rem] bg-[#87E0B2] "
+            ><div class="font-extrabold">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd" />
+              </svg>
+              
+          </div>
+          </button>
+          <div class="w-[25rem]">
+          <input
+            type="text"
+            name="text"
+            placeholder="Search for articles"
+            class="w-full text-[1.3rem] py-[0.97rem] px-[1rem] xl:px-[1.5rem] cursor-text tracking-wider text-[black] border-none outline-none"
+          />
+        </div>
+        </form> -->
+      </div>
+      <!-- end of desktop for menu -->
+    </div>
+
+    <hr class="border-[1px] border-[#5A5880] mt-[19.5px]">
+
+
+    <!-- Nav for Mobile -->
+    <div id="mobileNav" class="bg-[#5A5880] w-full py-6 px-6 hidden">
+      <!-- <form class="flex items-center text-xs mb-6 w-full">
+        <button
+          class="p-[0.92rem] bg-[#87E0B2] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.5rem]"
+          ><img src={search} alt="" />
+        </button>
+        <input
+          type="text"
+          id="text"
+          name="text"
+          placeholder="Search for articles"
+          class="py-[0.75rem] pl-[1.9rem] pr-[4.5rem] w-full text-[#C8C7D5] text-[1rem] cursor-text tracking-wider leading-6"
+        />
+      </form> -->
+      <a href="/blog/">
+        <button class="p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"><img src="/blog.svg" alt="" class="pr-[0.92rem]">
+          <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Blog</p>
+        </button>
+      </a>
+
+      <a href="https://www.youtube.com/@Ihechikara" target="_blank">
+        <button class="p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"><img src="/blog.svg" alt="" class="pr-[0.92rem]">
+          <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">YouTube</p>
+        </button>
+      </a>
+
+      <a href="https://ihechikara.substack.com/embed" target="_blank">
+        <button class="p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"><img src="/blog.svg" alt="" class="pr-[0.92rem]">
+          <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Newsletter</p>
+        </button>
+      </a>
+
+        <!-- <a href="#newsletter">
+  
+          <button
+            class="p-[0.92rem] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"
+            ><img src={blog} alt="" class="pr-[0.92rem]" />
+            <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Newsletter</p>
+          </button>
+        </a> -->
+
+      
+
+    </div>
+
+    <!-- End of Nav for Mobile -->
+  </nav>
+</header>
+
+
+    <main class="lg:mx-[16.5rem] lg:mt-[7.5rem] text-gray-100">
+      <article class=" mt-16 mx-6">
+        <h1 class="text-[28.43px] lg:text-[37.9px] font-semibold lg:mb-[1.6rem]">How to Use Loops in Arduino</h1>
+        <div class="sm:flex justify-between lg:text-[1rem] lg:mb-[1rem]">
+        <p class="mt-2">Author: Ihechikara Abba</p>
+        <div class="mt-2">
+          <time>October 7 2024</time>
+        </div>
+      </div>
+
+        <hr class="border-[1px] border-[#5A5880] my-4 lg:mb-[2rem]">
+
+        <img width="720" height="360" src="/how-to-use-loops-in-arduino/loops-in-arduino.png" alt="" class="sm:w-full">
+
+        <hr class="border-[1px] border-[#5A5880] mt-4 mb-12 lg:mt-[2rem]">
+
+        
+        <!-- {
+          updatedDate && (
+            <div>
+              Last updated on <time>{updatedDate}</time>
+            </div>
+          )
+        } -->
+
+
+
+        <!-- <hr /> -->
+        <div class="prose sm:prose-xl max-w-none text-gray-100 prose-headings:text-gray-100 prose-code:text-[#87E0B2] prose-a:text-blue-600">
+
+          <p>You can use loops in Arduino to execute a block of code multiple times until a specific condition has been met.</p>
+<p>In this article, you’ll learn about the commonly used loops in Arduino:</p>
+<ul>
+<li><code>for</code> loop.</li>
+<li><code>while</code> loop.</li>
+<li><code>do...while</code> loop.</li>
+<li><code>loop()</code> function.</li>
+</ul>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#how-to-use-a-for-loop-in-arduino">How to Use a <code>for</code> Loop in Arduino</a>
+<ul>
+<li><a href="#for-loop-example"><code>for</code> Loop Example</a></li>
+</ul>
+</li>
+<li><a href="#how-to-use-a-while-loop-in-arduino">How to Use a <code>while</code> Loop in Arduino</a>
+<ul>
+<li><a href="#while-loop-example"><code>while</code> Loop Example</a></li>
+<li><a href="#for-loop-vs-while-loop--which-one-should-you-use"><code>for</code> Loop vs <code>while</code> Loop – Which One Should You Use?</a></li>
+</ul>
+</li>
+<li><a href="#how-to-use-a-do-while-loop-in-arduino">How to Use a <code>do...while</code> Loop in Arduino</a>
+<ul>
+<li><a href="#do-while-loop-example-1"><code>do...while</code> Loop Example #1</a></li>
+<li><a href="#do-while-loop-example-2"><code>do...while</code> Loop Example #2</a></li>
+</ul>
+</li>
+<li><a href="#how-to-use-the-loop-function-as-a-loop-in-arduino">How to Use the <code>loop()</code> Function as a Loop in Arduino</a>
+<ul>
+<li><a href="#loop-function-as-a-loop-example"><code>loop()</code> Function as a Loop Example</a></li>
+</ul>
+</li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+<h2 id="how-to-use-a-for-loop-in-arduino">How to Use a <code>for</code> Loop in Arduino</h2>
+<p>Here’s the syntax for a <code>for</code> loop:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">for (initialization; condition; increment/decrement) {</span></span>
+<span class="line"><span style="color: #c9d1d9">   // code to be executed</span></span>
+<span class="line"><span style="color: #c9d1d9">}</span></span></code></pre>
+<p>In the syntax above, we have three keywords that lets a <code>for</code> loop know what is expected to happen: <code>initialization</code>, <code>condition</code>, and <code>increment/decrement</code>.</p>
+<p>The <code>initialization</code> keyword represents the starting point of the loop. It is usually an integer variable.</p>
+<p>The <code>condition</code> is used to determine when the loop will stop. This is usually a logical operation/condition that controls how many times the loop will run.</p>
+<p><code>increment/decrement</code> is used to increase or decrease the <code>initialization</code> variable after every iteration.</p>
+<h3 id="for-loop-example"><code>for</code> Loop Example</h3>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">int</span><span style="color: #C9D1D9"> greenLED </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">3</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">setup</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">begin</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">9600</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">for</span><span style="color: #C9D1D9"> (</span><span style="color: #FF7B72">int</span><span style="color: #C9D1D9"> i </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">; i </span><span style="color: #FF7B72">&#x3C;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">11</span><span style="color: #C9D1D9">; i</span><span style="color: #FF7B72">++</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">digitalWrite</span><span style="color: #C9D1D9">(greenLED, HIGH);</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">delay</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">500</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">digitalWrite</span><span style="color: #C9D1D9">(greenLED, LOW);</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">delay</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">500</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">    Serial.</span><span style="color: #D2A8FF">println</span><span style="color: #C9D1D9">(i);</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">loop</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>The code above uses a <code>for</code> loop to turn an LED on and off ten times. After each iteration of the loop, the <code>i</code> variable will be increased by 1. When the variable gets to 10, the loop will stop.</p>
+<p>Let’s break the code down further using the three keywords we discussed in the <code>for</code> loop syntax.</p>
+<ul>
+<li>The <code>initialization</code> variable here is <code>i</code> and it has a value of 1.</li>
+<li>The <code>condition </code> is a logical operation: <code>i &#x3C; 11</code>. As long as <code>i</code> (the initialization variable) is less than 11, the loop will keep running. In other words, the loop will stop once <code>i</code> is no longer less than 11.</li>
+<li>The <code>increment</code> logic is <code>i++</code>. This increases the value of <code>1</code> after every iteration (one iteration = LED ON and OFF).</li>
+</ul>
+<p>We also have a line of code that prints the value of <code>i</code> after every iteration: <code>Serial.println(i);</code>. You should see something like this when you look at the serial monitor:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">1</span></span>
+<span class="line"><span style="color: #c9d1d9">2</span></span>
+<span class="line"><span style="color: #c9d1d9">3</span></span>
+<span class="line"><span style="color: #c9d1d9">4</span></span>
+<span class="line"><span style="color: #c9d1d9">5</span></span>
+<span class="line"><span style="color: #c9d1d9">6</span></span>
+<span class="line"><span style="color: #c9d1d9">7</span></span>
+<span class="line"><span style="color: #c9d1d9">8</span></span>
+<span class="line"><span style="color: #c9d1d9">9</span></span>
+<span class="line"><span style="color: #c9d1d9">10</span></span></code></pre>
+<p>You can see that it stops printing at 10. This is because the <code>i &#x3C; 11</code> condition is no longer <code>true</code> after 10, so the loop has to stop.</p>
+<h2 id="how-to-use-a-while-loop-in-arduino">How to Use a <code>while</code> Loop in Arduino</h2>
+<p>Here’s the syntax for a <code>while</code> loop:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">while (condition) {</span></span>
+<span class="line"><span style="color: #c9d1d9">    // Code to be executed</span></span>
+<span class="line"><span style="color: #c9d1d9">}</span></span></code></pre>
+<p>The <code>while</code> loop only has the <code>condition</code> keyword in the syntax above. A <code>while</code> loop will keep running until the <code>condition</code> becomes <code>false</code>. We’ll discuss the differences between <code>for</code> and <code>while</code> loops in a different section. Let’s look at a <code>while</code> loop example first.</p>
+<h3 id="while-loop-example"><code>while</code> Loop Example</h3>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">int</span><span style="color: #C9D1D9"> greenLED </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">3</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #FF7B72">int</span><span style="color: #C9D1D9"> i </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">setup</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">begin</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">9600</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">while</span><span style="color: #C9D1D9"> (i </span><span style="color: #FF7B72">&#x3C;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">11</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">digitalWrite</span><span style="color: #C9D1D9">(greenLED, HIGH);</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">delay</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">500</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">digitalWrite</span><span style="color: #C9D1D9">(greenLED, LOW);</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">delay</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">500</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">    Serial.</span><span style="color: #D2A8FF">println</span><span style="color: #C9D1D9">(i);</span></span>
+<span class="line"><span style="color: #C9D1D9">    i</span><span style="color: #FF7B72">++</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">loop</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>The <code>condition</code> for the <code>while</code> loop above is <code>i &#x3C; 11</code>. In the body of the loop, we turned an LED on and off, and increased the value of <code>i</code> by 1.</p>
+<p><code>i</code> has initial value of 1, and the loop stops when <code>i</code> is no longer less than 11.</p>
+<p>This looks similar to the example we used in the <code>for</code> loop section, but you’ll see their differences and use cases in actual projects. Let’s discuss some of those use cases.</p>
+<h3 id="for-loop-vs-while-loop--which-one-should-you-use"><code>for</code> Loop vs <code>while</code> Loop – Which One Should You Use?</h3>
+<h4 id="when-to-use-a-for-loop">When to Use a <code>for</code> Loop</h4>
+<p>You should use a <code>for</code> loop when you know how many times the loop should run. The example used in the <code>for</code> loop section is a good example—we knew that the loop will the loop will run ten times based on the variable and condition given.</p>
+<p>Let’s assume that you were given a task to print 1 to 20 in the serial monitor. The first thing you’ll do is to define your initialization variable and a condition that keeps the variable within the expected range.</p>
+<p>If you’re going to print 1 to 20 then the initialization variable should be 1 because it’ll be printed first. This should be followed by a condition that terminates the loop after 20 has been printed: <code>i &#x3C; 21</code>. Here’s what the code will look like:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">setup</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">begin</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">9600</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">for</span><span style="color: #C9D1D9"> (</span><span style="color: #FF7B72">int</span><span style="color: #C9D1D9"> i </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">; i </span><span style="color: #FF7B72">&#x3C;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">21</span><span style="color: #C9D1D9">; i</span><span style="color: #FF7B72">++</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">    Serial.</span><span style="color: #D2A8FF">println</span><span style="color: #C9D1D9">(i);</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">delay</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">500</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">      </span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">loop</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>This example above depicts the use of a <code>for</code> loop:</p>
+<ul>
+<li>We know what the expected outcome should be: print 1 to 20.</li>
+<li>We set the conditions to match the expected outcome: <code>i = 1</code> and <code>i &#x3C; 21</code>.</li>
+</ul>
+<p>A <code>for</code> loop can also be used for the following:</p>
+<ul>
+<li>Iterating over an array.</li>
+<li>Blinking LEDs in a sequence.</li>
+<li>Collecting data from sensors.</li>
+</ul>
+<h4 id="when-to-use-a-while-loop">When to Use a <code>while</code> Loop</h4>
+<p>You should use <code>while</code> loop when the number of iterations isn’t predefined. That is, the termination of the loop is dependent on a condition that isn’t controlled by the loop.</p>
+<p>The example we saw in the “How to Use a <code>while</code> Loop in Arduino” section just showed how the syntax works. Here is a practical examples:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">setup</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">begin</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">9600</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">println</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"Please enter a character and press Enter:"</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">loop</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">while</span><span style="color: #C9D1D9"> (Serial.</span><span style="color: #D2A8FF">available</span><span style="color: #C9D1D9">() </span><span style="color: #FF7B72">==</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #8B949E">    // Do nothing and keep waiting until data is available</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">char</span><span style="color: #C9D1D9"> userInput </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> Serial.</span><span style="color: #D2A8FF">read</span><span style="color: #C9D1D9">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">print</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"You entered: "</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">println</span><span style="color: #C9D1D9">(userInput);</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #D2A8FF">delay</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">1000</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>The code above prints out user input. We used a <code>while</code> loop to check if there is any serial data input available.</p>
+<p>The condition here is <code>Serial.available() == 0</code>, which implies that there is no data available. Until the condition becomes <code>false</code>/the loop terminates, the rest of the code will not be executed.</p>
+<p>Once you type in a character, <code>Serial.available()</code> will no longer be 0, the loop will be terminated, and the rest of the code will be executed.</p>
+<p>This shows how to use a <code>while</code> loop to control the flow of your code. Since you’ll have to read data from a user using the <code>Serial.read()</code> function, you must make sure that there’s actual data to be read. Hence, the use of a <code>while</code> loop to check when data is available before proceeding.</p>
+<p>Other practical ways of using a <code>while</code> loop includes:</p>
+<ul>
+<li>Pausing a program until an event occurs.</li>
+<li>Waiting for a component/device to initialize.</li>
+<li>Reading data from sensors continuously, and so on.</li>
+</ul>
+<p>In summary, while <code>for</code>  and <code>while</code> loops can be used interchangeably, you should:</p>
+<ul>
+<li>Use a <code>for</code> loop when you know the expected number of iterations.</li>
+<li>Use a <code>while</code> loop when the number of iterations is not defined.</li>
+</ul>
+<h2 id="how-to-use-a-dowhile-loop-in-arduino">How to Use a <code>do...while</code> Loop in Arduino</h2>
+<p>Here’s the syntax for a <code>do...while</code> loop:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">do</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #8B949E">    // code to be executed</span></span>
+<span class="line"><span style="color: #C9D1D9">} </span><span style="color: #FF7B72">while</span><span style="color: #C9D1D9"> (condition);</span></span></code></pre>
+<p>The <code>do...while</code> loop works just like a <code>while</code> loop, but the code in the loop will be executed at least once even if the condition is false. This happens because of the structure of the loop: the code in the loop’s body comes before the condition, so the code will be executed before the condition is checked.</p>
+<h3 id="dowhile-loop-example-1"><code>do...while</code> Loop Example #1</h3>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">int</span><span style="color: #C9D1D9"> i </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">setup</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">begin</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">9600</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">do</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    Serial.</span><span style="color: #D2A8FF">println</span><span style="color: #C9D1D9">(i);</span></span>
+<span class="line"><span style="color: #C9D1D9">    i</span><span style="color: #FF7B72">++</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  } </span><span style="color: #FF7B72">while</span><span style="color: #C9D1D9"> (i </span><span style="color: #FF7B72">&#x3C;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">loop</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>The code above prints 1 to 9 in the serial monitor. The logic here is the same: the loop runs until the condition becomes false. This is the typical process that you’ve seen in other sections of this article.</p>
+<p>But what if the condition is false from the start? Let’s see how a <code>do...while</code> loop will handle that.</p>
+<h3 id="dowhile-loop-example-2"><code>do...while</code> Loop Example #2</h3>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">int</span><span style="color: #C9D1D9"> i </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">11</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">setup</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">begin</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">9600</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">do</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    Serial.</span><span style="color: #D2A8FF">println</span><span style="color: #C9D1D9">(i);</span></span>
+<span class="line"><span style="color: #C9D1D9">    i</span><span style="color: #FF7B72">++</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #C9D1D9">  } </span><span style="color: #FF7B72">while</span><span style="color: #C9D1D9"> (i </span><span style="color: #FF7B72">&#x3C;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">loop</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>In this example, <code>i</code> has a value of 11 which means that the loop’s condition—<code>i &#x3C; 10</code>—is already false. In this case, instead of doing nothing, the code in the <code>do</code> block will run once.</p>
+<p>In the serial monitor, you should see 11 printed out because we have <code>Serial.println(i);</code> in the <code>do</code> block.</p>
+<h2 id="how-to-use-the-loop-function-as-a-loop-in-arduino">How to Use the <code>loop()</code> Function as a Loop in Arduino</h2>
+<p>When you create a new Arduino sketch using the Arduino IDE, you should have something like this:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">setup</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #8B949E">  // put your setup code here, to run once:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">loop</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #8B949E">  // put your main code here, to run repeatedly:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>From the comment seen in the body of the <code>loop()</code> function, the code is expected to run repeatedly.</p>
+<p>Note that the function doesn’t fall under control structures in Arduino. It is the part of an Arduino sketch that is supposed to run your code repeatedly.</p>
+<p>You may have noticed that most of the examples in this article were written within the <code>setup()</code> function. I didn’t want the code/loops to run endlessly so I added them to the part of the sketch that runs only once, which helped in showing exactly how the loops work.</p>
+<h3 id="loop-function-as-a-loop-example"><code>loop()</code> Function as a Loop Example</h3>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">setup</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">begin</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">9600</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">loop</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #C9D1D9">  Serial.</span><span style="color: #D2A8FF">println</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"Hello, World!"</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #D2A8FF">delay</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">1000</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>The code above prints “Hello, World!” for as long as the program runs.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this article, you learned about the different loops in Arduino. You saw the syntax and code examples of each loop.</p>
+<p>Check out <a href="https://ihechikara.com/">my blog</a> for articles about embedded systems, IoT, and web development.</p>
+<p>Happy coding!</p>
+        </div>
+        
+        <div class="flex flex-col mt-8 mb-[8rem] ">
+          <p class="mb-[2rem] font-bold text-xl">Tag(s):</p>
+          <div class="flex space-x-2">
+            <ul>
+              <li class="py-[4px] px-[8px] text-[#232055] bg-[#87E0B2] text-sm mr-2"><a href="/tags/Arduino">Arduino</a></li>
+            </ul>
+          </div>
+          <section id="newsletter" class="bg-[#87E0B2] mb-8 px-6 py-7 md:py-[6.9rem] font-[Work_Sans] text-[#232055] md:flex md:flex-col md:items-center w-full mt-8">
+  <h2 class="font-normal text-[1.3rem] md:text-[2.37rem] leading-[1.56rem] md:leading-[2.6rem] tracking-wide mb-2 md:mb-3 w-[18.4rem] md:w-[32.8rem] md:font-semibold">
+    Subscribe to my Newsletter
+  </h2>
+  <p class="text-[0.6rem] md:text-[1rem] font-medium md:font-normal leading-[0.7rem] md:leading-[1.5rem] mb-6 md:mb-[2.75rem] md:w-[30rem]">
+    Subscribe to my newsletter so you don't miss updates and resources. You'll get these emails once a week.
+  </p>
+
+  <form action="https://ihechikaraabba.podia.com/email_lists/486740/subscriptions" accept-charset="UTF-8" method="post" class="flex items-center text-xs">
+    <div class="md:w-[32rem]"><input type="email" name="email" required="required" id="email" placeholder="Your email address" class="py-[1.06rem] md:py-[1.72rem] px-4 md:pl-[3rem] w-full text-[black] cursor-text tracking-wider md:text-[1.3rem] border-none outline-none"></div>
+    <input type="submit" value="Sign me up!" class="py-[1.0625rem] md:py-[2rem] px-[1rem] md:px-[3.5rem] bg-[#232055] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] ">
+  </form>
+</section>
+        </div>
+
+      </article>
+    </main>
+    <!-- <p > </p> -->
+    <footer class="px-6 lg:px-[8.3rem] pt-[1.9rem] lg:pt-[3.75rem] bg-[#5A5880] leading-7">
+  <div class="lg:flex lg:justify-between lg:w-full">
+    <div>
+      <h1 class="text-2xl lg:text-[2.4rem] font-extrabold mb-8">
+        IHECHIKARA<span class="text-[#87E0B2]">.</span>
+      </h1>
+    </div>
+    <div class="">
+      <p class="font-[Work_Sans] tracking-wider text-base md:text-[1.3rem] mb-2 md:mb-[1rem]">
+        Contact me
+      </p>
+      <div class="flex items-center justify:center gap-4 lg:gap-[2.63rem] mb-[3.9rem] cursor-pointer">
+      <!-- Twitter -->
+        <a href="https://twitter.com/Ihechikara2" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
+          <img src="/twitter.svg" class="w-[30px] h-[30px] lg:w-full lg:h-full">
+        </a>
+
+        <!-- Mail -->
+        <a href="mailto:ihechikara.dev@gmail.com" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
+          <img src="/mail.svg" class="w-[30px] h-[30px] lg:w-full lg:h-full">
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/ihechikara-vincent-abba-983a411b9/" target="_blank" class="cursor- md:mb-8 md:h-8 md:w-8">
+          <img src="/linkedin.svg" class="w-[30px] h-[30px] w-full h-full">
+        </a>
+        
+        <!-- GitHub -->
+        <a href="https://github.com/ihechikara" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
+          <img src="/github.svg" class="w-[30px] h-[30px] lg:w-full lg:h-full">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="text-center flex flex-col lg:flex-row lg:justify-center">
+    <p class="text-base lg:mr-6 lg:text-lg"> Built with <span class="text-[#87E0B2] underline text-xl font-bold"> <a href="https://astro.build/"> Astro </a> </span></p>
+    <p class="text-base lg:mr-6 lg:text-lg"> Styled with <span class="text-[#87E0B2] underline text-xl font-bold"> <a href="https://tailwindcss.com/"> Tailwind CSS </a> </span> </p>
+    <p class="text-base lg:text-lg"> Hosted on <span class="text-[#87E0B2] underline text-xl font-bold"> <a href="https://www.netlify.com/">Netlify</a>  </span> </p>
+  </div>
+</footer>
+  </body></html>
