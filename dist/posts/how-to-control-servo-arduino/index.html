@@ -1,0 +1,333 @@
+<!DOCTYPE html><html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-MPXRHH8QR5"></script>
+    <script type="text/partytown">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MPXRHH8QR5');
+    </script>
+    <link rel="sitemap" href="/sitemap-index.xml">
+    <!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="ihechikara-pfp.ico">
+<meta name="generator" content="Astro v1.2.1">
+
+<!-- Primary Meta Tags -->
+<title>How to Control a Servo Motor with Arduino</title>
+<meta name="title" content="How to Control a Servo Motor with Arduino">
+<meta name="description" content="Servo motors are popularly used for prototyping robotics parts or projects that require mechanical motion in fixed, specific angles. In this article, you'll learn how to connect a servo motor to an Arduino board, write code to control the motor, and use a for loop to create a sweeping motion with it">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ihechikara.com/posts/how-to-control-servo-arduino/">
+<meta property="og:title" content="How to Control a Servo Motor with Arduino">
+<meta property="og:description" content="Servo motors are popularly used for prototyping robotics parts or projects that require mechanical motion in fixed, specific angles. In this article, you'll learn how to connect a servo motor to an Arduino board, write code to control the motor, and use a for loop to create a sweeping motion with it">
+<meta property="og:image" content="https://ihechikara.com/how-to-control-servo-arduino/how-to-control-servo.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://ihechikara.com/posts/how-to-control-servo-arduino/">
+<meta property="twitter:title" content="How to Control a Servo Motor with Arduino">
+<meta property="twitter:description" content="Servo motors are popularly used for prototyping robotics parts or projects that require mechanical motion in fixed, specific angles. In this article, you'll learn how to connect a servo motor to an Arduino board, write code to control the motor, and use a for loop to create a sweeping motion with it">
+<meta property="twitter:image" content="https://ihechikara.com/how-to-control-servo-arduino/how-to-control-servo.png">
+
+  <link rel="stylesheet" href="/assets/b3bf2276.2afff52e.css" /><script type="module">let e=document.getElementById("hamBurger-img"),t=document.getElementById("mobileNav");e.addEventListener("click",()=>{t.classList.toggle("hidden")});
+</script>
+<script>!(function(w,p,f,c){c=w[p]=Object.assign(w[p]||{},{"lib":"/~partytown/","debug":false});c[f]=(c[f]||[]).concat(["dataLayer.push"])})(window,'partytown','forward');/* Partytown 0.7.5 - MIT builder.io */
+!function(t,e,n,i,r,o,a,d,s,c,p,l){function u(){l||(l=1,"/"==(a=(o.lib||"/~partytown/")+(o.debug?"debug/":""))[0]&&(s=e.querySelectorAll('script[type="text/partytown"]'),i!=t?i.dispatchEvent(new CustomEvent("pt1",{detail:t})):(d=setTimeout(f,1e4),e.addEventListener("pt0",w),r?h(1):n.serviceWorker?n.serviceWorker.register(a+(o.swPath||"partytown-sw.js"),{scope:a}).then((function(t){t.active?h():t.installing&&t.installing.addEventListener("statechange",(function(t){"activated"==t.target.state&&h()}))}),console.error):f())))}function h(t){c=e.createElement(t?"script":"iframe"),t||(c.setAttribute("style","display:block;width:0;height:0;border:0;visibility:hidden"),c.setAttribute("aria-hidden",!0)),c.src=a+"partytown-"+(t?"atomics.js?v=0.7.5":"sandbox-sw.html?"+Date.now()),e.body.appendChild(c)}function f(n,r){for(w(),i==t&&(o.forward||[]).map((function(e){delete t[e.split(".")[0]]})),n=0;n<s.length;n++)(r=e.createElement("script")).innerHTML=s[n].innerHTML,e.head.appendChild(r);c&&c.parentNode.removeChild(c)}function w(){clearTimeout(d)}o=t.partytown||{},i==t&&(o.forward||[]).map((function(e){p=t,e.split(".").map((function(e,n,i){p=p[i[n]]=n+1<i.length?"push"==i[n+1]?[]:p[i[n]]||{}:function(){(t._ptf=t._ptf||[]).push(i,arguments)}}))})),"complete"==e.readyState?u():(t.addEventListener("DOMContentLoaded",u),t.addEventListener("load",u))}(window,document,navigator,top,window.crossOriginIsolated);</script></head>
+
+  <body class="bg-[#232055] text-white">
+    <header>
+  <nav class="">
+    <div class="flex justify-between items-center mt-11 mx-6 md:mx-[3rem] xl:mx-[8.25rem] md:my-[1.63rem]">
+      <a href="/blog" class="cursor-pointer"><h1 class="text-2xl md:text-[2.4rem] leading-7 md:leading-[2.79rem] font-extrabold">
+          IHECHIKARA<span class="text-[#87E0B2]">.</span>
+        </h1>
+      </a>
+
+      <img id="hamBurger-img" src="/bx_menu.svg" alt="" class="p-2 pr-0 border-white lg:hidden">
+      <!-- desktop menu -->
+      <div class="items-center leading-[1.56rem] text-[1.3rem] font-[Work_Sans] cursor-pointer hidden lg:flex">
+      <a href="/blog/" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Blog</a>
+      <a href="https://www.youtube.com/@Ihechikara" target="_blank" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">YouTube</a>
+      <a href="https://ihechikara.substack.com/embed" target="_blank" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Newsletter</a>
+      <!-- <a href="#about" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">About</a>
+      <a href="#newsletter" class="hidden lg:block mr-[2rem] xl:mr-[3rem]">Newsletter</a> -->
+
+        <!-- <form class="flex items-center text-xs">
+          <button class="p-[1.05rem] bg-[#87E0B2] "
+            ><div class="font-extrabold">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd" />
+              </svg>
+              
+          </div>
+          </button>
+          <div class="w-[25rem]">
+          <input
+            type="text"
+            name="text"
+            placeholder="Search for articles"
+            class="w-full text-[1.3rem] py-[0.97rem] px-[1rem] xl:px-[1.5rem] cursor-text tracking-wider text-[black] border-none outline-none"
+          />
+        </div>
+        </form> -->
+      </div>
+      <!-- end of desktop for menu -->
+    </div>
+
+    <hr class="border-[1px] border-[#5A5880] mt-[19.5px]">
+
+
+    <!-- Nav for Mobile -->
+    <div id="mobileNav" class="bg-[#5A5880] w-full py-6 px-6 hidden">
+      <!-- <form class="flex items-center text-xs mb-6 w-full">
+        <button
+          class="p-[0.92rem] bg-[#87E0B2] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.5rem]"
+          ><img src={search} alt="" />
+        </button>
+        <input
+          type="text"
+          id="text"
+          name="text"
+          placeholder="Search for articles"
+          class="py-[0.75rem] pl-[1.9rem] pr-[4.5rem] w-full text-[#C8C7D5] text-[1rem] cursor-text tracking-wider leading-6"
+        />
+      </form> -->
+      <a href="/blog/">
+        <button class="p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"><img src="/blog.svg" alt="" class="pr-[0.92rem]">
+          <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Blog</p>
+        </button>
+      </a>
+
+      <a href="https://www.youtube.com/@Ihechikara" target="_blank">
+        <button class="p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"><img src="/blog.svg" alt="" class="pr-[0.92rem]">
+          <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">YouTube</p>
+        </button>
+      </a>
+
+      <a href="https://ihechikara.substack.com/embed" target="_blank">
+        <button class="p-[0.92rem] mb-6 text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"><img src="/blog.svg" alt="" class="pr-[0.92rem]">
+          <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Newsletter</p>
+        </button>
+      </a>
+
+        <!-- <a href="#newsletter">
+  
+          <button
+            class="p-[0.92rem] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] flex items-center bg-[#5A5880] border-[#918FAA] leading-6 border-[#918FAA] border-solid border-[1px] w-full"
+            ><img src={blog} alt="" class="pr-[0.92rem]" />
+            <p class="pl-0 cursor-text tracking-wider text-[1rem] text-[#C8C7D5]">Newsletter</p>
+          </button>
+        </a> -->
+
+      
+
+    </div>
+
+    <!-- End of Nav for Mobile -->
+  </nav>
+</header>
+
+
+    <main class="lg:mx-[16.5rem] lg:mt-[7.5rem] text-gray-100">
+      <article class=" mt-16 mx-6">
+        <h1 class="text-[28.43px] lg:text-[37.9px] font-semibold lg:mb-[1.6rem]">How to Control a Servo Motor with Arduino</h1>
+        <div class="sm:flex justify-between lg:text-[1rem] lg:mb-[1rem]">
+        <p class="mt-2">Author: Ihechikara Abba</p>
+        <div class="mt-2">
+          <time>November 2 2024</time>
+        </div>
+      </div>
+
+        <hr class="border-[1px] border-[#5A5880] my-4 lg:mb-[2rem]">
+
+        <img width="720" height="360" src="/how-to-control-servo-arduino/how-to-control-servo.png" alt="" class="sm:w-full">
+
+        <hr class="border-[1px] border-[#5A5880] mt-4 mb-12 lg:mt-[2rem]">
+
+        
+        <!-- {
+          updatedDate && (
+            <div>
+              Last updated on <time>{updatedDate}</time>
+            </div>
+          )
+        } -->
+
+
+
+        <!-- <hr /> -->
+        <div class="prose sm:prose-xl max-w-none text-gray-100 prose-headings:text-gray-100 prose-code:text-[#87E0B2] prose-a:text-blue-600">
+
+          <p>In this article, you’ll learn how to connect and control a servo motor with an Arduino board. Servo motors are popularly used for prototyping robotics parts or projects that require mechanical motion in fixed, specific angles (in this case, 0 to 180 degrees).</p>
+<p>You’ll learn how to connect a servo motor to an Arduino board, how to control the motor using code, and how to use a for loop to create a sweeping motion.</p>
+<p>Let’s get started!</p>
+<h2 id="hardware-components">Hardware Components</h2>
+<ul>
+<li>Arduino board.</li>
+<li>Servo Motor.</li>
+<li>Jumper wires.</li>
+</ul>
+<h2 id="circuit-diagram">Circuit Diagram</h2>
+<p>You should have a circuit connection similar to this:</p>
+<p><img src="/how-to-control-servo-arduino/ciruit-diagram-servo.png" alt="ciruit-diagram-servo"></p>
+<p>Here’s how to make the connections above:</p>
+<ul>
+<li>Connect the red wire of the servo motor to 5V.</li>
+<li>Connect the black (this may be brown for you) wire to GND.</li>
+<li>Connect the yellow wire to a digital pin. For this tutorial, we’ll use pin 9.</li>
+</ul>
+<h2 id="how-to-control-a-servo-motor">How to Control a Servo Motor</h2>
+<p>In order to control the servo motor, you have to make use of the built-in Servo library. This library comes with the Arduino IDE, so no extra installations are required.</p>
+<h3 id="servo-motor-example-1">Servo Motor Example #1</h3>
+<p>First, let’s see how you can use code to interact with the hardware connections. Here’s what the code looks like:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">#include</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#x3C;Servo.h></span><span style="color: #C9D1D9">  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">Servo myServo;  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">setup</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #C9D1D9">  myServo.</span><span style="color: #D2A8FF">attach</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">9</span><span style="color: #C9D1D9">);  </span></span>
+<span class="line"><span style="color: #C9D1D9">  myServo.</span><span style="color: #D2A8FF">write</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">loop</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>Let’s break down the code.</p>
+<p>We started by “including” the Servo library. This gives you access to the library’s methods: <code>attach()</code> <code>detach()</code>, <code>write()</code>, and so on.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">#include</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#x3C;Servo.h></span><span style="color: #C9D1D9"> </span></span></code></pre>
+<p>We then created a new instance of the Servo class called <code>myServo</code>:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">Servo myServo; </span></span></code></pre>
+<p>Next, we specified that the servo motor was connected to pin 9 on the Arduino board using the <code>attach()</code> function:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">myServo.</span><span style="color: #D2A8FF">attach</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">9</span><span style="color: #C9D1D9">);</span></span></code></pre>
+<p>Lastly, we used the <code>write()</code> function to move the servo motor to an angle of 100 degrees:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">myServo.</span><span style="color: #D2A8FF">write</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">);</span></span></code></pre>
+<p>When you upload the code, your motor should move to an angle of 100 degrees.</p>
+<p>This example shows how to use code to interact with the servo motor. In the next section, you’ll</p>
+<h2 id="servo-motor-example-2--servo-sweep-example">Servo Motor Example #2 — Servo Sweep Example</h2>
+<p>In this example, we’ll simulate a sweeping motion with the servo motor by moving it from 0 to 180 degrees and then back from 180 to 0 degrees in a continuous loop.</p>
+<p>Here’s the code:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">#include</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#x3C;Servo.h></span><span style="color: #C9D1D9">  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">Servo myServo;  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">setup</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #C9D1D9">  myServo.</span><span style="color: #D2A8FF">attach</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">9</span><span style="color: #C9D1D9">);  </span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">loop</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">for</span><span style="color: #C9D1D9"> (</span><span style="color: #FF7B72">int</span><span style="color: #C9D1D9"> pos </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">; pos </span><span style="color: #FF7B72">&#x3C;=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">180</span><span style="color: #C9D1D9">; pos</span><span style="color: #FF7B72">++</span><span style="color: #C9D1D9">) {  </span></span>
+<span class="line"><span style="color: #C9D1D9">    myServo.</span><span style="color: #D2A8FF">write</span><span style="color: #C9D1D9">(pos);  </span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">delay</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">15</span><span style="color: #C9D1D9">);  </span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">for</span><span style="color: #C9D1D9"> (</span><span style="color: #FF7B72">int</span><span style="color: #C9D1D9"> pos </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">180</span><span style="color: #C9D1D9">; pos </span><span style="color: #FF7B72">>=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">; pos</span><span style="color: #FF7B72">--</span><span style="color: #C9D1D9">) {  </span></span>
+<span class="line"><span style="color: #C9D1D9">    myServo.</span><span style="color: #D2A8FF">write</span><span style="color: #C9D1D9">(pos);</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">delay</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">15</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>We started by including the Servo library, creating a new instance of the Servo class called <code>myServo</code>, and attaching pin 9 to the servo moto:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">#include</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">&#x3C;Servo.h></span><span style="color: #C9D1D9">  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">Servo myServo;  </span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">setup</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #C9D1D9">  myServo.</span><span style="color: #D2A8FF">attach</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">9</span><span style="color: #C9D1D9">);  </span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>In the <code>loop()</code> function, we created two <a href="https://ihechikara.com/posts/how-to-use-loops-in-arduino/"><code>for</code> loops</a>:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">void</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">loop</span><span style="color: #C9D1D9">() {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">for</span><span style="color: #C9D1D9"> (</span><span style="color: #FF7B72">int</span><span style="color: #C9D1D9"> pos </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">; pos </span><span style="color: #FF7B72">&#x3C;=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">180</span><span style="color: #C9D1D9">; pos</span><span style="color: #FF7B72">++</span><span style="color: #C9D1D9">) {  </span></span>
+<span class="line"><span style="color: #C9D1D9">    myServo.</span><span style="color: #D2A8FF">write</span><span style="color: #C9D1D9">(pos);  </span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">delay</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">15</span><span style="color: #C9D1D9">);  </span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">for</span><span style="color: #C9D1D9"> (</span><span style="color: #FF7B72">int</span><span style="color: #C9D1D9"> pos </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">180</span><span style="color: #C9D1D9">; pos </span><span style="color: #FF7B72">>=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">; pos</span><span style="color: #FF7B72">--</span><span style="color: #C9D1D9">) {  </span></span>
+<span class="line"><span style="color: #C9D1D9">    myServo.</span><span style="color: #D2A8FF">write</span><span style="color: #C9D1D9">(pos);</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">delay</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">15</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>The first loop turns the servo motor from 0 to 180 degrees with a delay of 15 milliseconds. Without the delay, the motor will move rapidly, so you have some sort of delay to have a smother motion.</p>
+<p>The second loop does the same thing, but in the opposite direction: it turns the motor from 180 to 0 degrees.</p>
+<h2 id="use-cases">Use Cases</h2>
+<p>Some of the use cases for servo motors in Arduino include:</p>
+<ul>
+<li>Robotic arms and joints.</li>
+<li>Radar and object detection systems.</li>
+<li>Simulating analog displays like range of temperature, speed, and so on.</li>
+<li>Automated opening and closing mechanisms.</li>
+<li>Automated feeding systems, and so on.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this article, you learned about servo motors in Arduino. You started by learning how to connect a servo motor to an Arduino board.</p>
+<p>Then you learned how to write code to control the motor connected to a board. You also learned how to use the Servo library to send signals and control the angle of the motor.</p>
+<p>Lastly, you learned how to simulate a sweeping motion using <code>for</code> loops.</p>
+<p>Happy Coding!</p>
+        </div>
+        
+        <div class="flex flex-col mt-8 mb-[8rem] ">
+          <p class="mb-[2rem] font-bold text-xl">Tag(s):</p>
+          <div class="flex space-x-2">
+            <ul>
+              <li class="py-[4px] px-[8px] text-[#232055] bg-[#87E0B2] text-sm mr-2"><a href="/tags/Arduino">Arduino</a></li>
+            </ul>
+          </div>
+          <section id="newsletter" class="bg-[#87E0B2] mb-8 px-6 py-7 md:py-[6.9rem] font-[Work_Sans] text-[#232055] md:flex md:flex-col md:items-center w-full mt-8">
+  <h2 class="font-normal text-[1.3rem] md:text-[2.37rem] leading-[1.56rem] md:leading-[2.6rem] tracking-wide mb-2 md:mb-3 w-[18.4rem] md:w-[32.8rem] md:font-semibold">
+    Subscribe to my Newsletter
+  </h2>
+  <p class="text-[0.6rem] md:text-[1rem] font-medium md:font-normal leading-[0.7rem] md:leading-[1.5rem] mb-6 md:mb-[2.75rem] md:w-[30rem]">
+    Subscribe to my newsletter so you don't miss updates and resources. You'll get these emails once a week.
+  </p>
+
+  <form action="https://ihechikaraabba.podia.com/email_lists/486740/subscriptions" accept-charset="UTF-8" method="post" class="flex items-center text-xs">
+    <div class="md:w-[32rem]"><input type="email" name="email" required="required" id="email" placeholder="Your email address" class="py-[1.06rem] md:py-[1.72rem] px-4 md:pl-[3rem] w-full text-[black] cursor-text tracking-wider md:text-[1.3rem] border-none outline-none"></div>
+    <input type="submit" value="Sign me up!" class="py-[1.0625rem] md:py-[2rem] px-[1rem] md:px-[3.5rem] bg-[#232055] text-[#FFFFFF] tracking-wider cursor-pointer md:text-[1.3rem] ">
+  </form>
+</section>
+        </div>
+
+      </article>
+    </main>
+    <!-- <p > </p> -->
+    <footer class="px-6 lg:px-[8.3rem] pt-[1.9rem] lg:pt-[3.75rem] bg-[#5A5880] leading-7">
+  <div class="lg:flex lg:justify-between lg:w-full">
+    <div>
+      <h1 class="text-2xl lg:text-[2.4rem] font-extrabold mb-8">
+        IHECHIKARA<span class="text-[#87E0B2]">.</span>
+      </h1>
+    </div>
+    <div class="">
+      <p class="font-[Work_Sans] tracking-wider text-base md:text-[1.3rem] mb-2 md:mb-[1rem]">
+        Contact me
+      </p>
+      <div class="flex items-center justify:center gap-4 lg:gap-[2.63rem] mb-[3.9rem] cursor-pointer">
+      <!-- Twitter -->
+        <a href="https://twitter.com/Ihechikara2" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
+          <img src="/twitter.svg" class="w-[30px] h-[30px] lg:w-full lg:h-full">
+        </a>
+
+        <!-- Mail -->
+        <a href="mailto:ihechikara.dev@gmail.com" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
+          <img src="/mail.svg" class="w-[30px] h-[30px] lg:w-full lg:h-full">
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/ihechikara-vincent-abba-983a411b9/" target="_blank" class="cursor- md:mb-8 md:h-8 md:w-8">
+          <img src="/linkedin.svg" class="w-[30px] h-[30px] w-full h-full">
+        </a>
+        
+        <!-- GitHub -->
+        <a href="https://github.com/ihechikara" target="_blank" class="cursor-pointer md:mb-8 md:h-8 md:w-8">
+          <img src="/github.svg" class="w-[30px] h-[30px] lg:w-full lg:h-full">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="text-center flex flex-col lg:flex-row lg:justify-center">
+    <p class="text-base lg:mr-6 lg:text-lg"> Built with <span class="text-[#87E0B2] underline text-xl font-bold"> <a href="https://astro.build/"> Astro </a> </span></p>
+    <p class="text-base lg:mr-6 lg:text-lg"> Styled with <span class="text-[#87E0B2] underline text-xl font-bold"> <a href="https://tailwindcss.com/"> Tailwind CSS </a> </span> </p>
+    <p class="text-base lg:text-lg"> Hosted on <span class="text-[#87E0B2] underline text-xl font-bold"> <a href="https://www.netlify.com/">Netlify</a>  </span> </p>
+  </div>
+</footer>
+  </body></html>
