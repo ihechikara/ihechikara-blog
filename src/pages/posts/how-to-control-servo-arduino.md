@@ -57,7 +57,7 @@ void loop() {
 
 Let's break down the code.
 
-We started by "including" the Servo library. This gives you access to the library's methods: `attach()` `detach()`, `write()`, and so on.
+We started by "including" the Servo library. This gives you access to the library's methods: `attach()`, `detach()`, `write()`, and so on.
 
 ```cpp
 #include <Servo.h> 
@@ -83,7 +83,7 @@ myServo.write(100);
 
 When you upload the code, your motor should move to an angle of 100 degrees.
 
-This example shows how to use code to interact with the servo motor. In the next section, you'll 
+This example shows how to use code to interact with the servo motor. In the next section, you'll simulate a sweepint motion with the servo motor.
 
 ## Servo Motor Example #2 -- Servo Sweep Example
 
@@ -112,7 +112,7 @@ void loop() {
 }
 ```
 
-We started by including the Servo library, creating a new instance of the Servo class called `myServo`, and attaching pin 9 to the servo moto:
+We started by including the Servo library, creating a new instance of the Servo class called `myServo`, and attaching pin 9 to the servo motor:
 
 ```cpp  
 #include <Servo.h>  
@@ -139,7 +139,7 @@ void loop() {
 }
 ```
 
-The first loop turns the servo motor from 0 to 180 degrees with a delay of 15 milliseconds. Without the delay, the motor will move rapidly, so you have some sort of delay to have a smother motion.
+The first loop turns the servo motor from 0 to 180 degrees with a delay of 15 milliseconds. Without the delay, the motor will move rapidly, so you have some sort of delay to have a smoother motion.
 
 The second loop does the same thing, but in the opposite direction: it turns the motor from 180 to 0 degrees. 
 
