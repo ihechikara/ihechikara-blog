@@ -83,7 +83,7 @@ myServo.write(100);
 
 When you upload the code, your motor should move to an angle of 100 degrees.
 
-This example shows how to use code to interact with the servo motor. In the next section, you'll simulate a sweepint motion with the servo motor.
+This example shows how to use code to interact with the servo motor. In the next section, you'll simulate a sweeping motion with the servo motor.
 
 ## Servo Motor Example #2 -- Servo Sweep Example
 
