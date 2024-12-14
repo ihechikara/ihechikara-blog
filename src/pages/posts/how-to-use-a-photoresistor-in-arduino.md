@@ -15,7 +15,7 @@ In this article, you'll learn how to use a photoresistor to automatically contro
 
 ## Hardware Components
 
-- Arduino board.
+- Arduino Uno board.
 - Photoresistor.
 - Breadboard.
 - LED.
