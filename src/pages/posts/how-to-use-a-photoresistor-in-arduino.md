@@ -13,7 +13,7 @@ A photoresistor, also known as a light-dependent resistor (LDR), is a sensor tha
 
 In this article, you'll learn how to use a photoresistor to automatically control an LED based on light levels.
 
-## Hardware Components
+## Hardware Components Used
 
 - Arduino Uno board.
 - Photoresistor.
